@@ -13,19 +13,24 @@ assert val_1 is val_2
 from collections.abc import Callable
 
 
-def cache(func: Callable, ca={}) -> Callable:
+def cache(func: Callable) -> Callable:
     """
     :param func: any function for cache
-    :param ca: don't touch this
     :return: cached function's return
-    :rtype: function's rtype
     """
 
-    def some_func(*args):
-        if func(*args) in ca:
-            return ca[func(*args)]
+    def some_func(*args, cached_value_dict={}, **kwargs):
+        """
+        :param args: any args for decorated func
+        :param cached_value_dict: dict for cached value
+        :return: cached func(*args) result
+        """
+        if (tuple(args), tuple(kwargs)) in cached_value_dict:
+            # if func had already called with this args return cached value
+            return cached_value_dict[(tuple(args), tuple(kwargs))]
         else:
-            ca[func(*args)] = func(*args)
-            return ca[func(*args)]
+            # add value to cache if it isn't in it
+            cached_value_dict[(tuple(args), tuple(kwargs))] = func(*args, **kwargs)
+            return cached_value_dict[(tuple(args), tuple(kwargs))]
 
     return some_func

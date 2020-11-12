@@ -11,21 +11,22 @@ Example 2:
 Input: [2,2,1,1,1,2,2]
 Output: 2, 1
 """
-from typing import List, Tuple
+from typing import List, Tuple, Dict, Any
 
 
-def major_and_minor_elem(inp: List) -> Tuple[int, int]:
+def major_and_minor_elem(inp: List[int]) -> Tuple[int, int]:
     """
     :param inp: array is non-empty and the most common element
     always exist in the array
-    :type inp: List
     :return: Tuple(least_common_elem, most_common_elem)
-    :rtype: int
     """
-    least_com, most_com = inp[0], inp[0]
-    for i in inp:
-        if inp.count(i) < inp.count(least_com):
-            least_com = i
-        elif inp.count(i) >= len(inp) // 2:
-            most_com = i
-    return least_com, most_com
+    value_count_dict = {}
+    for value in inp:
+        if value in value_count_dict:
+            value_count_dict[value] += 1
+        else:
+            value_count_dict[value] = 1
+    return (
+        sorted(value_count_dict.items(), key=lambda item: item[1])[0][0],
+        sorted(value_count_dict.items(), key=lambda item: item[1])[-1][0],
+    )

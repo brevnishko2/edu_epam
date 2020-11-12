@@ -1,6 +1,12 @@
 import os
 
-from hw2.tasks.task_1 import *
+from hw2.tasks.task_1 import (
+    get_longest_diverse_words,
+    get_rarest_char,
+    count_punctuation_chars,
+    count_non_ascii_chars,
+    get_most_common_non_ascii_char,
+)
 
 
 def test_longest_words():
@@ -12,11 +18,11 @@ def test_longest_words():
         "Bevölkerungsabschub",
         "Werkstättenlandschaft",
         "Schicksalsfiguren",
-        "vernachlässigt",
-        "unverständlich",
-        "politischstrategischen",
+        "Fingerabdrucks",
+        "Friedensabstimmung",
         "außenpolitisch",
-        "Zwingherrschaft",
+        "Seinsverdichtungen",
+        "Selbstbezichtigungen",
         "Vorausgeschickt",
     ]
 
@@ -32,7 +38,7 @@ def test_punctuation_chars():
     path = os.path.abspath(os.path.dirname(__file__)) + "/data.txt"
     actual_result = count_punctuation_chars(path)
 
-    assert actual_result == 3166
+    assert actual_result == 3209
 
 
 def test_count_non_ascii_chars():
