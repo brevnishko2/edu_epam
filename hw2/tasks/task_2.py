@@ -27,6 +27,6 @@ def major_and_minor_elem(inp: List[int]) -> Tuple[int, int]:
         else:
             value_count_dict[value] = 1
     return (
-        sorted(value_count_dict.items(), key=lambda item: item[1])[0][0],
-        sorted(value_count_dict.items(), key=lambda item: item[1])[-1][0],
+        max(value_count_dict.items(), key=lambda item: item[1])[0],
+        min(value_count_dict.items(), key=lambda item: item[1])[0],
     )

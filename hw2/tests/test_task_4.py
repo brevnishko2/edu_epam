@@ -4,9 +4,10 @@ import pytest
 from hw2.tasks.task_4 import cache
 
 
-def summa(*a, b=3):
+def summa(*args):
     sleep(1)
-    return sum(a, b)
+    print(args)
+    return sum(args)
 
 
 def str_summa(a, b):
@@ -20,11 +21,12 @@ def some_obj():
 
 
 def test_summa():
-    value = [2, 3, 4]
+    value1 = 1
+    value2 = 2
     start_time = time()
     cache_func = cache(summa)
-    actual_result1 = cache_func(*value, b=2)
-    actual_result2 = cache_func(*value, b=2)
+    actual_result1 = cache_func(value1, value2)
+    actual_result2 = cache_func(value1, value2)
 
     assert actual_result1 is actual_result2 and (time() - start_time) < 2
 
