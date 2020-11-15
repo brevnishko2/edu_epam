@@ -10,7 +10,7 @@ val_1 = cache_func(*some)
 val_2 = cache_func(*some)
 assert val_1 is val_2
 """
-from collections.abc import Callable
+from typing import Callable
 
 
 def cache(func: Callable) -> Callable:
@@ -18,19 +18,22 @@ def cache(func: Callable) -> Callable:
     :param func: any function for cache
     :return: cached function's return
     """
+    cached_value_list = []
 
-    def some_func(*args, cached_value_dict={}, **kwargs):
+    def some_func(*args, **kwargs):
         """
         :param args: any args for decorated func
         :param cached_value_dict: dict for cached value
         :return: cached func(*args) result
         """
-        if (tuple(args), tuple(kwargs)) in cached_value_dict:
-            # if func had already called with this args return cached value
-            return cached_value_dict[(tuple(args), tuple(kwargs))]
+        for item in cached_value_list:
+            if [args, kwargs] in item:
+                # if func had already called with this args return cached value
+                return item[-1]
         else:
             # add value to cache if it isn't in it
-            cached_value_dict[(tuple(args), tuple(kwargs))] = func(*args, **kwargs)
-            return cached_value_dict[(tuple(args), tuple(kwargs))]
+            cached_value_list.append([[args, kwargs]])
+            cached_value_list[-1].append(func(*args, *kwargs))
+            return cached_value_list[-1][-1]
 
     return some_func
