@@ -12,5 +12,5 @@ Write a function that detects if a number is Armstrong number in functionaly sty
 """
 
 
-def is_armstrong(number):
+def is_armstrong(number) -> bool:
     return number == sum(map(lambda a: int(a) ** len(str(number)), str(number)))

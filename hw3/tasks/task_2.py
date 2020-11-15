@@ -18,3 +18,6 @@ def slow_calculate(value):
 def fast_calculate(value):
     pool = Pool(60)
     return sum(pool.map(slow_calculate, range(value)))
+
+
+print(fast_calculate(500))

@@ -10,36 +10,35 @@ Would give out cached value up to times number only.
 from typing import Callable
 
 
-def cache(*arg, **kwarg) -> Callable:
+def cache(times=None) -> Callable:
     """
-    :param func: any function for cache
-    :return: cached function's return
+    take 1 function and cache result with count = times
+    :arg:
+        func: any callable
+    :return:
+        decorated func: callable
     """
 
     def cached_func(func):
         cached_value_dict = {}
-        cache_counter = kwarg["times"]
+        if times:
+            cache_counter = times
 
         def some_func(*args, **kwargs):
-            """
-            :param args: any args for decorated func
-            :param cached_value_dict: dict for cached value
-            :return: cached func(*args) result
-            """
             # if func had already called with this args return cached value
-            if (tuple(args), tuple(kwargs)) in cached_value_dict:
+            if (args, tuple(kwargs.items())) in cached_value_dict:
                 # takes counter from outside function
                 nonlocal cache_counter
                 if cache_counter > 1:
                     cache_counter -= 1
-                    return cached_value_dict[(tuple(args), tuple(kwargs))]
+                    return cached_value_dict[(args, tuple(kwargs.items()))]
                 else:
                     # return value last time and delete if from dict
-                    return cached_value_dict.pop((tuple(args), tuple(kwargs)))
+                    return cached_value_dict.pop((args, tuple(kwargs.items())))
             else:
                 # add value to cache if it isn't in it
-                cached_value_dict[(tuple(args), tuple(kwargs))] = func(*args, **kwargs)
-                return cached_value_dict[(tuple(args), tuple(kwargs))]
+                cached_value_dict[(args, tuple(kwargs.items()))] = func(*args, **kwargs)
+                return cached_value_dict[(args, tuple(kwargs.items()))]
 
         return some_func
 
