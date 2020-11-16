@@ -1,3 +1,4 @@
+"""
 import os
 
 from hw2.tasks.task_1 import (
@@ -53,3 +54,4 @@ def test_most_common_non_ascii_char():
     actual_result = get_most_common_non_ascii_char(path)
 
     assert actual_result == "ä"
+"""
