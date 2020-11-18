@@ -17,10 +17,15 @@ import sys
 
 def my_precious_logger(text: str):
     """
-    write string to stderr if line starts with "error" and to the stdout otherwise
-    :param text: any str text
+    Receives a string and writes it to stderr
+if line starts with "error" and to the stdout otherwise.
+    Args:
+        text (): any string
+
+    Returns:
+        None
     """
-    if text[0:5] == "error":
+    if text.startswith('error'):
         sys.stderr.write(text)
     else:
         sys.stdout.write(text)

@@ -16,18 +16,19 @@ Instruction:
 
 def fizzbuzz(limit: int) -> list[str]:
     """
-    takes a number N as an input and returns N FizzBuzz numbers
-    :param:
-        limit: range of numbers for function's work
-    :return:
-        list: numbers or fizz\buzz
+    Takes a number N as an input and returns N FizzBuzz numbers
+    Args:
+        limit (): range of working
+
+    Returns:
+        result_list: list with str(number) or fizz/buzz from 1 to N
     examples:
-    >>> fizzbuzz(5)
-    ['1', '2', 'fizz', '4', 'buzz']
-    >>> fizzbuzz(0)
-    []
-    >>> fizzbuzz(-5)
-    []
+>>> fizzbuzz(5)
+['1', '2', 'fizz', '4', 'buzz']
+>>> fizzbuzz(0)
+[]
+>>> fizzbuzz(-5)
+[]
     """
     result_list = []
     for number in range(1, limit + 1):

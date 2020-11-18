@@ -15,16 +15,20 @@ Definition of done:
 
 def read_magic_number(file_path: str) -> bool:
     """
-    Read file and return bool, if first line is number. Otherwise raise ValueError
-    :param file_path: path to file
-    :return:
-        bool: True if number in interval [1:3)
-              False all other number
+    Reads the first line of the file.
+If first line is a number returns true if number in an interval [1, 3)*
+and false otherwise. Raises ValueError if first line not number.
+
+    Args:
+        file_path (): path to file
+
+    Returns:
+        bool: True if line is number from 1 to 3, False otherwise
     """
     with open(file_path) as inf:
         line = inf.readline().strip()
     # check if all char in line are numbers
-    if all(char.isdigit() for char in line):
+    if line.isdigit():
         if 1 <= int(line) < 3:
             return True
         return False

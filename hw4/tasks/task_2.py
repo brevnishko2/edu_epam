@@ -27,5 +27,8 @@ def count_dots_on_i(url: str) -> int:
     :param url:
     :return: count(i)
     """
-    response = requests.get(url)
+    try:
+        response = requests.get(url)
+    except:
+        raise ValueError
     return response.text.count("i")

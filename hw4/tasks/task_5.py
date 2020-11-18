@@ -12,14 +12,17 @@ Definition of done:
 
 def fizzbuzz(n: int):
     """
-    generate fizz-buzz numbers from 1 to N
-    :param: N: range of working
-    :return: generator
+Generator that takes a number N as an input
+and returns N FizzBuzz numbers
+    Args:
+        n ():range of working
+
+    Returns:
+        generator
     """
     numbers = [i for i in range(n + 1)]
-    fizz = [None] + ([None] * 2 + ["fizz"]) * (n + 1 // 3)
-    buzz = [None] + ([None] * 4 + ["buzz"]) * (n + 1 // 5)
-    fizz_buzz = [None] + ([None] * 14 + ["fizz buzz"]) * (n + 1 // 15)
-
+    fizz = [None] + ([None] * 2 + ["fizz"]) * ((n + 3) // 3)
+    buzz = [None] + ([None] * 4 + ["buzz"]) * ((n + 5) // 5)
+    fizz_buzz = [None] + ([None] * 14 + ["fizz buzz"]) * ((n + 15) // 15)
     for i in range(1, n + 1):
         yield fizz_buzz[i] or fizz[i] or buzz[i] or str(numbers[i])
