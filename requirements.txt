@@ -1,1 +1,6 @@
 pre-commit
+pytest~=6.1.2
+black
+isort
+requests~=2.25.0
+mock~=4.0.2
