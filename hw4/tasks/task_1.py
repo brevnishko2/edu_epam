@@ -15,15 +15,15 @@ Definition of done:
 
 def read_magic_number(file_path: str) -> bool:
     """
-    Reads the first line of the file.
-If first line is a number returns true if number in an interval [1, 3)*
-and false otherwise. Raises ValueError if first line not number.
+        Reads the first line of the file.
+    If first line is a number returns true if number in an interval [1, 3)*
+    and false otherwise. Raises ValueError if first line not number.
 
-    Args:
-        file_path (): path to file
+        Args:
+            file_path (): path to file
 
-    Returns:
-        bool: True if line is number from 1 to 3, False otherwise
+        Returns:
+            bool: True if line is number from 1 to 3, False otherwise
     """
     with open(file_path) as inf:
         line = inf.readline().strip()
