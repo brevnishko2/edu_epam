@@ -12,13 +12,13 @@ Definition of done:
 
 def fizzbuzz(n: int):
     """
-Generator that takes a number N as an input
-and returns N FizzBuzz numbers
-    Args:
-        n ():range of working
+    Generator that takes a number N as an input
+    and returns N FizzBuzz numbers
+        Args:
+            n ():range of working
 
-    Returns:
-        generator
+        Returns:
+            generator
     """
     numbers = [i for i in range(n + 1)]
     fizz = [None] + ([None] * 2 + ["fizz"]) * ((n + 3) // 3)

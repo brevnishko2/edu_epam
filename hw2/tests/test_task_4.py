@@ -6,7 +6,6 @@ from hw2.tasks.task_4 import cache
 
 def summa(*args):
     sleep(0.5)
-    print(args)
     return sum(args)
 
 
