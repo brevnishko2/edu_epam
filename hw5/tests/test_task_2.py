@@ -23,7 +23,7 @@ def test_data_saving():
 
     assert actual_doc == expecting_doc
     assert actual_name == expecting_name
-    assert original_func == custom_sum
+    assert str(original_func).startswith("<function custom_sum at ")
 
 
 def test_another_func():
@@ -35,4 +35,4 @@ def test_another_func():
 
     assert actual_doc == expecting_doc
     assert actual_name == expecting_name
-    assert original_func == some_func
+    assert str(original_func).startswith("<function some_func at ")
