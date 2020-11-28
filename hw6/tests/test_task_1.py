@@ -13,11 +13,12 @@ class AnotherClass:
 
 
 def test_class_counter():
-    _, _, _ = [ClassForTest(2, 3) for i in range(3)]
+    user, _, _ = ClassForTest(2, 3), ClassForTest(), ClassForTest(3)
     actual_result1 = ClassForTest.get_created_instances()
     expected_result1 = 3
 
     assert actual_result1 == expected_result1
+    assert user.args == (2, 3)
 
 
 def test_class_counter_reset():
@@ -25,4 +26,4 @@ def test_class_counter_reset():
     actual_result = AnotherClass.reset_instances_counter()
     expected_result = 4
 
-    assert actual_result == expected_result and AnotherClass._created_count == 0
+    assert actual_result == expected_result and AnotherClass.__created_count == 0

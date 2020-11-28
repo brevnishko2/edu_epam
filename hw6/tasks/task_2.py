@@ -40,6 +40,7 @@ PEP8 соблюдать строго.
 К названием остальных переменных, классов и тд. подходить ответственно -
 давать логичные подходящие имена.
 """
+from __future__ import annotations
 import datetime
 from collections import defaultdict
 
@@ -49,6 +50,7 @@ class Homework:
     Args:
         text: text for homework task
         deadline: time since creation, when homework become inactive
+
     Attributes:
         text: text for homework task
         deadline: time since creation, when homework become inactive
@@ -63,6 +65,7 @@ class Homework:
 
     def is_active(self) -> bool:
         """Check if homework still actual
+
         Returns:
             True if deadline hasn't come yet
             False otherwise
@@ -77,6 +80,7 @@ class HomeworkResult:
         homework: Homework obj
         solution: some text as a solution for homework
         author: tuple(first_name, last_name) of student who doing homework
+
     Attributes:
         homework: Homework obj
         solution: some text as a solution for homework
@@ -85,7 +89,7 @@ class HomeworkResult:
 
     """
 
-    def __init__(self, homework: Homework, solution: str, author: tuple):
+    def __init__(self, homework: Homework, solution: str, author: Student):
         if not isinstance(homework, Homework):
             raise ValueError("You gave a not Homework object")
         self.homework = homework
@@ -94,49 +98,58 @@ class HomeworkResult:
         self.created = datetime.datetime.now()
 
 
-class People:
+class Person:
     """Class for creating people.
     Args:
         last_name: person last name
         first_name: person first_name
+
     Attributes:
         last_name: person last name
         first_name: person first_name
+
     """
 
-    def __init__(self, last_name: str, first_name: str):
+    def __init__(self, first_name: str, last_name: str):
         self.first_name = first_name
         self.last_name = last_name
 
 
-class Student(People):
-    """Inherited from People"""
+class Student(Person):
+    """Born to do homework"""
 
     def do_homework(self, hw: Homework, solution: str) -> HomeworkResult:
-        """Do homework if it's actual. Print "You are late" otherwise.
+        """Do homework if it's actual.
         Args:
             hw: Homework obj
             solution: some text for doing homework. It should be 5 char or longer.
 
         Returns:
-            hw if it still active
-            None otherwise
+            HomeworkResult obj if it still active
+
+        Raises:
+            DeadlineError if deadline missing
 
         """
         if hw.is_active():
-            return HomeworkResult(hw, solution, (self.first_name, self.last_name))
-        else:
-            raise DeadlineError("You are late")
+            return HomeworkResult(hw, solution, self)
+        raise DeadlineError("You are late")
 
 
-class Teacher(People):
-    """Inherited from People
-    Attributes:
+class Teacher(Person):
+    """Class for teachers. Can create homework, check student's homework
+    and reset already checked list
+    Class attributes:
         homework_done: dict with all homework already done
+
+    Methods:
+        create_homework
+        check_homework
+        reset_results
 
     """
 
-    homework_done = defaultdict()
+    homework_done: defaultdict = defaultdict(list)
 
     @staticmethod
     def create_homework(text: str, deadline: int) -> Homework:
@@ -152,43 +165,38 @@ class Teacher(People):
 
     def check_homework(self, hw_result: HomeworkResult):
         """
-        Check if homework done correctly and append it to homework_done if it's not in it.
+        Check if homework result is correct and append it to homework_done
+        if it's not in it.
         Args:
             hw_result: HomeworkResult obj created by student
+
         Returns:
-            bool: False - if homework incorrect or if this solution of hw have already been used
+            bool: False - if homework incorrect or
+            if this solution of hw have already been used
 
         """
         if len(hw_result.solution) < 5:
             return False
-        if hw_result.homework in Teacher.homework_done:
-            # check for recurring solution
-            for _items in Teacher.homework_done[hw_result.homework]:
-                if hw_result.solution in _items:
-                    return False
-            # append new solution to dict
-            Teacher.homework_done[hw_result.homework].append(
-                [hw_result.solution, hw_result.author]
-            )
-        else:
-            Teacher.homework_done[hw_result.homework] = [
-                [hw_result.solution, hw_result.author],
-            ]
+
+        for _items in Teacher.homework_done[hw_result.homework]:
+            if hw_result.solution in _items.solution:
+                return False
+        # append new solution to dict
+        Teacher.homework_done[hw_result.homework].append(hw_result)
 
     @staticmethod
-    def reset_results(*homeworks):
+    def reset_results(*homework):
         """
         Delete homework results. Delete all homeworks if homework not specified
         Args:
-            homeworks: one or list with Homework obj
+            homework: one Homework obj or empty list
 
         """
-        if homeworks:
-            # delete homeworks result
-            for hw in homeworks:
-                del Teacher.homework_done[hw]
-        else:
-            Teacher.homework_done = defaultdict()
+        if not homework:
+            Teacher.homework_done = defaultdict(list)
+        elif homework[0] in Teacher.homework_done:
+            # delete homework's results
+            del Teacher.homework_done[homework[0]]
 
 
 class DeadlineError(Exception):

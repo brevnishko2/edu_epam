@@ -1,4 +1,4 @@
-from hw6.tasks.task_2 import Student, Teacher, Homework, HomeworkResult, DeadlineError
+from hw6.tasks.task_2 import Student, Teacher, HomeworkResult, DeadlineError
 
 opp_teacher = Teacher("Daniil", "Shadrin")
 advanced_python_teacher = Teacher("Aleksandr", "Smetanin")
@@ -44,3 +44,16 @@ def test_hw_not_in_time():
         assert True
     else:
         assert False
+
+
+def test_duplicated_solution():
+    result_4 = good_student.do_homework(docs_hw, "I have done this hw")
+    result_5 = lazy_student.do_homework(docs_hw, "I have done this hw")
+
+    advanced_python_teacher.check_homework(result_4)
+    advanced_python_teacher.check_homework(result_5)
+
+    actual_result = len(Teacher.homework_done[docs_hw])
+    expected_result = 1
+
+    assert actual_result == expected_result
