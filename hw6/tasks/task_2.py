@@ -175,15 +175,18 @@ class Teacher(People):
                 [hw_result.solution, hw_result.author],
             ]
 
-    def reset_results(*self, homework=None):
+    @staticmethod
+    def reset_results(*homeworks):
         """
         Delete homework results. Delete all homeworks if homework not specified
         Args:
-            homework: Homework obj
+            homeworks: one or list with Homework obj
 
         """
-        if homework:
-            del Teacher.homework_done[homework]
+        if homeworks:
+            # delete homeworks result
+            for hw in homeworks:
+                del Teacher.homework_done[hw]
         else:
             Teacher.homework_done = defaultdict()
 
