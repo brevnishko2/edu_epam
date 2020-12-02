@@ -30,7 +30,7 @@ def custom_range(iterable, *args, step=1) -> list:
         ]
     except ValueError:
         print(
-            "something wrong with start/end/step args. "
-            + "start/end must be in iterable obj, step must be int"
+            "something wrong with start/end/step args. ",
+            "start/end must be in iterable obj, step must be int",
         )
     return result_list

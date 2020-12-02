@@ -3,8 +3,8 @@
 Homework)
 Наследование в этой задаче использовать не нужно.
 Для работы с временем использовать модуль datetime
-1. Homework принимает на вход 2 атрибута: текст задания и количество дней
-на это задание
+1. Homework принимает на вход 2 атрибута: текст задания и
+количество дней на это задание
 Атрибуты:
     text - текст задания
     deadline - хранит объект datetime.timedelta с количеством
@@ -19,7 +19,8 @@ Homework)
     first_name
 Методы:
     do_homework - принимает объект Homework и возвращает его же,
-    если задание уже просрочено, то печатет 'You are late' и возвращает None
+    если задание уже просрочено, то печатет 'You are late'
+    и возвращает None
 3. Teacher
 Атрибуты:
      last_name
@@ -27,13 +28,15 @@ Homework)
 Методы:
     create_homework - текст задания и количество дней на это задание,
     возвращает экземпляр Homework
-    Обратите внимание, что для работы этого метода не требуется сам объект.
+    Обратите внимание, что для работы этого метода не
+    требуется сам объект.
 PEP8 соблюдать строго.
 Всем перечисленным выше атрибутам и методам классов сохранить названия.
 К названием остальных переменных, классов и тд. подходить ответственно -
 давать логичные подходящие имена.
 """
 import datetime
+from typing import Union
 
 
 class Homework:
@@ -48,7 +51,7 @@ class Homework:
 
     """
 
-    def __init__(self, text: str, deadline: datetime.timedelta):
+    def __init__(self, text: str, deadline: int):
         self.text = text
         self.deadline = datetime.timedelta(deadline)
         self.created = datetime.datetime.now()
@@ -78,7 +81,7 @@ class Student:
         self.first_name = first_name
         self.last_name = last_name
 
-    def do_homework(self, hw: Homework) -> Homework or None:
+    def do_homework(self, hw: Homework) -> Union[Homework, None]:
         """Do homework if it's actual. Print "You are late" otherwise.
         Args:
             hw: Homework obj
@@ -90,9 +93,8 @@ class Student:
         """
         if hw.is_active():
             return hw
-        else:
-            print("You are late")
-            return None
+        print("You are late")
+        return None
 
 
 class Teacher:
@@ -110,7 +112,7 @@ class Teacher:
         self.last_name = last_name
 
     @staticmethod
-    def create_homework(text: str, deadline: datetime.timedelta) -> Homework:
+    def create_homework(text: str, deadline: int) -> Homework:
         """Create Homework obj with text and deadline args
         Args:
             text: string

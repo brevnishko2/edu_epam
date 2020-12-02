@@ -1,13 +1,14 @@
 """
 Given a file containing text. Complete using only default collections:
-    1) Find 10 longest words consisting from largest amount of unique symbols
+    1) Find 10 longest words consisting from largest
+    amount of unique symbols
     2) Find rarest symbol for document
     3) Count every punctuation char
     4) Count every non ascii char
     5) Find most common non ascii char for document
 """
 import string
-from typing import List
+from typing import Dict, List
 
 
 def get_longest_diverse_words(file_path: str) -> List[str]:
@@ -15,7 +16,8 @@ def get_longest_diverse_words(file_path: str) -> List[str]:
     :param:
         file_path: path to working file
     :return:
-        list: 10 longest words consisting from largest amount of unique symbols
+        list: 10 longest words consisting from largest
+        amount of unique symbols
     """
     dict_for_count_uniq = {}
     with open(file_path, encoding="unicode-escape") as inf:
@@ -49,7 +51,7 @@ def get_rarest_char(file_path: str) -> str:
         line: one or more rarest char
         example: 'char1 char2 char3 etc.'
     """
-    dict_for_count = {}
+    dict_for_count: Dict[str, int] = {}
     with open(file_path, encoding="unicode-escape") as inf:
         for line in inf:
             # make line without punctuation
@@ -103,7 +105,7 @@ def get_most_common_non_ascii_char(file_path: str) -> str:
     :return:
         line: most common non ascii char for document
     """
-    dict_for_count = {}
+    dict_for_count: Dict[str, int] = {}
     with open(file_path, encoding="unicode-escape") as inf:
         for line in inf:
             # count every non-ascii char

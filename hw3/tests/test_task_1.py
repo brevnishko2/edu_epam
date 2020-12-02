@@ -1,4 +1,3 @@
-import pytest
 from hw3.tasks.task_1 import cache
 
 
@@ -16,7 +15,7 @@ def test_summa():
     value1 = 300
     value2 = 400
     actual_result1 = summa(value1, value2)
-    actual_result2 = summa(value1, value2)
+    summa(value1, value2)
     actual_result3 = summa(value1, value2)
     actual_result4 = summa(value1, value2)
 

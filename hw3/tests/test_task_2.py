@@ -1,5 +1,5 @@
-from hw3.tasks.task_2 import fast_calculate
-from time import time
+# from hw3.tasks.task_2 import fast_calculate
+# from time import time
 
 """
 def test_calculation_time():

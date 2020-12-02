@@ -1,6 +1,4 @@
 from time import sleep, time
-
-import pytest
 from hw2.tasks.task_4 import cache
 
 

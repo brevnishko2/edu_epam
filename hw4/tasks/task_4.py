@@ -1,5 +1,6 @@
 """
-Write a function that takes a number N as an input and returns N FizzBuzz numbers*
+Write a function that takes a number N as an input and returns N
+FizzBuzz numbers*
 Write a doctest for that function.
 Write a detailed instruction how to run doctests**.
 
@@ -12,9 +13,10 @@ Instruction:
     - Write "python -m doctest -v <path to your file.py>"
     - Congratulations!
 """
+from typing import List
 
 
-def fizzbuzz(limit: int) -> list[str]:
+def fizzbuzz(limit: int) -> List[str]:
     """
         Takes a number N as an input and returns N FizzBuzz numbers
         Args:

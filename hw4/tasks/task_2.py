@@ -16,7 +16,6 @@ You will learn:
  - do a simple network requests
 >> count_dots_on_i("https://example.com/")
 59
-* https://docs.python.org/3/library/urllib.request.html#urllib.request.urlopen
 """
 import requests
 
@@ -29,6 +28,6 @@ def count_dots_on_i(url: str) -> int:
     """
     try:
         response = requests.get(url)
-    except:
+    except Exception:
         raise ValueError
     return response.text.count("i")

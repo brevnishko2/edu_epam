@@ -16,7 +16,8 @@ Definition of done:
 def read_magic_number(file_path: str) -> bool:
     """
         Reads the first line of the file.
-    If first line is a number returns true if number in an interval [1, 3)*
+    If first line is a number returns true if number
+    in an interval [1, 3)*
     and false otherwise. Raises ValueError if first line not number.
 
         Args:

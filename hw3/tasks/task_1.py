@@ -1,6 +1,8 @@
-"""In previous homework task 4, you wrote a cache function that remembers
+"""In previous homework task 4, you wrote a
+ cache function that remembers
 other function output value.
- Modify it to be a parametrized decorator, so that the following code:
+ Modify it to be a parametrized decorator,
+so that the following code:
 
 @cache(times=3)
 def some_function():
@@ -25,7 +27,7 @@ def cache(times=None) -> Callable:
             cache_counter = times
 
         def some_func(*args, **kwargs):
-            # if func had already called with this args return cached value
+            # if func had already called with this args return cache
             if (args, tuple(kwargs.items())) in cached_value_dict:
                 # takes counter from outside function
                 nonlocal cache_counter
