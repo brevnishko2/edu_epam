@@ -54,6 +54,5 @@ def test_duplicated_solution():
     advanced_python_teacher.check_homework(result_5)
 
     actual_result = len(Teacher.homework_done[docs_hw])
-    expected_result = 1
 
-    assert actual_result == expected_result
+    assert actual_result == 1

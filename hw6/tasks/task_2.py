@@ -1,44 +1,47 @@
 """
-В этом задании будем улучшать нашу систему классов из задания прошлой лекции
-(Student, Teacher, Homework)
+В этом задании будем улучшать нашу систему классов из задания
+прошлой лекции (Student, Teacher, Homework)
 Советую обратить внимание на defaultdict из модуля collection для
 использования как общую переменную
 1. Как то не правильно, что после do_homework мы возвращаем все тот же
 объект - будем возвращать какой-то результат работы (HomeworkResult)
-HomeworkResult принимает объект автора задания, принимает исходное задание
-и его решение в виде строки
+HomeworkResult принимает объект автора задания, принимает исходное
+задание и его решение в виде строки
 Атрибуты:
-    homework - для объекта Homework, если передан не этот класс -  выкинуть
-    подходящие по смыслу исключение с сообщением:
+    homework - для объекта Homework, если передан не этот класс -
+    выкинуть подходящие по смыслу исключение с сообщением:
     'You gave a not Homework object'
     solution - хранит решение ДЗ как строку
     author - хранит объект Student
     created - c точной датой и временем создания
-2. Если задание уже просрочено хотелось бы видеть исключение при do_homework,
-а не просто принт 'You are late'.
-Поднимайте исключение DeadlineError с сообщением 'You are late' вместо print.
+2. Если задание уже просрочено хотелось бы видеть исключение при
+do_homework, а не просто принт 'You are late'.
+Поднимайте исключение DeadlineError с сообщением 'You are late'
+вместо print.
 3. Student и Teacher имеют одинаковые по смыслу атрибуты
-(last_name, first_name) - избавиться от дублирования с помощью наследования
+(last_name, first_name) - избавиться от дублирования с помощью
+наследования
 4.
 Teacher
 Атрибут:
-    homework_done - структура с интерфейсом как в словаря, сюда поподают все
-    HomeworkResult после успешного прохождения check_homework
-    (нужно гаранитровать остутствие повторяющихся результатов по каждому
-    заданию), группировать по экземплярам Homework.
-    Общий для всех учителей. Вариант ипользования смотри в блоке if __main__...
+    homework_done - структура с интерфейсом как в словаря, сюда
+    поподают все HomeworkResult после успешного прохождения
+    check_homework (нужно гаранитровать остутствие повторяющихся
+    результатов по каждому заданию), группировать по экземплярам
+     Homework. Общий для всех учителей. Вариант ипользования
+     смотри в блоке if __main__...
 Методы:
-    check_homework - принимает экземпляр HomeworkResult и возвращает True если
-    ответ студента больше 5 символов, так же при успешной проверке добавить в
-    homework_done.
+    check_homework - принимает экземпляр HomeworkResult и
+    возвращает True если ответ студента больше 5 символов,
+    так же при успешной проверке добавить в homework_done.
     Если меньше 5 символов - никуда не добавлять и вернуть False.
     reset_results - если передать экземпряр Homework - удаляет только
-    результаты этого задания из homework_done, если ничего не передавать,
-    то полностью обнулит homework_done.
+    результаты этого задания из homework_done, если ничего не
+    передавать, то полностью обнулит homework_done.
 PEP8 соблюдать строго.
 Всем перечисленным выше атрибутам и методам классов сохранить названия.
-К названием остальных переменных, классов и тд. подходить ответственно -
-давать логичные подходящие имена.
+К названием остальных переменных, классов и тд. подходить
+ответственно - давать логичные подходящие имена.
 """
 from __future__ import annotations
 import datetime
@@ -79,12 +82,14 @@ class HomeworkResult:
     Args:
         homework: Homework obj
         solution: some text as a solution for homework
-        author: tuple(first_name, last_name) of student who doing homework
+        author: tuple(first_name, last_name) of student who
+        doing homework
 
     Attributes:
         homework: Homework obj
         solution: some text as a solution for homework
-        author: tuple(first_name, last_name) of student who doing homework
+        author: tuple(first_name, last_name) of student who
+        doing homework
         created: time of obj creation
 
     """
@@ -122,7 +127,8 @@ class Student(Person):
         """Do homework if it's actual.
         Args:
             hw: Homework obj
-            solution: some text for doing homework. It should be 5 char or longer.
+            solution: some text for doing homework.
+            It should be 5 char or longer.
 
         Returns:
             HomeworkResult obj if it still active
@@ -165,8 +171,8 @@ class Teacher(Person):
 
     def check_homework(self, hw_result: HomeworkResult):
         """
-        Check if homework result is correct and append it to homework_done
-        if it's not in it.
+        Check if homework result is correct and append it
+        to homework_done if it's not in it.
         Args:
             hw_result: HomeworkResult obj created by student
 
@@ -185,18 +191,17 @@ class Teacher(Person):
         Teacher.homework_done[hw_result.homework].append(hw_result)
 
     @staticmethod
-    def reset_results(*homework):
+    def reset_results(homework=None):
         """
-        Delete homework results. Delete all homeworks if homework not specified
+        Delete homework results. Delete all homeworks if homework
+        not specified
         Args:
             homework: one Homework obj or empty list
 
         """
         if not homework:
             Teacher.homework_done = defaultdict(list)
-        elif homework[0] in Teacher.homework_done:
-            # delete homework's results
-            del Teacher.homework_done[homework[0]]
+        Teacher.homework_done.pop(homework, None)
 
 
 class DeadlineError(Exception):

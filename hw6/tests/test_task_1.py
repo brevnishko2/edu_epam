@@ -24,6 +24,6 @@ def test_class_counter():
 def test_class_counter_reset():
     _, _, _, _ = [AnotherClass() for i in range(4)]
     actual_result = AnotherClass.reset_instances_counter()
-    expected_result = 4
 
-    assert actual_result == expected_result and AnotherClass.__created_count == 0
+    assert actual_result == 4
+    assert AnotherClass.__created_count[AnotherClass] == 0
