@@ -9,7 +9,7 @@ def test_true_number():
     result = read_magic_number(fp.name)
     os.remove(fp.name)
 
-    assert result == True
+    assert result
 
 
 def test_false_number():
@@ -18,7 +18,7 @@ def test_false_number():
     result = read_magic_number(fp.name)
     os.remove(fp.name)
 
-    assert result == False
+    assert not result
 
 
 def test_raise_error():

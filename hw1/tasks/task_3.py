@@ -2,8 +2,10 @@ from typing import Tuple
 
 
 def find_maximum_and_minimum(file_name: str) -> Tuple[int, int]:
-    """Первая строчка файла записывается в first_value для присвоения первоначального значения
-    max_int & min_int. Цикл пробегается по всем строчкам сравнивая текущие экстремумы с новыми
+    """Первая строчка файла записывается в first_value для
+    присвоения первоначального значения
+    max_int & min_int. Цикл пробегается по всем строчкам
+    сравнивая текущие экстремумы с новыми
     значениями"""
     with open(file_name) as fi:
         first_value = fi.readline()
