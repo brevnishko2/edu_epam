@@ -16,7 +16,6 @@ Example:
      Return value should be "x wins!"
 """
 from typing import List
-from copy import deepcopy
 
 
 def reverse_board(some_board: List[list]) -> List[list]:
@@ -54,26 +53,22 @@ def tic_tac_toe_checker(board: List[List]) -> str:
     def find_win(some_board):
         nonlocal win
         nonlocal unfinished
-        diagonal1, diagonal2 = [], []
-        board_with_diag = deepcopy(some_board)
-
-        # append diagonals to the board
-        for i in range(len(some_board)):
-            j = len(some_board) - i - 1
-            diagonal1.append(some_board[i][i])
-            diagonal2.append(some_board[j][i])
-        board_with_diag.append(diagonal1)
-        board_with_diag.append(diagonal2)
-
         # find winner and check is finished
-        for line in board_with_diag:
+        for line in some_board:
             if ("x" not in line or "o" not in line) and "-" not in line:
                 win = line[0]
             elif "-" in line:
                 unfinished = True
 
+    diagonal: List[list] = [[], []]
+    for i in range(len(board)):
+        j = len(board) - i - 1
+        diagonal[0].append(board[i][i])
+        diagonal[1].append(board[j][i])
+
     find_win(board)
     find_win(reverse_board(board))
+    find_win(diagonal)
 
     if win:
         return str(win) + " wins!"

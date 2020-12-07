@@ -29,15 +29,16 @@ def backspace_compare(first: str, second: str) -> bool:
     """
 
     def clean_from_backspace(element: str) -> str:
-        result_str = ""
+        result_lst = []
         # if char not '#' append it to result string
         for char in element:
             if char != "#":
-                result_str += char
+                result_lst.append(char)
             else:
-                # Delete prev char from result string if char is '#'
-                result_str = result_str[:-1]
-        return result_str
+                if result_lst:
+                    # Delete prev char from result string if char is '#'
+                    result_lst.pop()
+        return "".join(result_lst)
 
     clean_first = clean_from_backspace(first)
     clean_second = clean_from_backspace(second)
