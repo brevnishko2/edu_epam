@@ -1,0 +1,7 @@
+name=kek
+last_name=top
+power=9001
+song=shadilay
+long=too
+star=@rainbow
+__doc__=docstring_that_never_be_used
