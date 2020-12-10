@@ -21,7 +21,7 @@ When writing tests, it's not always neccessary to mock database calls
 completely. Use supplied example.sqlite file as database fixture file.
  """
 import sqlite3
-from typing import Callable, Tuple
+from typing import Callable
 
 
 class TableData:
@@ -45,21 +45,17 @@ class TableData:
             self.conn = sqlite3.connect(self.database_name)
             self.cursor = self.conn.cursor()
             self.cursor.execute("SELECT * from %s" % self.table_name)
-
             return func(self, *args)
 
         return inner
 
     @connect_to_table
     def __iter__(self):
-        return self
-
-    def __next__(self) -> Tuple[str, ...]:
         row = self.cursor.fetchone()
-        if row is not None:
-            return row
+        while row is not None:
+            yield row
+            row = self.cursor.fetchone()
         self.conn.close()
-        raise StopIteration
 
     @connect_to_table
     def __len__(self) -> int:
