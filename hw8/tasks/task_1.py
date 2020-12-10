@@ -38,21 +38,27 @@ class WrapperForStorage:
     def __init__(self, path: str):
         with open(path) as inf:
             content = inf.read()
+            items = [item.split("=") for item in content.strip().split("\n")]
 
-        __list_key_value = [item.split("=") for item in content.split()]
-        __custom_chars = (string.punctuation + string.digits).replace("_", "")
+        available_chars = string.ascii_letters + string.digits + "_" + " "
 
-        for key_value in __list_key_value:
+        for key, value in items:
             # check for correct name
-            if key_value[0][0] in __custom_chars:
-                raise ValueError("incorrect name for attribute name: " + key_value[0])
-            # append value if it isnt rewriting value in dict
-            if key_value[0] not in self.__dir__():
-                try:
-                    self.__dict__[key_value[0]] = int(key_value[1])
-                except ValueError:
-                    self.__dict__[key_value[0]] = str(key_value[1])
+            if not all(char in available_chars for char in key) or key[0].isdigit():
+                raise ValueError("incorrect name for attribute name: " + key)
+            # append value if it isn't rewriting value in dict
+            if key not in self.__dir__():
+                if value.isdigit():
+                    self.__dict__[key.strip()] = int(value.strip())
+                else:
+                    self.__dict__[key.strip()] = value.strip()
 
     def __getitem__(self, item):
+        if not isinstance(item, str):
+            raise TypeError("Key must be str")
         if item in self.__dict__:
             return self.__dict__[item]
+        raise KeyError("This key isn't exist")
+
+    def __setitem__(self, key, value):
+        self.__dict__[key] = value

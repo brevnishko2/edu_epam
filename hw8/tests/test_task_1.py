@@ -1,4 +1,5 @@
 import os
+import pytest
 from hw8.tasks.task_1 import WrapperForStorage
 
 
@@ -7,11 +8,8 @@ path2 = os.path.join(os.path.abspath(os.path.dirname(__file__)), "data.txt")
 
 
 def test_bad_value():
-    try:
+    with pytest.raises(ValueError):
         WrapperForStorage(path1)
-        assert False
-    except ValueError:
-        assert True
 
 
 def test_wrapper():
