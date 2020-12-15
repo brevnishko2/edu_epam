@@ -20,7 +20,7 @@ def suppressor_generator(error):
         pass
 
 
-class SuppressorClass:
+class suppressor_class:
     """Suppress error inside
     Args:
         error: error's type

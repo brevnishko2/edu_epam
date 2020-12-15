@@ -35,11 +35,14 @@ def universal_file_counter(
         with open(file_name) as inf:
             count_lines = 0
             if not token:
-                for _ in inf.readlines():
+                for _ in inf:
                     count_lines += 1
             else:
-                for line in inf.readlines():
-                    count_lines += len(token(line))
+                for line in inf:
+                    if isinstance(token(line), str):
+                        count_lines += 1
+                    else:
+                        count_lines += len(token(line))
         return count_lines
 
     for file in dir_path.glob("*." + file_extension):
