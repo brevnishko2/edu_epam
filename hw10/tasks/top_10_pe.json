@@ -1,0 +1,92 @@
+[
+    {
+        "co_code": "ba",
+        "co_name": "Boeing",
+        "price": 219.75,
+        "P/E": -95.58,
+        "growth": -30.93,
+        "potential profit": 260.95,
+        "market_cap": 9311.07
+    },
+    {
+        "co_code": "hes",
+        "co_name": "Hess",
+        "price": 55.95,
+        "P/E": -69.69,
+        "growth": -18.23,
+        "potential profit": 45.44,
+        "market_cap": 1246.36
+    },
+    {
+        "co_code": "ual",
+        "co_name": "United Airlines",
+        "price": 44.74,
+        "P/E": -26.71,
+        "growth": -50.05,
+        "potential profit": 72.77,
+        "market_cap": 953.1
+    },
+    {
+        "co_code": "aal",
+        "co_name": "American Airlines",
+        "price": 16.51,
+        "P/E": -20.0,
+        "growth": -40.38,
+        "potential profit": 22.52,
+        "market_cap": 733.15
+    },
+    {
+        "co_code": "wynn",
+        "co_name": "Wynn Resorts",
+        "price": 115.93,
+        "P/E": -18.81,
+        "growth": -21.54,
+        "potential profit": 117.4,
+        "market_cap": 879.79
+    },
+    {
+        "co_code": "expe",
+        "co_name": "Expedia",
+        "price": 125.54,
+        "P/E": -7.79,
+        "growth": 12.08,
+        "potential profit": 93.31,
+        "market_cap": 1246.36
+    },
+    {
+        "co_code": "apa",
+        "co_name": "Apache",
+        "price": 15.33,
+        "P/E": -4.47,
+        "growth": -29.68,
+        "potential profit": 29.96,
+        "market_cap": 366.58
+    },
+    {
+        "co_code": "incy",
+        "co_name": "Incyte",
+        "price": 88.34,
+        "P/E": -1.49,
+        "growth": -5.56,
+        "potential profit": 47.84,
+        "market_cap": 1319.68
+    },
+    {
+        "co_code": "hst",
+        "co_name": "Host Hotels & Resorts",
+        "price": 14.09,
+        "P/E": -1.37,
+        "growth": -24.53,
+        "potential profit": 11.04,
+        "market_cap": 733.15
+    },
+    {
+        "co_code": "mar",
+        "co_name": "Marriott",
+        "price": 128.82,
+        "P/E": -0.21,
+        "growth": -12.4,
+        "potential profit": 106.71,
+        "market_cap": 3079.25
+    }
+]

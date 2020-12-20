@@ -1,0 +1,92 @@
+[
+    {
+        "co_code": "nvda",
+        "co_name": "NVIDIA",
+        "price": 530.88,
+        "P/E": 5.58,
+        "growth": 132.03,
+        "potential profit": 408.23,
+        "market_cap": 23974.17
+    },
+    {
+        "co_code": "amd",
+        "co_name": "AMD (Advanced Micro Devices)",
+        "price": 95.92,
+        "P/E": 1.23,
+        "growth": 126.44,
+        "potential profit": 61.23,
+        "market_cap": 8504.6
+    },
+    {
+        "co_code": "pypl",
+        "co_name": "PayPal",
+        "price": 236.45,
+        "P/E": 3.79,
+        "growth": 112.24,
+        "potential profit": 155.95,
+        "market_cap": 19721.87
+    },
+    {
+        "co_code": "alb",
+        "co_name": "Albemarle",
+        "price": 138.9,
+        "P/E": 11.92,
+        "growth": 97.44,
+        "potential profit": 97.09,
+        "market_cap": 1026.42
+    },
+    {
+        "co_code": "lb",
+        "co_name": "L Brands",
+        "price": 38.63,
+        "P/E": 10.21,
+        "growth": 93.54,
+        "potential profit": 34.17,
+        "market_cap": 733.15
+    },
+    {
+        "co_code": "algn",
+        "co_name": "Align Technology",
+        "price": 529.92,
+        "P/E": 4.73,
+        "growth": 92.46,
+        "potential profit": 405.46,
+        "market_cap": 2932.62
+    },
+    {
+        "co_code": "aapl",
+        "co_name": "Apple",
+        "price": 126.66,
+        "P/E": 3.25,
+        "growth": 82.32,
+        "potential profit": 84.82,
+        "market_cap": 159094.64
+    },
+    {
+        "co_code": "idxx",
+        "co_name": "IDEXX Laboratories",
+        "price": 485.52,
+        "P/E": 6.09,
+        "growth": 81.82,
+        "potential profit": 318.24,
+        "market_cap": 2859.3
+    },
+    {
+        "co_code": "cdns",
+        "co_name": "Cadence Design Systems",
+        "price": 132.02,
+        "P/E": 2.7,
+        "growth": 81.4,
+        "potential profit": 80.85,
+        "market_cap": 2492.73
+    },
+    {
+        "co_code": "snps",
+        "co_name": "Synopsys",
+        "price": 255.0,
+        "P/E": 5.54,
+        "growth": 81.17,
+        "potential profit": 150.56,
+        "market_cap": 2712.67
+    }
+]
