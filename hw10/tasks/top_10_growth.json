@@ -1,12 +1,21 @@
 [
     {
+        "co_code": "tsla",
+        "co_name": "Tesla",
+        "price": 695.0,
+        "P/E": 2.32,
+        "growth": 721.62,
+        "potential profit": 624.9,
+        "market_cap": 48241.6
+    },
+    {
         "co_code": "nvda",
         "co_name": "NVIDIA",
         "price": 530.88,
         "P/E": 5.58,
         "growth": 132.03,
         "potential profit": 408.23,
-        "market_cap": 23974.17
+        "market_cap": 24047.48
     },
     {
         "co_code": "amd",
@@ -15,7 +24,7 @@
         "P/E": 1.23,
         "growth": 126.44,
         "potential profit": 61.23,
-        "market_cap": 8504.6
+        "market_cap": 8431.28
     },
     {
         "co_code": "pypl",
@@ -24,13 +33,13 @@
         "P/E": 3.79,
         "growth": 112.24,
         "potential profit": 155.95,
-        "market_cap": 19721.87
+        "market_cap": 20308.39
     },
     {
         "co_code": "alb",
         "co_name": "Albemarle",
         "price": 138.9,
-        "P/E": 11.92,
+        "P/E": 3.92,
         "growth": 97.44,
         "potential profit": 97.09,
         "market_cap": 1026.42
@@ -39,7 +48,7 @@
         "co_code": "lb",
         "co_name": "L Brands",
         "price": 38.63,
-        "P/E": 10.21,
+        "P/E": 2.38,
         "growth": 93.54,
         "potential profit": 34.17,
         "market_cap": 733.15
@@ -51,7 +60,7 @@
         "P/E": 4.73,
         "growth": 92.46,
         "potential profit": 405.46,
-        "market_cap": 2932.62
+        "market_cap": 3005.94
     },
     {
         "co_code": "aapl",
@@ -60,7 +69,7 @@
         "P/E": 3.25,
         "growth": 82.32,
         "potential profit": 84.82,
-        "market_cap": 159094.64
+        "market_cap": 157848.27
     },
     {
         "co_code": "idxx",
@@ -69,7 +78,7 @@
         "P/E": 6.09,
         "growth": 81.82,
         "potential profit": 318.24,
-        "market_cap": 2859.3
+        "market_cap": 3005.94
     },
     {
         "co_code": "cdns",
@@ -78,15 +87,6 @@
         "P/E": 2.7,
         "growth": 81.4,
         "potential profit": 80.85,
-        "market_cap": 2492.73
-    },
-    {
-        "co_code": "snps",
-        "co_name": "Synopsys",
-        "price": 255.0,
-        "P/E": 5.54,
-        "growth": 81.17,
-        "potential profit": 150.56,
-        "market_cap": 2712.67
+        "market_cap": 2639.36
     }
 ]

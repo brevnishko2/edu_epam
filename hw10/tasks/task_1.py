@@ -113,6 +113,9 @@ class ThreadParsingToJSON:
             with open(f"{names_for_files[i]}.json", "w") as ouf:
                 ouf.write(json.dumps(top_10[i], indent=4))
 
+        def start(self):
+            asyncio.run(self.print_to_json())
+
 
 class AsyncParsingToJSON:
     def __init__(self):
@@ -225,3 +228,11 @@ class AsyncParsingToJSON:
         for i in range(len(top_10)):
             with open(f"{names_for_files[i]}.json", "w") as ouf:
                 ouf.write(json.dumps(top_10[i], indent=4))
+
+    def start(self):
+        asyncio.run(self.print_to_json())
+
+
+if __name__ == "__main__":
+    instance = AsyncParsingToJSON()
+    instance.start()

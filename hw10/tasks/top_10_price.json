@@ -6,7 +6,7 @@
         "P/E": 34.97,
         "growth": 80.99,
         "potential profit": 1923.0,
-        "market_cap": 119064.37
+        "market_cap": 117744.69
     },
     {
         "co_code": "goog",
@@ -15,7 +15,7 @@
         "P/E": 51.73,
         "growth": 30.1,
         "potential profit": 832.56,
-        "market_cap": 87318.76
+        "market_cap": 85852.45
     },
     {
         "co_code": "googl",
@@ -24,13 +24,13 @@
         "P/E": 51.72,
         "growth": 29.69,
         "potential profit": 834.18,
-        "market_cap": 87025.5
+        "market_cap": 85559.19
     },
     {
         "co_code": "cmg",
         "co_name": "Chipotle Mexican Grill",
         "price": 1418.57,
-        "P/E": 59.53,
+        "P/E": 11.02,
         "growth": 68.33,
         "potential profit": 1009.27,
         "market_cap": 2859.3
@@ -39,7 +39,7 @@
         "co_code": "azo",
         "co_name": "AutoZone",
         "price": 1181.9,
-        "P/E": 16.46,
+        "P/E": 66.67,
         "growth": -2.56,
         "potential profit": 574.23,
         "market_cap": 1979.52
@@ -48,10 +48,10 @@
         "co_code": "mtd",
         "co_name": "Mettler-Toledo International",
         "price": 1134.83,
-        "P/E": 34.74,
+        "P/E": 25.03,
         "growth": 35.25,
         "potential profit": 633.38,
-        "market_cap": 1906.2
+        "market_cap": 1979.52
     },
     {
         "co_code": "isrg",
@@ -60,16 +60,16 @@
         "P/E": 9.64,
         "growth": 29.03,
         "potential profit": 431.82,
-        "market_cap": 6525.08
+        "market_cap": 6745.03
     },
     {
         "co_code": "shw",
         "co_name": "Sherwin-Williams",
         "price": 728.23,
-        "P/E": 27.52,
+        "P/E": 24.35,
         "growth": 15.53,
         "potential profit": 432.57,
-        "market_cap": 4765.51
+        "market_cap": 4838.82
     },
     {
         "co_code": "eqix",
@@ -78,13 +78,13 @@
         "P/E": 5.2,
         "growth": 14.29,
         "potential profit": 360.89,
-        "market_cap": 4472.25
+        "market_cap": 4618.88
     },
     {
         "co_code": "blk",
         "co_name": "BlackRock",
         "price": 698.8,
-        "P/E": 17.85,
+        "P/E": 32.07,
         "growth": 39.04,
         "potential profit": 397.09,
         "market_cap": 7771.44
