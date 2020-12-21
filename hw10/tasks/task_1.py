@@ -24,7 +24,7 @@ class ThreadParsingToJSON:
     def convert_to_number(self, string):
         lst = []
         for char in string:
-            if char.isdigit() or char == ".":
+            if char.isdigit() or char in ".-":
                 lst.append(char)
         return float("".join(lst))
 
@@ -63,7 +63,12 @@ class ThreadParsingToJSON:
             .find_all("div", class_="snapshot__data-item")[2]
             .text.split()[0][0:-2]
         )
-        return co_code, float(pe), float(profit), float(market_cap.replace(",", ""))
+        return (
+            co_code,
+            self.convert_to_number(pe),
+            self.convert_to_number(profit),
+            self.convert_to_number(market_cap),
+        )
 
     def get_result(self, page):
         result_list = []
@@ -85,7 +90,7 @@ class ThreadParsingToJSON:
                         line.find_all("td")[9].text.strip().split("\n")[1][:-1]
                     ),
                     "potential profit": profit,
-                    "market_cap": float(f"{(market_cap * self.valute):.{2}f}"),
+                    "market_cap": market_cap * self.valute,
                 }
             )
         return result_list
@@ -139,7 +144,7 @@ class AsyncParsingToJSON:
     def convert_to_number(self, string):
         lst = []
         for char in string:
-            if char.isdigit() or char == ".":
+            if char.isdigit() or char in ".-":
                 lst.append(char)
         return float("".join(lst))
 
@@ -178,7 +183,12 @@ class AsyncParsingToJSON:
             .find_all("div", class_="snapshot__data-item")[2]
             .text.split()[0][0:-2]
         )
-        return co_code, float(pe), float(profit), float(market_cap.replace(",", ""))
+        return (
+            co_code,
+            self.convert_to_number(pe),
+            self.convert_to_number(profit),
+            self.convert_to_number(market_cap),
+        )
 
     async def get_result(self, page):
         result_list = []
@@ -200,7 +210,7 @@ class AsyncParsingToJSON:
                         line.find_all("td")[9].text.strip().split("\n")[1][:-1]
                     ),
                     "potential profit": profit,
-                    "market_cap": float(f"{(market_cap * self.valute):.{2}f}"),
+                    "market_cap": market_cap * self.valute,
                 }
             )
         return result_list
