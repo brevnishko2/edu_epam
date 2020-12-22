@@ -1,92 +1,82 @@
 [
     {
-        "co_code": "tsla",
-        "co_name": "Tesla",
-        "price": 695.0,
-        "P/E": 2.32,
+        "name": "Tesla ",
+        "code": "TSLA",
+        "price": 49180.81,
+        "profit": 624.9,
         "growth": 721.62,
-        "potential profit": 624.9,
-        "market_cap": 48241.6
+        "P/E": 14392.16
     },
     {
-        "co_code": "nvda",
-        "co_name": "NVIDIA",
-        "price": 530.88,
-        "P/E": 5.58,
+        "name": "NVIDIA Corp. ",
+        "code": "NVDA",
+        "price": 40187.06,
+        "profit": 408.23,
         "growth": 132.03,
-        "potential profit": 408.23,
-        "market_cap": 24047.48
+        "P/E": 41.38
     },
     {
-        "co_code": "amd",
-        "co_name": "AMD (Advanced Micro Devices)",
-        "price": 95.92,
-        "P/E": 1.23,
+        "name": "AMD (Advanced Micro Devices)  Inc. ",
+        "code": "AMD",
+        "price": 7048.97,
+        "profit": 61.23,
         "growth": 126.44,
-        "potential profit": 61.23,
-        "market_cap": 8431.28
+        "P/E": 72.26
     },
     {
-        "co_code": "pypl",
-        "co_name": "PayPal",
-        "price": 236.45,
-        "P/E": 3.79,
+        "name": "PayPal Inc ",
+        "code": "PYPL",
+        "price": 18117.11,
+        "profit": 157.63,
         "growth": 112.24,
-        "potential profit": 155.95,
-        "market_cap": 20308.39
+        "P/E": 35.29
     },
     {
-        "co_code": "alb",
-        "co_name": "Albemarle",
-        "price": 138.9,
-        "P/E": 3.92,
+        "name": "Albemarle Corp. ",
+        "code": "ALB",
+        "price": 10818.72,
+        "profit": 97.09,
         "growth": 97.44,
-        "potential profit": 97.09,
-        "market_cap": 1026.42
+        "P/E": 11.92
     },
     {
-        "co_code": "lb",
-        "co_name": "L Brands",
-        "price": 38.63,
-        "P/E": 2.38,
+        "name": "L Brands Inc ",
+        "code": "LB",
+        "price": 2912.27,
+        "profit": 34.17,
         "growth": 93.54,
-        "potential profit": 34.17,
-        "market_cap": 733.15
+        "P/E": 10.21
     },
     {
-        "co_code": "algn",
-        "co_name": "Align Technology",
-        "price": 529.92,
-        "P/E": 4.73,
+        "name": "Align Technology Inc. ",
+        "code": "ALGN",
+        "price": 40040.13,
+        "profit": 405.46,
         "growth": 92.46,
-        "potential profit": 405.46,
-        "market_cap": 3005.94
+        "P/E": 47.15
     },
     {
-        "co_code": "aapl",
-        "co_name": "Apple",
-        "price": 126.66,
-        "P/E": 3.25,
+        "name": "Apple Inc. ",
+        "code": "AAPL",
+        "price": 9928.84,
+        "profit": 84.82,
         "growth": 82.32,
-        "potential profit": 84.82,
-        "market_cap": 157848.27
+        "P/E": 35.6
     },
     {
-        "co_code": "idxx",
-        "co_name": "IDEXX Laboratories",
-        "price": 485.52,
-        "P/E": 6.09,
+        "name": "IDEXX Laboratories ",
+        "code": "IDXX",
+        "price": 36806.12,
+        "profit": 321.69,
         "growth": 81.82,
-        "potential profit": 318.24,
-        "market_cap": 3005.94
+        "P/E": 53.95
     },
     {
-        "co_code": "cdns",
-        "co_name": "Cadence Design Systems",
-        "price": 132.02,
-        "P/E": 2.7,
+        "name": "Cadence Design Systems Inc. ",
+        "code": "CDNS",
+        "price": 9964.26,
+        "profit": 80.85,
         "growth": 81.4,
-        "potential profit": 80.85,
-        "market_cap": 2639.36
+        "P/E": 31.9
     }
 ]

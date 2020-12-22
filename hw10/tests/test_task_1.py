@@ -1,9 +1,10 @@
-from mock import Mock
 from pathlib import Path
-from hw10.tasks.task_1 import AsyncParsingToJSON
-from asynctest import CoroutineMock
-import pytest
 
+import pytest
+from asynctest import CoroutineMock
+from mock import Mock
+
+from hw10.tasks.task_1 import NewParsing
 
 path1 = Path.resolve(Path(__file__).parent) / "page.html"
 path2 = Path.resolve(Path(__file__).parent) / "page1.html"
@@ -16,19 +17,28 @@ async def test_correct_info_collection():
     with open(path2) as inf:
         co_info = inf.read()
 
-    a = AsyncParsingToJSON()
-    a.get_valute = Mock(return_value=70)
+    a = NewParsing()
+    a.get_conversion_rate = Mock(return_value=70)
     a.get_page_content = CoroutineMock(return_value=page_content)
-    a.get_company_info = CoroutineMock(return_value=co_info)
-    task = await a.get_result(1)
+    a.get_company_page = CoroutineMock(return_value=(co_info, 45.32))
+    a.async_access = CoroutineMock(
+        return_value=[
+            ["/stocks/mmm-stock", "3.22"],
+            ["/stocks/aos-stock", "17.67"],
+            ["/stocks/abt-stock", "23.29"],
+            ["/stocks/abbv-stock", "16.16"],
+        ]
+    )
+    task1 = await a.get_companies_list(1)
+    task2 = await a.get_companies_info()
     expected_result = {
-        "co_code": "mmm",
-        "co_name": "3M",
-        "price": 174.68,
+        "name": "3M Co. ",
+        "code": "MMM",
+        "price": 13209.57,
+        "profit": 68.49,
+        "growth": 45.32,
         "P/E": 20.12,
-        "growth": 2.81,
-        "potential profit": 68.49,
-        "market_cap": 7258.23,
     }
 
-    assert task[0] == expected_result
+    assert task1[0] == ["/stocks/mmm-stock", "3.22"]
+    assert task2[0] == expected_result

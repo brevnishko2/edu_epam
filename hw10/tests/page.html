@@ -26,7 +26,7 @@
 <meta name="Copyright" content="finanzen.net GmbH" />
 <meta name="Robots" content="INDEX,FOLLOW" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" /><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"d362edb6e0","applicationID":"25947051","transactionName":"NVYGNRRQDxAAW0RaXAwcKTclHigNBVFTVkAhXAoVFF4NDwRKH39aEUcX","queueTime":0,"applicationTime":245,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"d362edb6e0",applicationID:"25947051"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" /><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"d362edb6e0","applicationID":"25947051","transactionName":"NVYGNRRQDxAAW0RaXAwcKTclHigNBVFTVkAhXAoVFF4NDwRKH39aEUcX","queueTime":0,"applicationTime":222,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"d362edb6e0",applicationID:"25947051"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
 <meta name="page-topic" content="Finanzen" />
 <meta name="page-type" content="Kommerzielle Homepage" />
 <meta name="audience" content="Alle" />
@@ -67,7 +67,7 @@
 <link rel="preload" href="/Content/dist/fonts/TiemposTextApp-BoldItalic.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="/Content/dist/fonts/TiemposTextApp-Italic.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="/Content/dist/fonts/TiemposTextApp-Regular.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="/Content/dist/fonts/icon.eot?v=d825b98a" as="font" type="font/eot" crossorigin>
+<link rel="preload" href="/Content/dist/fonts/icon.eot?v=5a8d9f7f" as="font" type="font/eot" crossorigin>
 <link rel="preload" href="/Content/dist/images/business-insider-logo.svg" as="image">
 <link rel="preload" href="/Content/dist/images/insider-intelligence-logo.svg" as="image">
 <link rel="preload" href="/Content/dist/images/insider-logo.svg" as="image">
@@ -90,8 +90,8 @@
 <link rel="dns-prefetch" href="//ping.chartbeat.net">
 <link rel="dns-prefetch" href="//static.chartbeat.com">
 	<!-- Stylesheet -->
-	<link href="/cache/css/style.min.css?v=d825b98a" rel="stylesheet" title="" type="text/css" />
-<link href="/Content/dist/styles.css?v=d825b98a" rel="stylesheet" title="" type="text/css" />
+	<link href="/cache/css/style.min.css?v=5a8d9f7f" rel="stylesheet" title="" type="text/css" />
+<link href="/Content/dist/styles.css?v=5a8d9f7f" rel="stylesheet" title="" type="text/css" />
 
 
 <noscript>
@@ -114,15 +114,15 @@
 
 
 
-<script src="/Content/Scripts/basic.min.js?v=d825b98a"></script>
-<script src="/Content/Scripts/MDSnG/libs/socket.io.js?v=d825b98a"></script>
-<script src="/Content/Scripts/MDSnG/Config.min.js?v=d825b98a"></script>
-<script src="/Content/Scripts/MDSnG/min/clientApiCore.min.js?v=d825b98a"></script>
-<script src="/Content/Scripts/MDSnG/min/clientApiLibs.min.js?v=d825b98a"></script>
+<script src="/Content/Scripts/basic.min.js?v=5a8d9f7f"></script>
+<script src="/Content/Scripts/MDSnG/libs/socket.io.js?v=5a8d9f7f"></script>
+<script src="/Content/Scripts/MDSnG/Config.min.js?v=5a8d9f7f"></script>
+<script src="/Content/Scripts/MDSnG/min/clientApiCore.min.js?v=5a8d9f7f"></script>
+<script src="/Content/Scripts/MDSnG/min/clientApiLibs.min.js?v=5a8d9f7f"></script>
 
 
 
-<script async="async" defer="defer" src="/Content/dist/scripts.js?v=d825b98a"></script>
+<script async="async" defer="defer" src="/Content/dist/scripts.js?v=5a8d9f7f"></script>
 
 <script>
 		var FinandoJsEnvironment = {  VersionNumber : "7", CurrencySeparator : ",", RegexForDateValidation : /^\d{1,2}\/\d{1,2}\/\d{4}$/, RegexForEmailValidation : /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/ }
@@ -151,7 +151,7 @@
   window.loadTinpass = false;
 
   // general time informations
-  timestamp = '202012160336512646';
+  timestamp = '202012221334258264';
   utcTimeOffsetToApplication = '-5';
   isApplicationTimeByUser = 'False';
 
@@ -351,14 +351,14 @@
   window.marketsNowSections.configs.push({
   	regionSelector: '#markets-now-section',
   	marketsNowSection:
-		{"isOutOfMarketTime":true,"showFutures":true,"caption":{"doesMarketOpenToday":false,"marketOpenTime":"0001-01-01T00:00:00","marketOpenTimeMillies":-43572602.2087,"captionText":"U.S. markets closed","captionLink":"/premarket","isShown":true},"clientApiVariable":"clientApiHandler","values":[{"label":"DOW 30","mobileHiddenLabel":null,"url":"/index/dow_jones","premarketObject":{"label":"Dow","mobileHiddenLabel":"Futures","url":"/futures/dow-futures","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y0101313000998313","pushDataField":"Last","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":-0.10590,"absoluteValue":-32.00000,"currentValue":30185.00000,"previousClose":30203.00000,"roundedCurrent":0,"roundedAbsolute":0,"chartData":null,"RelativeValueText":"-0.11%","AbsoluteValueText":"-32.00","CurrentValueText":"30,185.00"},"valuePushApi":null,"relativeValue":1.13109,"absoluteValue":337.76000,"currentValue":30199.31000,"previousClose":29861.55000,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"-0.11%","AbsoluteValueText":"-32.00","CurrentValueText":"30,185.00"},{"label":"S&P 500","mobileHiddenLabel":null,"url":"/index/s&p_500","premarketObject":{"label":"S&P","mobileHiddenLabel":"Futures","url":"/futures/s&p-500-futures","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y01010EA000712045","pushDataField":"Last","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":-0.02707,"absoluteValue":-1.00000,"currentValue":3693.25000,"previousClose":3694.50000,"roundedCurrent":0,"roundedAbsolute":0,"chartData":null,"RelativeValueText":"-0.03%","AbsoluteValueText":"-1.00","CurrentValueText":"3,693.25"},"valuePushApi":null,"relativeValue":1.29212,"absoluteValue":47.13000,"currentValue":3694.62000,"previousClose":3647.49000,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"-0.03%","AbsoluteValueText":"-1.00","CurrentValueText":"3,693.25"},{"label":"NASDAQ","mobileHiddenLabel":"100","url":"/index/nasdaq_100","premarketObject":{"label":"NASDAQ","mobileHiddenLabel":"Futures","url":"/futures/nasdaq-100-futures","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y01010EA000821881","pushDataField":"Last","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":0.06352,"absoluteValue":8.00000,"currentValue":12603.25000,"previousClose":12591.75000,"roundedCurrent":0,"roundedAbsolute":0,"chartData":null,"RelativeValueText":"+0.06%","AbsoluteValueText":"+8.00","CurrentValueText":"12,603.25"},"valuePushApi":null,"relativeValue":1.07294,"absoluteValue":133.71175,"currentValue":12595.92158,"previousClose":12595.92158,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"+0.06%","AbsoluteValueText":"+8.00","CurrentValueText":"12,603.25"},{"label":"Gold","mobileHiddenLabel":null,"url":"/commodities/gold-price","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y0306000000XAU-USD","pushDataField":"Mid","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":0.17804,"absoluteValue":3.30000,"currentValue":1856.80000,"previousClose":1853.50000,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"+0.18%","AbsoluteValueText":"+3.30","CurrentValueText":"1,856.80"},{"label":"Oil (WTI)","mobileHiddenLabel":null,"url":"/commodities/oil-price?type=wti","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y01010080001594836-USD","pushDataField":"Last","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":0.00000,"absoluteValue":0.00000,"currentValue":47.59000,"previousClose":47.62000,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"+0.00%","AbsoluteValueText":"+0.00","CurrentValueText":"47.59"},{"label":"EUR/USD","mobileHiddenLabel":null,"url":"/currencies/eur-usd","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y0306000000EURUSD-USD","pushDataField":"Mid","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":0.02469,"absoluteValue":0.00030,"currentValue":1.21545,"previousClose":1.21515,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"+0.02%","AbsoluteValueText":"+0.00","CurrentValueText":"1.22"}]}
+		{"isOutOfMarketTime":true,"showFutures":true,"caption":{"doesMarketOpenToday":true,"marketOpenTime":"2020-12-22T16:03:58.4241816Z","marketOpenTimeMillies":6961575.8184,"captionText":"U.S. markets open in 1 hour 56 minutes","captionLink":"/premarket","isShown":true},"clientApiVariable":"clientApiHandler","values":[{"label":"DOW 30","mobileHiddenLabel":null,"url":"/index/dow_jones","premarketObject":{"label":"Dow","mobileHiddenLabel":"Futures","url":"/futures/dow-futures","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y0101313000998313","pushDataField":"Last","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":0.07311,"absoluteValue":22.00000,"currentValue":30114.00000,"previousClose":30113.00000,"roundedCurrent":0,"roundedAbsolute":0,"chartData":null,"RelativeValueText":"+0.07%","AbsoluteValueText":"+22.00","CurrentValueText":"30,114.00"},"valuePushApi":null,"relativeValue":0.12393,"absoluteValue":37.40000,"currentValue":30216.45000,"previousClose":30216.45000,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"+0.07%","AbsoluteValueText":"+22.00","CurrentValueText":"30,114.00"},{"label":"S&P 500","mobileHiddenLabel":null,"url":"/index/s&p_500","premarketObject":{"label":"S&P","mobileHiddenLabel":"Futures","url":"/futures/s&p-500-futures","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y01010EA000712045","pushDataField":"Last","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":0.26464,"absoluteValue":9.75000,"currentValue":3694.00000,"previousClose":3685.75000,"roundedCurrent":0,"roundedAbsolute":0,"chartData":null,"RelativeValueText":"+0.26%","AbsoluteValueText":"+9.75","CurrentValueText":"3,694.00"},"valuePushApi":null,"relativeValue":-0.39063,"absoluteValue":-14.49000,"currentValue":3694.92000,"previousClose":3694.92000,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"+0.26%","AbsoluteValueText":"+9.75","CurrentValueText":"3,694.00"},{"label":"NASDAQ","mobileHiddenLabel":"100","url":"/index/nasdaq_100","premarketObject":{"label":"NASDAQ","mobileHiddenLabel":"Futures","url":"/futures/nasdaq-100-futures","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y01010EA000821881","pushDataField":"Last","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":0.42163,"absoluteValue":53.50000,"currentValue":12742.50000,"previousClose":12683.50000,"roundedCurrent":0,"roundedAbsolute":0,"chartData":null,"RelativeValueText":"+0.42%","AbsoluteValueText":"+53.50","CurrentValueText":"12,742.50"},"valuePushApi":null,"relativeValue":-0.37623,"absoluteValue":-47.92436,"currentValue":12690.25693,"previousClose":12690.25693,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"+0.42%","AbsoluteValueText":"+53.50","CurrentValueText":"12,742.50"},{"label":"Gold","mobileHiddenLabel":null,"url":"/commodities/gold-price","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y0306000000XAU-USD","pushDataField":"Mid","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":-0.08524,"absoluteValue":-1.60000,"currentValue":1875.45000,"previousClose":1877.05000,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"-0.09%","AbsoluteValueText":"-1.60","CurrentValueText":"1,875.45"},{"label":"Oil (WTI)","mobileHiddenLabel":null,"url":"/commodities/oil-price?type=wti","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y01010080001594836-USD","pushDataField":"Last","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":-0.89977,"absoluteValue":-0.43000,"currentValue":47.36000,"previousClose":47.74000,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"-0.90%","AbsoluteValueText":"-0.43","CurrentValueText":"47.36"},{"label":"EUR/USD","mobileHiddenLabel":null,"url":"/currencies/eur-usd","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y0306000000EURUSD-USD","pushDataField":"Mid","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":0.09397,"absoluteValue":0.00115,"currentValue":1.22490,"previousClose":1.22375,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"+0.09%","AbsoluteValueText":"+0.00","CurrentValueText":"1.22"}]}
   });
 </script>
 <fieldset class="markets-now-section" id="markets-now-section">
-	<legend class="markets-now-section__legend"><a href="/premarket">U.S. markets closed</a></legend>
+	<legend class="markets-now-section__legend"><a href="/premarket">U.S. markets open in 1 hour 56 minutes</a></legend>
 	<div class="markets-now-section__row">
 			<div class="markets-now-section__market">
-				<div class="markets-now  markets-now--negative">
+				<div class="markets-now markets-now--positive ">
           <div class="markets-now__header">
               <div class="markets-now__up-or-down">
                   <div class="arrow"></div>
@@ -366,14 +366,14 @@
               <a href="#" class="markets-now__caption">Dow <span class="markets-now__sub-caption">Futures</span></a>
           </div>
 					<div class="markets-now__values">
-						<div class="markets-now__relative-value">-0.11%</div>
-						<div class="markets-now__absolute-value">-32.00</div>
-						<div class="markets-now__current-value">30,185.00</div>
+						<div class="markets-now__relative-value">+0.07%</div>
+						<div class="markets-now__absolute-value">+22.00</div>
+						<div class="markets-now__current-value">30,114.00</div>
 					</div>
 				</div>
 			</div>
 			<div class="markets-now-section__market">
-				<div class="markets-now  markets-now--negative">
+				<div class="markets-now markets-now--positive ">
           <div class="markets-now__header">
               <div class="markets-now__up-or-down">
                   <div class="arrow"></div>
@@ -381,9 +381,9 @@
               <a href="#" class="markets-now__caption">S&amp;P <span class="markets-now__sub-caption">Futures</span></a>
           </div>
 					<div class="markets-now__values">
-						<div class="markets-now__relative-value">-0.03%</div>
-						<div class="markets-now__absolute-value">-1.00</div>
-						<div class="markets-now__current-value">3,693.25</div>
+						<div class="markets-now__relative-value">+0.26%</div>
+						<div class="markets-now__absolute-value">+9.75</div>
+						<div class="markets-now__current-value">3,694.00</div>
 					</div>
 				</div>
 			</div>
@@ -396,14 +396,14 @@
               <a href="#" class="markets-now__caption">NASDAQ <span class="markets-now__sub-caption">Futures</span></a>
           </div>
 					<div class="markets-now__values">
-						<div class="markets-now__relative-value">+0.06%</div>
-						<div class="markets-now__absolute-value">+8.00</div>
-						<div class="markets-now__current-value">12,603.25</div>
+						<div class="markets-now__relative-value">+0.42%</div>
+						<div class="markets-now__absolute-value">+53.50</div>
+						<div class="markets-now__current-value">12,742.50</div>
 					</div>
 				</div>
 			</div>
 			<div class="markets-now-section__market">
-				<div class="markets-now markets-now--positive ">
+				<div class="markets-now  markets-now--negative">
           <div class="markets-now__header">
               <div class="markets-now__up-or-down">
                   <div class="arrow"></div>
@@ -411,14 +411,14 @@
               <a href="#" class="markets-now__caption">Gold <span class="markets-now__sub-caption"></span></a>
           </div>
 					<div class="markets-now__values">
-						<div class="markets-now__relative-value">+0.18%</div>
-						<div class="markets-now__absolute-value">+3.30</div>
-						<div class="markets-now__current-value">1,856.80</div>
+						<div class="markets-now__relative-value">-0.09%</div>
+						<div class="markets-now__absolute-value">-1.60</div>
+						<div class="markets-now__current-value">1,875.45</div>
 					</div>
 				</div>
 			</div>
 			<div class="markets-now-section__market">
-				<div class="markets-now  ">
+				<div class="markets-now  markets-now--negative">
           <div class="markets-now__header">
               <div class="markets-now__up-or-down">
                   <div class="arrow"></div>
@@ -426,9 +426,9 @@
               <a href="#" class="markets-now__caption">Oil (WTI) <span class="markets-now__sub-caption"></span></a>
           </div>
 					<div class="markets-now__values">
-						<div class="markets-now__relative-value">+0.00%</div>
-						<div class="markets-now__absolute-value">+0.00</div>
-						<div class="markets-now__current-value">47.59</div>
+						<div class="markets-now__relative-value">-0.90%</div>
+						<div class="markets-now__absolute-value">-0.43</div>
+						<div class="markets-now__current-value">47.36</div>
 					</div>
 				</div>
 			</div>
@@ -441,7 +441,7 @@
               <a href="#" class="markets-now__caption">EUR/USD <span class="markets-now__sub-caption"></span></a>
           </div>
 					<div class="markets-now__values">
-						<div class="markets-now__relative-value">+0.02%</div>
+						<div class="markets-now__relative-value">+0.09%</div>
 						<div class="markets-now__absolute-value">+0.00</div>
 						<div class="markets-now__current-value">1.22</div>
 					</div>
@@ -906,30 +906,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/mmm-stock" title="3M">3M</a>						</td>
 						<td class="text-right">
-174.68<br />
-174.68						</td>
+175.66<br />
+175.66						</td>
 						<td class="text-right">
-172.57<br />
-175.04						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">1.60</span><br />
-<span class="colorGreen">0.92%</span>						</td>
+<span class="colorRed">-0.76</span><br />
+<span class="colorRed">-0.43%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">7.32</span><br />
-<span class="colorGreen">4.41%</span>						</td>
+<span class="colorGreen">3.03</span><br />
+<span class="colorGreen">1.76%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">21.11</span><br />
-<span class="colorGreen">13.85%</span>						</td>
+<span class="colorGreen">16.19</span><br />
+<span class="colorGreen">10.17%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">4.75</span><br />
-<span class="colorGreen">2.81%</span>						</td>
+<span class="colorGreen">5.48</span><br />
+<span class="colorGreen">3.22%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,1405105,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="3M" onclick="window.location.href= '/chart/mmm'" style='cursor:pointer' title="3M 1-year Chart"/>						</td>
 				</tr>
@@ -937,30 +937,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/aos-stock" title="AO Smith">AO Smith</a>						</td>
 						<td class="text-right">
-56.42<br />
-56.42						</td>
+55.82<br />
+55.82						</td>
 						<td class="text-right">
-55.32<br />
-56.44						</td>
+0.00<br />
+0.00						</td>
 						<td >
 <div class="image_icon_price_green"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">1.01</span><br />
-<span class="colorGreen">1.82%</span>						</td>
+<span class="colorGreen">0.18</span><br />
+<span class="colorGreen">0.32%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">9.26</span><br />
-<span class="colorGreen">19.13%</span>						</td>
+<span class="colorGreen">1.90</span><br />
+<span class="colorGreen">3.57%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">9.28</span><br />
-<span class="colorGreen">19.18%</span>						</td>
+<span class="colorGreen">7.39</span><br />
+<span class="colorGreen">15.50%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">12.28</span><br />
-<span class="colorGreen">27.05%</span>						</td>
+<span class="colorGreen">8.27</span><br />
+<span class="colorGreen">17.67%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,970993,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="AO Smith" onclick="window.location.href= '/chart/aos'" style='cursor:pointer' title="AO Smith 1-year Chart"/>						</td>
 				</tr>
@@ -968,30 +968,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/abt-stock" title="Abbott Laboratories">Abbott Laboratories</a>						</td>
 						<td class="text-right">
-107.45<br />
-107.45						</td>
+108.09<br />
+108.09						</td>
 						<td class="text-right">
-106.44<br />
-108.40						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">0.66</span><br />
-<span class="colorGreen">0.62%</span>						</td>
+<span class="colorRed">-0.88</span><br />
+<span class="colorRed">-0.81%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">2.32</span><br />
-<span class="colorGreen">2.23%</span>						</td>
+<span class="colorGreen">0.68</span><br />
+<span class="colorGreen">0.64%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">14.16</span><br />
-<span class="colorGreen">15.36%</span>						</td>
+<span class="colorGreen">16.44</span><br />
+<span class="colorGreen">18.09%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">21.76</span><br />
-<span class="colorGreen">25.73%</span>						</td>
+<span class="colorGreen">20.28</span><br />
+<span class="colorGreen">23.29%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,903037,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Abbott Laboratories" onclick="window.location.href= '/chart/abt'" style='cursor:pointer' title="Abbott Laboratories 1-year Chart"/>						</td>
 				</tr>
@@ -999,30 +999,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/abbv-stock" title="AbbVie">AbbVie</a>						</td>
 						<td class="text-right">
-102.82<br />
-102.82						</td>
+103.71<br />
+103.71						</td>
 						<td class="text-right">
-102.32<br />
-105.45						</td>
+0.00<br />
+0.00						</td>
 						<td >
 <div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorRed">-1.38</span><br />
-<span class="colorRed">-1.32%</span>						</td>
+<span class="colorRed">-0.74</span><br />
+<span class="colorRed">-0.71%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">19.02</span><br />
-<span class="colorGreen">21.22%</span>						</td>
+<span class="colorGreen">15.01</span><br />
+<span class="colorGreen">16.75%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">11.77</span><br />
-<span class="colorGreen">12.15%</span>						</td>
+<span class="colorGreen">8.90</span><br />
+<span class="colorGreen">9.30%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">22.11</span><br />
-<span class="colorGreen">25.54%</span>						</td>
+<span class="colorGreen">14.56</span><br />
+<span class="colorGreen">16.16%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,20145667,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="AbbVie" onclick="window.location.href= '/chart/abbv'" style='cursor:pointer' title="AbbVie 1-year Chart"/>						</td>
 				</tr>
@@ -1030,30 +1030,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/acn-stock" title="Accenture">Accenture</a>						</td>
 						<td class="text-right">
-247.05<br />
-247.05						</td>
+261.42<br />
+261.42						</td>
 						<td class="text-right">
-245.21<br />
-248.91						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">3.30</span><br />
-<span class="colorGreen">1.35%</span>						</td>
+<span class="colorRed">-4.83</span><br />
+<span class="colorRed">-1.81%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">13.12</span><br />
-<span class="colorGreen">5.62%</span>						</td>
+<span class="colorGreen">10.63</span><br />
+<span class="colorGreen">4.49%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">37.34</span><br />
-<span class="colorGreen">17.83%</span>						</td>
+<span class="colorGreen">42.25</span><br />
+<span class="colorGreen">20.59%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">44.89</span><br />
-<span class="colorGreen">22.24%</span>						</td>
+<span class="colorGreen">44.05</span><br />
+<span class="colorGreen">21.66%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,10478724,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Accenture" onclick="window.location.href= '/chart/acn'" style='cursor:pointer' title="Accenture 1-year Chart"/>						</td>
 				</tr>
@@ -1061,30 +1061,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/atvi-stock" title="Activision Blizzard">Activision Blizzard</a>						</td>
 						<td class="text-right">
-86.92<br />
-85.94						</td>
+88.81<br />
+90.37						</td>
 						<td class="text-right">
-85.59<br />
-86.96						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">0.98</span><br />
-<span class="colorGreen">1.14%</span>						</td>
+<span class="colorRed">-1.56</span><br />
+<span class="colorRed">-1.73%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/15/2020 08:00:00 PM UTC-0500</span><br />
-16.12.2020						</td>
+<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/21/2020 08:00:00 PM UTC-0500</span><br />
+22.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">5.14</span><br />
-<span class="colorGreen">6.59%</span>						</td>
+<span class="colorGreen">9.45</span><br />
+<span class="colorGreen">12.00%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">11.43</span><br />
-<span class="colorGreen">15.95%</span>						</td>
+<span class="colorGreen">12.69</span><br />
+<span class="colorGreen">16.80%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">24.55</span><br />
-<span class="colorGreen">41.92%</span>						</td>
+<span class="colorGreen">29.96</span><br />
+<span class="colorGreen">51.42%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,3971431,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Activision Blizzard" onclick="window.location.href= '/chart/atvi'" style='cursor:pointer' title="Activision Blizzard 1-year Chart"/>						</td>
 				</tr>
@@ -1092,30 +1092,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/adbe-stock" title="Adobe">Adobe</a>						</td>
 						<td class="text-right">
-482.64<br />
-486.42						</td>
+498.39<br />
+502.95						</td>
 						<td class="text-right">
-480.64<br />
-489.48						</td>
+0.00<br />
+0.00						</td>
 						<td >
 <div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorRed">-3.78</span><br />
-<span class="colorRed">-0.78%</span>						</td>
+<span class="colorRed">-4.56</span><br />
+<span class="colorRed">-0.91%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/15/2020 08:00:00 PM UTC-0500</span><br />
-16.12.2020						</td>
+<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/21/2020 08:00:00 PM UTC-0500</span><br />
+22.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">5.52</span><br />
-<span class="colorGreen">1.17%</span>						</td>
+<span class="colorGreen">15.60</span><br />
+<span class="colorGreen">3.29%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">70.33</span><br />
-<span class="colorGreen">17.30%</span>						</td>
+<span class="colorGreen">76.41</span><br />
+<span class="colorGreen">18.48%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">170.91</span><br />
-<span class="colorGreen">55.86%</span>						</td>
+<span class="colorGreen">167.05</span><br />
+<span class="colorGreen">51.74%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,903472,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Adobe" onclick="window.location.href= '/chart/adbe'" style='cursor:pointer' title="Adobe 1-year Chart"/>						</td>
 				</tr>
@@ -1123,30 +1123,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/aap-stock" title="Advance Auto Parts">Advance Auto Parts</a>						</td>
 						<td class="text-right">
-159.84<br />
-159.84						</td>
+160.49<br />
+160.49						</td>
 						<td class="text-right">
-156.22<br />
-159.94						</td>
+0.00<br />
+0.00						</td>
 						<td >
 <div class="image_icon_price_green"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">2.28</span><br />
-<span class="colorGreen">1.45%</span>						</td>
+<span class="colorGreen">0.50</span><br />
+<span class="colorGreen">0.31%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">4.39</span><br />
-<span class="colorGreen">2.86%</span>						</td>
+<span class="colorGreen">6.56</span><br />
+<span class="colorGreen">4.24%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">17.57</span><br />
-<span class="colorGreen">12.52%</span>						</td>
+<span class="colorGreen">12.68</span><br />
+<span class="colorGreen">8.53%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">1.78</span><br />
-<span class="colorGreen">1.14%</span>						</td>
+<span class="colorGreen">3.34</span><br />
+<span class="colorGreen">2.11%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,1331600,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Advance Auto Parts" onclick="window.location.href= '/chart/aap'" style='cursor:pointer' title="Advance Auto Parts 1-year Chart"/>						</td>
 				</tr>
@@ -1154,30 +1154,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/aes-stock" title="AES">AES</a>						</td>
 						<td class="text-right">
-22.28<br />
-22.28						</td>
+22.62<br />
+22.62						</td>
 						<td class="text-right">
-21.30<br />
-22.30						</td>
+0.00<br />
+0.00						</td>
 						<td >
 <div class="image_icon_price_green"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">0.98</span><br />
-<span class="colorGreen">4.60%</span>						</td>
+<span class="colorGreen">0.08</span><br />
+<span class="colorGreen">0.35%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">3.49</span><br />
-<span class="colorGreen">20.10%</span>						</td>
+<span class="colorGreen">3.47</span><br />
+<span class="colorGreen">18.83%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">7.68</span><br />
-<span class="colorGreen">58.31%</span>						</td>
+<span class="colorGreen">8.49</span><br />
+<span class="colorGreen">63.31%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">1.72</span><br />
-<span class="colorGreen">8.99%</span>						</td>
+<span class="colorGreen">2.98</span><br />
+<span class="colorGreen">15.75%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,903613,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="AES" onclick="window.location.href= '/chart/aes'" style='cursor:pointer' title="AES 1-year Chart"/>						</td>
 				</tr>
@@ -1185,30 +1185,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/afl-stock" title="Aflac">Aflac</a>						</td>
 						<td class="text-right">
-44.87<br />
-44.87						</td>
+43.59<br />
+43.59						</td>
 						<td class="text-right">
-44.19<br />
-45.09						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">0.67</span><br />
-<span class="colorGreen">1.52%</span>						</td>
+<span class="colorRed">-0.30</span><br />
+<span class="colorRed">-0.68%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">8.91</span><br />
-<span class="colorGreen">24.61%</span>						</td>
+<span class="colorGreen">7.06</span><br />
+<span class="colorGreen">18.77%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">6.03</span><br />
-<span class="colorGreen">15.43%</span>						</td>
+<span class="colorGreen">7.89</span><br />
+<span class="colorGreen">21.45%</span>						</td>
 						<td class="text-right">
-<span class="colorRed">-8.04</span><br />
-<span class="colorRed">-15.12%</span>						</td>
+<span class="colorRed">-8.43</span><br />
+<span class="colorRed">-15.87%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,903835,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Aflac" onclick="window.location.href= '/chart/afl'" style='cursor:pointer' title="Aflac 1-year Chart"/>						</td>
 				</tr>
@@ -1216,30 +1216,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/a-stock" title="Agilent Technologies">Agilent Technologies</a>						</td>
 						<td class="text-right">
-117.39<br />
-117.39						</td>
+117.78<br />
+117.78						</td>
 						<td class="text-right">
-116.87<br />
-118.00						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">0.65</span><br />
-<span class="colorGreen">0.56%</span>						</td>
+<span class="colorRed">-1.52</span><br />
+<span class="colorRed">-1.27%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">17.83</span><br />
-<span class="colorGreen">18.09%</span>						</td>
+<span class="colorGreen">17.64</span><br />
+<span class="colorGreen">17.71%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">26.59</span><br />
-<span class="colorGreen">29.61%</span>						</td>
+<span class="colorGreen">29.32</span><br />
+<span class="colorGreen">33.35%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">33.47</span><br />
-<span class="colorGreen">40.36%</span>						</td>
+<span class="colorGreen">33.29</span><br />
+<span class="colorGreen">39.65%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,901692,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Agilent Technologies" onclick="window.location.href= '/chart/a'" style='cursor:pointer' title="Agilent Technologies 1-year Chart"/>						</td>
 				</tr>
@@ -1247,30 +1247,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/apd-stock" title="Air Products and Chemicals">Air Products and Chemicals</a>						</td>
 						<td class="text-right">
-270.01<br />
-270.01						</td>
+264.49<br />
+264.49						</td>
 						<td class="text-right">
-268.09<br />
-272.00						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">4.61</span><br />
-<span class="colorGreen">1.74%</span>						</td>
+<span class="colorRed">-5.06</span><br />
+<span class="colorRed">-1.88%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorRed">-24.66</span><br />
-<span class="colorRed">-8.35%</span>						</td>
+<span class="colorRed">-33.08</span><br />
+<span class="colorRed">-10.95%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">22.71</span><br />
-<span class="colorGreen">9.16%</span>						</td>
+<span class="colorGreen">31.45</span><br />
+<span class="colorGreen">13.24%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">41.07</span><br />
-<span class="colorGreen">17.90%</span>						</td>
+<span class="colorGreen">33.29</span><br />
+<span class="colorGreen">14.13%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,903838,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Air Products and Chemicals" onclick="window.location.href= '/chart/apd'" style='cursor:pointer' title="Air Products and Chemicals 1-year Chart"/>						</td>
 				</tr>
@@ -1278,30 +1278,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/akam-stock" title="Akamai">Akamai</a>						</td>
 						<td class="text-right">
-103.87<br />
-103.27						</td>
+105.98<br />
+107.08						</td>
 						<td class="text-right">
-102.77<br />
-104.18						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">0.60</span><br />
-<span class="colorGreen">0.58%</span>						</td>
+<span class="colorRed">-1.10</span><br />
+<span class="colorRed">-1.03%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/15/2020 08:00:00 PM UTC-0500</span><br />
-16.12.2020						</td>
+<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/21/2020 08:00:00 PM UTC-0500</span><br />
+22.12.2020						</td>
 						<td class="text-right">
-<span class="colorRed">-1.91</span><br />
-<span class="colorRed">-1.80%</span>						</td>
+<span class="colorRed">-2.36</span><br />
+<span class="colorRed">-2.21%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">0.58</span><br />
-<span class="colorGreen">0.56%</span>						</td>
+<span class="colorGreen">3.11</span><br />
+<span class="colorGreen">3.07%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">20.34</span><br />
-<span class="colorGreen">24.19%</span>						</td>
+<span class="colorGreen">20.23</span><br />
+<span class="colorGreen">24.00%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,899181,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Akamai" onclick="window.location.href= '/chart/akam'" style='cursor:pointer' title="Akamai 1-year Chart"/>						</td>
 				</tr>
@@ -1309,30 +1309,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/alk-stock" title="Alaska Air Group">Alaska Air Group</a>						</td>
 						<td class="text-right">
-50.33<br />
-50.33						</td>
+50.22<br />
+50.22						</td>
 						<td class="text-right">
-48.41<br />
-50.55						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">1.40</span><br />
-<span class="colorGreen">2.86%</span>						</td>
+<span class="colorRed">-0.13</span><br />
+<span class="colorRed">-0.26%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">9.47</span><br />
-<span class="colorGreen">23.16%</span>						</td>
+<span class="colorGreen">7.60</span><br />
+<span class="colorGreen">18.03%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">8.88</span><br />
-<span class="colorGreen">21.41%</span>						</td>
+<span class="colorGreen">12.34</span><br />
+<span class="colorGreen">32.99%</span>						</td>
 						<td class="text-right">
-<span class="colorRed">-16.88</span><br />
-<span class="colorRed">-25.10%</span>						</td>
+<span class="colorRed">-20.31</span><br />
+<span class="colorRed">-28.99%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,904079,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Alaska Air Group" onclick="window.location.href= '/chart/alk'" style='cursor:pointer' title="Alaska Air Group 1-year Chart"/>						</td>
 				</tr>
@@ -1340,30 +1340,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/alb-stock" title="Albemarle">Albemarle</a>						</td>
 						<td class="text-right">
-137.94<br />
-137.94						</td>
+142.02<br />
+142.02						</td>
 						<td class="text-right">
-135.01<br />
-138.20						</td>
+0.00<br />
+0.00						</td>
 						<td >
 <div class="image_icon_price_green"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">3.37</span><br />
-<span class="colorGreen">2.50%</span>						</td>
+<span class="colorGreen">3.12</span><br />
+<span class="colorGreen">2.25%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">49.05</span><br />
-<span class="colorGreen">52.46%</span>						</td>
+<span class="colorGreen">35.33</span><br />
+<span class="colorGreen">35.17%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">58.69</span><br />
-<span class="colorGreen">69.99%</span>						</td>
+<span class="colorGreen">56.61</span><br />
+<span class="colorGreen">71.50%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">77.25</span><br />
-<span class="colorGreen">118.30%</span>						</td>
+<span class="colorGreen">67.01</span><br />
+<span class="colorGreen">97.44%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,199805,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Albemarle" onclick="window.location.href= '/chart/alb'" style='cursor:pointer' title="Albemarle 1-year Chart"/>						</td>
 				</tr>
@@ -1371,30 +1371,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/are-stock" title="Alexandria Real Estate Equities">Alexandria Real Estate Equities</a>						</td>
 						<td class="text-right">
-176.18<br />
-176.18						</td>
+174.62<br />
+174.62						</td>
 						<td class="text-right">
-171.60<br />
-176.18						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">3.35</span><br />
-<span class="colorGreen">1.94%</span>						</td>
+<span class="colorRed">-0.64</span><br />
+<span class="colorRed">-0.37%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">10.91</span><br />
-<span class="colorGreen">6.80%</span>						</td>
+<span class="colorGreen">15.59</span><br />
+<span class="colorGreen">9.62%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">13.34</span><br />
-<span class="colorGreen">8.45%</span>						</td>
+<span class="colorGreen">6.70</span><br />
+<span class="colorGreen">3.92%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">9.22</span><br />
-<span class="colorGreen">5.69%</span>						</td>
+<span class="colorGreen">22.73</span><br />
+<span class="colorGreen">14.67%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,651794,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Alexandria Real Estate Equities" onclick="window.location.href= '/chart/are'" style='cursor:pointer' title="Alexandria Real Estate Equities 1-year Chart"/>						</td>
 				</tr>
@@ -1402,30 +1402,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/alxn-stock" title="Alexion Pharmaceuticals">Alexion Pharmaceuticals</a>						</td>
 						<td class="text-right">
-157.91<br />
-156.31						</td>
+154.83<br />
+156.75						</td>
 						<td class="text-right">
-156.70<br />
-158.00						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">1.60</span><br />
-<span class="colorGreen">1.02%</span>						</td>
+<span class="colorRed">-1.92</span><br />
+<span class="colorRed">-1.22%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/15/2020 08:00:00 PM UTC-0500</span><br />
-16.12.2020						</td>
+<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/21/2020 08:00:00 PM UTC-0500</span><br />
+22.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">13.51</span><br />
-<span class="colorGreen">12.82%</span>						</td>
+<span class="colorGreen">43.90</span><br />
+<span class="colorGreen">38.46%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">9.57</span><br />
-<span class="colorGreen">8.76%</span>						</td>
+<span class="colorGreen">42.51</span><br />
+<span class="colorGreen">36.80%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">6.40</span><br />
-<span class="colorGreen">5.69%</span>						</td>
+<span class="colorGreen">48.21</span><br />
+<span class="colorGreen">43.90%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,440290,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Alexion Pharmaceuticals" onclick="window.location.href= '/chart/alxn'" style='cursor:pointer' title="Alexion Pharmaceuticals 1-year Chart"/>						</td>
 				</tr>
@@ -1433,30 +1433,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/algn-stock" title="Align Technology">Align Technology</a>						</td>
 						<td class="text-right">
-516.30<br />
-504.31						</td>
+530.71<br />
+529.92						</td>
 						<td class="text-right">
-503.54<br />
-518.97						</td>
+0.00<br />
+0.00						</td>
 						<td >
 <div class="image_icon_price_green"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">11.99</span><br />
-<span class="colorGreen">2.38%</span>						</td>
+<span class="colorGreen">0.79</span><br />
+<span class="colorGreen">0.15%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/15/2020 08:00:00 PM UTC-0500</span><br />
-16.12.2020						</td>
+<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/21/2020 08:00:00 PM UTC-0500</span><br />
+22.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">190.73</span><br />
-<span class="colorGreen">60.04%</span>						</td>
+<span class="colorGreen">188.31</span><br />
+<span class="colorGreen">57.41%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">256.99</span><br />
-<span class="colorGreen">102.22%</span>						</td>
+<span class="colorGreen">254.13</span><br />
+<span class="colorGreen">96.92%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">240.00</span><br />
-<span class="colorGreen">89.42%</span>						</td>
+<span class="colorGreen">248.05</span><br />
+<span class="colorGreen">92.46%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,1159441,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Align Technology" onclick="window.location.href= '/chart/algn'" style='cursor:pointer' title="Align Technology 1-year Chart"/>						</td>
 				</tr>
@@ -1464,30 +1464,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/alle-stock" title="Allegion">Allegion</a>						</td>
 						<td class="text-right">
-111.70<br />
-111.70						</td>
+112.79<br />
+112.79						</td>
 						<td class="text-right">
-109.81<br />
-112.47						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">2.01</span><br />
-<span class="colorGreen">1.83%</span>						</td>
+<span class="colorRed">-0.96</span><br />
+<span class="colorRed">-0.84%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">14.35</span><br />
-<span class="colorGreen">14.79%</span>						</td>
+<span class="colorGreen">7.22</span><br />
+<span class="colorGreen">6.94%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">2.34</span><br />
-<span class="colorGreen">2.15%</span>						</td>
+<span class="colorGreen">6.95</span><br />
+<span class="colorGreen">6.67%</span>						</td>
 						<td class="text-right">
-<span class="colorRed">-12.73</span><br />
-<span class="colorRed">-10.26%</span>						</td>
+<span class="colorRed">-12.33</span><br />
+<span class="colorRed">-9.98%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,22627015,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Allegion" onclick="window.location.href= '/chart/alle'" style='cursor:pointer' title="Allegion 1-year Chart"/>						</td>
 				</tr>
@@ -1495,30 +1495,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/lnt-stock" title="Alliant Energy">Alliant Energy</a>						</td>
 						<td class="text-right">
-52.38<br />
-51.34						</td>
+50.34<br />
+51.05						</td>
 						<td class="text-right">
-51.24<br />
-52.58						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">1.04</span><br />
-<span class="colorGreen">2.03%</span>						</td>
+<span class="colorRed">-0.71</span><br />
+<span class="colorRed">-1.39%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/15/2020 08:00:00 PM UTC-0500</span><br />
-16.12.2020						</td>
+<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/21/2020 08:00:00 PM UTC-0500</span><br />
+22.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">0.22</span><br />
-<span class="colorGreen">0.42%</span>						</td>
+<span class="colorRed">-0.54</span><br />
+<span class="colorRed">-1.03%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">1.58</span><br />
-<span class="colorGreen">3.12%</span>						</td>
+<span class="colorGreen">2.73</span><br />
+<span class="colorGreen">5.58%</span>						</td>
 						<td class="text-right">
-<span class="colorRed">-0.65</span><br />
-<span class="colorRed">-1.23%</span>						</td>
+<span class="colorRed">-2.24</span><br />
+<span class="colorRed">-4.15%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,804371,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Alliant Energy" onclick="window.location.href= '/chart/lnt'" style='cursor:pointer' title="Alliant Energy 1-year Chart"/>						</td>
 				</tr>
@@ -1526,30 +1526,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/all-stock" title="Allstate">Allstate</a>						</td>
 						<td class="text-right">
-105.92<br />
-105.92						</td>
+106.17<br />
+106.17						</td>
 						<td class="text-right">
-104.82<br />
-106.54						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">1.05</span><br />
-<span class="colorGreen">1.00%</span>						</td>
+<span class="colorRed">-1.23</span><br />
+<span class="colorRed">-1.15%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">12.57</span><br />
-<span class="colorGreen">13.57%</span>						</td>
+<span class="colorGreen">13.62</span><br />
+<span class="colorGreen">14.68%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">3.21</span><br />
-<span class="colorGreen">3.15%</span>						</td>
+<span class="colorGreen">8.47</span><br />
+<span class="colorGreen">8.65%</span>						</td>
 						<td class="text-right">
-<span class="colorRed">-5.55</span><br />
-<span class="colorRed">-5.01%</span>						</td>
+<span class="colorRed">-3.43</span><br />
+<span class="colorRed">-3.12%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,72015,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Allstate" onclick="window.location.href= '/chart/all'" style='cursor:pointer' title="Allstate 1-year Chart"/>						</td>
 				</tr>
@@ -1557,30 +1557,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/googl-stock" title="Alphabet A (ex Google">Alphabet A (ex Google</a>						</td>
 						<td class="text-right">
-1,761.08<br />
-1,752.26						</td>
+1,734.56<br />
+1,726.22						</td>
 						<td class="text-right">
-1,742.08<br />
-1,763.95						</td>
+0.00<br />
+0.00						</td>
 						<td >
 <div class="image_icon_price_green"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">8.82</span><br />
-<span class="colorGreen">0.50%</span>						</td>
+<span class="colorGreen">8.34</span><br />
+<span class="colorGreen">0.48%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/15/2020 08:00:00 PM UTC-0500</span><br />
-16.12.2020						</td>
+<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/21/2020 08:00:00 PM UTC-0500</span><br />
+22.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">251.89</span><br />
-<span class="colorGreen">16.62%</span>						</td>
+<span class="colorGreen">270.15</span><br />
+<span class="colorGreen">18.17%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">354.73</span><br />
-<span class="colorGreen">25.11%</span>						</td>
+<span class="colorGreen">304.65</span><br />
+<span class="colorGreen">20.97%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">419.16</span><br />
-<span class="colorGreen">31.08%</span>						</td>
+<span class="colorGreen">402.30</span><br />
+<span class="colorGreen">29.69%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,29798540,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Alphabet A (ex Google" onclick="window.location.href= '/chart/googl'" style='cursor:pointer' title="Alphabet A (ex Google 1-year Chart"/>						</td>
 				</tr>
@@ -1588,30 +1588,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/goog-stock" title="Alphabet C (ex Google">Alphabet C (ex Google</a>						</td>
 						<td class="text-right">
-1,767.77<br />
-1,760.06						</td>
+1,739.37<br />
+1,731.01						</td>
 						<td class="text-right">
-1,750.00<br />
-1,771.42						</td>
+0.00<br />
+0.00						</td>
 						<td >
 <div class="image_icon_price_green"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">7.71</span><br />
-<span class="colorGreen">0.44%</span>						</td>
+<span class="colorGreen">8.36</span><br />
+<span class="colorGreen">0.48%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/15/2020 08:00:00 PM UTC-0500</span><br />
-16.12.2020						</td>
+<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/21/2020 08:00:00 PM UTC-0500</span><br />
+22.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">254.61</span><br />
-<span class="colorGreen">16.74%</span>						</td>
+<span class="colorGreen">267.47</span><br />
+<span class="colorGreen">17.88%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">362.15</span><br />
-<span class="colorGreen">25.63%</span>						</td>
+<span class="colorGreen">311.88</span><br />
+<span class="colorGreen">21.49%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">425.06</span><br />
-<span class="colorGreen">31.48%</span>						</td>
+<span class="colorGreen">407.88</span><br />
+<span class="colorGreen">30.10%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,29798545,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Alphabet C (ex Google" onclick="window.location.href= '/chart/goog'" style='cursor:pointer' title="Alphabet C (ex Google 1-year Chart"/>						</td>
 				</tr>
@@ -1619,30 +1619,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/mo-stock" title="Altria">Altria</a>						</td>
 						<td class="text-right">
-42.18<br />
-42.18						</td>
+42.94<br />
+42.94						</td>
 						<td class="text-right">
-42.05<br />
-42.90						</td>
+0.00<br />
+0.00						</td>
 						<td >
 <div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorRed">-0.72</span><br />
-<span class="colorRed">-1.68%</span>						</td>
+<span class="colorRed">-0.84</span><br />
+<span class="colorRed">-1.92%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorRed">-0.37</span><br />
-<span class="colorRed">-0.85%</span>						</td>
+<span class="colorGreen">2.24</span><br />
+<span class="colorGreen">5.48%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">1.16</span><br />
-<span class="colorGreen">2.77%</span>						</td>
+<span class="colorGreen">2.24</span><br />
+<span class="colorGreen">5.48%</span>						</td>
 						<td class="text-right">
-<span class="colorRed">-7.07</span><br />
-<span class="colorRed">-14.13%</span>						</td>
+<span class="colorRed">-7.73</span><br />
+<span class="colorRed">-15.21%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,1331740,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Altria" onclick="window.location.href= '/chart/mo'" style='cursor:pointer' title="Altria 1-year Chart"/>						</td>
 				</tr>
@@ -1650,30 +1650,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/amzn-stock" title="Amazon">Amazon</a>						</td>
 						<td class="text-right">
-3,165.12<br />
-3,156.97						</td>
+3,206.18<br />
+3,201.65						</td>
 						<td class="text-right">
-3,130.56<br />
-3,187.99						</td>
+0.00<br />
+0.00						</td>
 						<td >
 <div class="image_icon_price_green"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">8.15</span><br />
-<span class="colorGreen">0.26%</span>						</td>
+<span class="colorGreen">4.53</span><br />
+<span class="colorGreen">0.14%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/15/2020 08:00:00 PM UTC-0500</span><br />
-16.12.2020						</td>
+<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/21/2020 08:00:00 PM UTC-0500</span><br />
+22.12.2020						</td>
 						<td class="text-right">
-<span class="colorRed">-14.73</span><br />
-<span class="colorRed">-0.47%</span>						</td>
+<span class="colorGreen">232.23</span><br />
+<span class="colorGreen">7.72%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">556.47</span><br />
-<span class="colorGreen">21.87%</span>						</td>
+<span class="colorGreen">599.98</span><br />
+<span class="colorGreen">22.72%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">1,341.16</span><br />
-<span class="colorGreen">76.19%</span>						</td>
+<span class="colorGreen">1,450.30</span><br />
+<span class="colorGreen">80.99%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,645156,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Amazon" onclick="window.location.href= '/chart/amzn'" style='cursor:pointer' title="Amazon 1-year Chart"/>						</td>
 				</tr>
@@ -1681,30 +1681,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/amd-stock" title="AMD (Advanced Micro Devices) ">AMD (Advanced Micro Devices) </a>						</td>
 						<td class="text-right">
-97.12<br />
-94.78						</td>
+93.23<br />
+95.92						</td>
 						<td class="text-right">
-95.45<br />
-97.98						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">2.34</span><br />
-<span class="colorGreen">2.47%</span>						</td>
+<span class="colorRed">-2.69</span><br />
+<span class="colorRed">-2.80%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/15/2020 08:00:00 PM UTC-0500</span><br />
-16.12.2020						</td>
+<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/21/2020 08:00:00 PM UTC-0500</span><br />
+22.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">15.32</span><br />
-<span class="colorGreen">20.07%</span>						</td>
+<span class="colorGreen">20.30</span><br />
+<span class="colorGreen">26.52%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">38.16</span><br />
-<span class="colorGreen">71.33%</span>						</td>
+<span class="colorGreen">42.30</span><br />
+<span class="colorGreen">77.54%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">49.07</span><br />
-<span class="colorGreen">115.21%</span>						</td>
+<span class="colorGreen">54.08</span><br />
+<span class="colorGreen">126.44%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,903491,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="AMD (Advanced Micro Devices) " onclick="window.location.href= '/chart/amd'" style='cursor:pointer' title="AMD (Advanced Micro Devices)  1-year Chart"/>						</td>
 				</tr>
@@ -1712,30 +1712,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/aee-stock" title="Ameren">Ameren</a>						</td>
 						<td class="text-right">
-78.73<br />
-78.73						</td>
+77.08<br />
+77.08						</td>
 						<td class="text-right">
-76.96<br />
-79.23						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">1.49</span><br />
-<span class="colorGreen">1.93%</span>						</td>
+<span class="colorRed">-1.78</span><br />
+<span class="colorRed">-2.26%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">1.34</span><br />
-<span class="colorGreen">1.75%</span>						</td>
+<span class="colorGreen">0.38</span><br />
+<span class="colorGreen">0.49%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">2.94</span><br />
-<span class="colorGreen">3.93%</span>						</td>
+<span class="colorGreen">5.54</span><br />
+<span class="colorGreen">7.65%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">3.21</span><br />
-<span class="colorGreen">4.30%</span>						</td>
+<span class="colorGreen">2.39</span><br />
+<span class="colorGreen">3.16%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,832416,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Ameren" onclick="window.location.href= '/chart/aee'" style='cursor:pointer' title="Ameren 1-year Chart"/>						</td>
 				</tr>
@@ -1743,30 +1743,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/aal-stock" title="American Airlines">American Airlines</a>						</td>
 						<td class="text-right">
-17.01<br />
-16.70						</td>
+16.10<br />
+16.51						</td>
 						<td class="text-right">
-16.17<br />
-17.06						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">0.31</span><br />
-<span class="colorGreen">1.86%</span>						</td>
+<span class="colorRed">-0.41</span><br />
+<span class="colorRed">-2.48%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/15/2020 08:00:00 PM UTC-0500</span><br />
-16.12.2020						</td>
+<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/21/2020 08:00:00 PM UTC-0500</span><br />
+22.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">4.16</span><br />
-<span class="colorGreen">31.95%</span>						</td>
+<span class="colorGreen">3.23</span><br />
+<span class="colorGreen">23.70%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">0.14</span><br />
-<span class="colorGreen">0.82%</span>						</td>
+<span class="colorRed">-0.12</span><br />
+<span class="colorRed">-0.71%</span>						</td>
 						<td class="text-right">
-<span class="colorRed">-9.84</span><br />
-<span class="colorRed">-36.44%</span>						</td>
+<span class="colorRed">-11.42</span><br />
+<span class="colorRed">-40.38%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,22053992,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="American Airlines" onclick="window.location.href= '/chart/aal'" style='cursor:pointer' title="American Airlines 1-year Chart"/>						</td>
 				</tr>
@@ -1774,30 +1774,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/aep-stock" title="American Electric Power">American Electric Power</a>						</td>
 						<td class="text-right">
-84.29<br />
-82.21						</td>
+82.12<br />
+83.29						</td>
 						<td class="text-right">
-82.21<br />
-84.43						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">2.08</span><br />
-<span class="colorGreen">2.53%</span>						</td>
+<span class="colorRed">-1.17</span><br />
+<span class="colorRed">-1.40%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/15/2020 08:00:00 PM UTC-0500</span><br />
-16.12.2020						</td>
+<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/21/2020 08:00:00 PM UTC-0500</span><br />
+22.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">5.08</span><br />
-<span class="colorGreen">6.47%</span>						</td>
+<span class="colorGreen">2.79</span><br />
+<span class="colorGreen">3.49%</span>						</td>
 						<td class="text-right">
-<span class="colorRed">-1.77</span><br />
-<span class="colorRed">-2.07%</span>						</td>
+<span class="colorGreen">0.58</span><br />
+<span class="colorGreen">0.71%</span>						</td>
 						<td class="text-right">
-<span class="colorRed">-8.34</span><br />
-<span class="colorRed">-9.07%</span>						</td>
+<span class="colorRed">-10.39</span><br />
+<span class="colorRed">-11.15%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,905988,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="American Electric Power" onclick="window.location.href= '/chart/aep'" style='cursor:pointer' title="American Electric Power 1-year Chart"/>						</td>
 				</tr>
@@ -1805,30 +1805,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/axp-stock" title="American Express">American Express</a>						</td>
 						<td class="text-right">
-119.10<br />
-119.10						</td>
+116.41<br />
+116.41						</td>
 						<td class="text-right">
-115.60<br />
-119.30						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">1.74</span><br />
-<span class="colorGreen">1.48%</span>						</td>
+<span class="colorRed">-1.10</span><br />
+<span class="colorRed">-0.94%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">18.48</span><br />
-<span class="colorGreen">17.88%</span>						</td>
+<span class="colorGreen">14.34</span><br />
+<span class="colorGreen">13.70%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">23.24</span><br />
-<span class="colorGreen">23.57%</span>						</td>
+<span class="colorGreen">15.04</span><br />
+<span class="colorGreen">14.47%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">1.20</span><br />
-<span class="colorGreen">0.99%</span>						</td>
+<span class="colorRed">-5.95</span><br />
+<span class="colorRed">-4.76%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,906153,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="American Express" onclick="window.location.href= '/chart/axp'" style='cursor:pointer' title="American Express 1-year Chart"/>						</td>
 				</tr>
@@ -1836,30 +1836,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/aig-stock" title="American International Group (AIG)">American International Group (AIG)</a>						</td>
 						<td class="text-right">
-38.54<br />
-38.54						</td>
+37.37<br />
+37.37						</td>
 						<td class="text-right">
-37.65<br />
-38.86						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">0.38</span><br />
-<span class="colorGreen">1.00%</span>						</td>
+<span class="colorRed">-0.11</span><br />
+<span class="colorRed">-0.29%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">11.78</span><br />
-<span class="colorGreen">41.83%</span>						</td>
+<span class="colorGreen">9.62</span><br />
+<span class="colorGreen">33.52%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">4.78</span><br />
-<span class="colorGreen">13.59%</span>						</td>
+<span class="colorGreen">6.04</span><br />
+<span class="colorGreen">18.71%</span>						</td>
 						<td class="text-right">
-<span class="colorRed">-11.14</span><br />
-<span class="colorRed">-21.81%</span>						</td>
+<span class="colorRed">-13.47</span><br />
+<span class="colorRed">-26.01%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,10315741,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="American International Group (AIG)" onclick="window.location.href= '/chart/aig'" style='cursor:pointer' title="American International Group (AIG) 1-year Chart"/>						</td>
 				</tr>
@@ -1867,30 +1867,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/amt-stock" title="American Tower">American Tower</a>						</td>
 						<td class="text-right">
-217.25<br />
-217.25						</td>
+219.78<br />
+219.78						</td>
 						<td class="text-right">
-215.63<br />
-218.36						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">0.53</span><br />
-<span class="colorGreen">0.24%</span>						</td>
+<span class="colorRed">-1.74</span><br />
+<span class="colorRed">-0.79%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorRed">-28.94</span><br />
-<span class="colorRed">-11.65%</span>						</td>
+<span class="colorRed">-31.11</span><br />
+<span class="colorRed">-12.41%</span>						</td>
 						<td class="text-right">
-<span class="colorRed">-45.90</span><br />
-<span class="colorRed">-17.30%</span>						</td>
+<span class="colorRed">-44.35</span><br />
+<span class="colorRed">-16.80%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">9.44</span><br />
-<span class="colorGreen">4.50%</span>						</td>
+<span class="colorGreen">7.69</span><br />
+<span class="colorGreen">3.63%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,14546493,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="American Tower" onclick="window.location.href= '/chart/amt'" style='cursor:pointer' title="American Tower 1-year Chart"/>						</td>
 				</tr>
@@ -1898,30 +1898,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/awk-stock" title="American Water Works">American Water Works</a>						</td>
 						<td class="text-right">
-152.99<br />
-152.99						</td>
+149.11<br />
+149.11						</td>
 						<td class="text-right">
-148.97<br />
-153.24						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">4.44</span><br />
-<span class="colorGreen">2.99%</span>						</td>
+<span class="colorRed">-1.13</span><br />
+<span class="colorRed">-0.75%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">7.70</span><br />
-<span class="colorGreen">5.47%</span>						</td>
+<span class="colorGreen">9.35</span><br />
+<span class="colorGreen">6.63%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">17.41</span><br />
-<span class="colorGreen">13.28%</span>						</td>
+<span class="colorGreen">20.51</span><br />
+<span class="colorGreen">15.79%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">26.12</span><br />
-<span class="colorGreen">21.35%</span>						</td>
+<span class="colorGreen">29.47</span><br />
+<span class="colorGreen">24.38%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,3382941,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="American Water Works" onclick="window.location.href= '/chart/awk'" style='cursor:pointer' title="American Water Works 1-year Chart"/>						</td>
 				</tr>
@@ -1929,30 +1929,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/amp-stock" title="Ameriprise Financial">Ameriprise Financial</a>						</td>
 						<td class="text-right">
-190.77<br />
-190.77						</td>
+186.76<br />
+186.76						</td>
 						<td class="text-right">
-189.80<br />
-193.14						</td>
+0.00<br />
+0.00						</td>
 						<td >
 <div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorRed">-0.22</span><br />
-<span class="colorRed">-0.12%</span>						</td>
+<span class="colorRed">-0.18</span><br />
+<span class="colorRed">-0.10%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">43.17</span><br />
-<span class="colorGreen">28.77%</span>						</td>
+<span class="colorGreen">32.74</span><br />
+<span class="colorGreen">20.85%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">39.19</span><br />
-<span class="colorGreen">25.44%</span>						</td>
+<span class="colorGreen">40.05</span><br />
+<span class="colorGreen">26.76%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">28.03</span><br />
-<span class="colorGreen">16.97%</span>						</td>
+<span class="colorGreen">22.40</span><br />
+<span class="colorGreen">13.39%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,2261863,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Ameriprise Financial" onclick="window.location.href= '/chart/amp'" style='cursor:pointer' title="Ameriprise Financial 1-year Chart"/>						</td>
 				</tr>
@@ -1960,30 +1960,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/abc-stock" title="AmerisourceBergen">AmerisourceBergen</a>						</td>
 						<td class="text-right">
-99.03<br />
-99.03						</td>
+97.67<br />
+97.67						</td>
 						<td class="text-right">
-97.56<br />
-99.28						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">1.91</span><br />
-<span class="colorGreen">1.97%</span>						</td>
+<span class="colorRed">-0.94</span><br />
+<span class="colorRed">-0.95%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">6.84</span><br />
-<span class="colorGreen">7.26%</span>						</td>
+<span class="colorGreen">1.56</span><br />
+<span class="colorGreen">1.61%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">4.16</span><br />
-<span class="colorGreen">4.29%</span>						</td>
+<span class="colorRed">-1.78</span><br />
+<span class="colorRed">-1.78%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">14.35</span><br />
-<span class="colorGreen">16.54%</span>						</td>
+<span class="colorGreen">15.22</span><br />
+<span class="colorGreen">18.30%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,1212868,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="AmerisourceBergen" onclick="window.location.href= '/chart/abc'" style='cursor:pointer' title="AmerisourceBergen 1-year Chart"/>						</td>
 				</tr>
@@ -1991,30 +1991,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/ame-stock" title="Ametek">Ametek</a>						</td>
 						<td class="text-right">
-117.79<br />
-117.79						</td>
+118.11<br />
+118.11						</td>
 						<td class="text-right">
-116.26<br />
-118.58						</td>
+0.00<br />
+0.00						</td>
 						<td >
 <div class="image_icon_price_green"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">1.49</span><br />
-<span class="colorGreen">1.28%</span>						</td>
+<span class="colorGreen">0.01</span><br />
+<span class="colorGreen">0.01%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">20.65</span><br />
-<span class="colorGreen">21.05%</span>						</td>
+<span class="colorGreen">14.45</span><br />
+<span class="colorGreen">14.12%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">25.61</span><br />
-<span class="colorGreen">27.49%</span>						</td>
+<span class="colorGreen">26.80</span><br />
+<span class="colorGreen">29.78%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">20.68</span><br />
-<span class="colorGreen">21.08%</span>						</td>
+<span class="colorGreen">17.58</span><br />
+<span class="colorGreen">17.72%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,681997,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Ametek" onclick="window.location.href= '/chart/ame'" style='cursor:pointer' title="Ametek 1-year Chart"/>						</td>
 				</tr>
@@ -2022,30 +2022,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/amgn-stock" title="Amgen">Amgen</a>						</td>
 						<td class="text-right">
-230.53<br />
-229.46						</td>
+227.31<br />
+228.49						</td>
 						<td class="text-right">
-227.07<br />
-231.23						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">1.07</span><br />
-<span class="colorGreen">0.47%</span>						</td>
+<span class="colorRed">-1.18</span><br />
+<span class="colorRed">-0.52%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/15/2020 08:00:00 PM UTC-0500</span><br />
-16.12.2020						</td>
+<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/21/2020 08:00:00 PM UTC-0500</span><br />
+22.12.2020						</td>
 						<td class="text-right">
-<span class="colorRed">-15.05</span><br />
-<span class="colorRed">-6.19%</span>						</td>
+<span class="colorRed">-19.64</span><br />
+<span class="colorRed">-7.92%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">10.26</span><br />
-<span class="colorGreen">4.71%</span>						</td>
+<span class="colorGreen">2.47</span><br />
+<span class="colorGreen">1.09%</span>						</td>
 						<td class="text-right">
-<span class="colorRed">-7.83</span><br />
-<span class="colorRed">-3.32%</span>						</td>
+<span class="colorRed">-14.40</span><br />
+<span class="colorRed">-5.93%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,907582,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Amgen" onclick="window.location.href= '/chart/amgn'" style='cursor:pointer' title="Amgen 1-year Chart"/>						</td>
 				</tr>
@@ -2053,30 +2053,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/aph-stock" title="Amphenol">Amphenol</a>						</td>
 						<td class="text-right">
-131.55<br />
-131.55						</td>
+129.36<br />
+129.36						</td>
 						<td class="text-right">
-130.11<br />
-131.68						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">1.25</span><br />
-<span class="colorGreen">0.96%</span>						</td>
+<span class="colorRed">-1.29</span><br />
+<span class="colorRed">-0.99%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">29.09</span><br />
-<span class="colorGreen">27.83%</span>						</td>
+<span class="colorGreen">20.98</span><br />
+<span class="colorGreen">19.09%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">33.28</span><br />
-<span class="colorGreen">33.17%</span>						</td>
+<span class="colorGreen">32.39</span><br />
+<span class="colorGreen">32.89%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">28.50</span><br />
-<span class="colorGreen">27.11%</span>						</td>
+<span class="colorGreen">23.96</span><br />
+<span class="colorGreen">22.41%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,647943,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Amphenol" onclick="window.location.href= '/chart/aph'" style='cursor:pointer' title="Amphenol 1-year Chart"/>						</td>
 				</tr>
@@ -2084,30 +2084,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/adi-stock" title="Analog Devices">Analog Devices</a>						</td>
 						<td class="text-right">
-144.06<br />
-142.33						</td>
+142.59<br />
+144.56						</td>
 						<td class="text-right">
-143.59<br />
-145.26						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">1.73</span><br />
-<span class="colorGreen">1.22%</span>						</td>
+<span class="colorRed">-1.97</span><br />
+<span class="colorRed">-1.36%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/15/2020 08:00:00 PM UTC-0500</span><br />
-16.12.2020						</td>
+<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/21/2020 08:00:00 PM UTC-0500</span><br />
+22.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">27.48</span><br />
-<span class="colorGreen">24.15%</span>						</td>
+<span class="colorGreen">27.31</span><br />
+<span class="colorGreen">23.65%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">22.87</span><br />
-<span class="colorGreen">19.31%</span>						</td>
+<span class="colorGreen">20.27</span><br />
+<span class="colorGreen">16.54%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">23.47</span><br />
-<span class="colorGreen">19.92%</span>						</td>
+<span class="colorGreen">23.98</span><br />
+<span class="colorGreen">20.18%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,907697,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Analog Devices" onclick="window.location.href= '/chart/adi'" style='cursor:pointer' title="Analog Devices 1-year Chart"/>						</td>
 				</tr>
@@ -2115,30 +2115,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/anss-stock" title="ANSYS">ANSYS</a>						</td>
 						<td class="text-right">
-343.03<br />
-343.39						</td>
+355.95<br />
+357.81						</td>
 						<td class="text-right">
-342.31<br />
-348.98						</td>
+0.00<br />
+0.00						</td>
 						<td >
 <div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorRed">-0.36</span><br />
-<span class="colorRed">-0.10%</span>						</td>
+<span class="colorRed">-1.86</span><br />
+<span class="colorRed">-0.52%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/15/2020 08:00:00 PM UTC-0500</span><br />
-16.12.2020						</td>
+<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/21/2020 08:00:00 PM UTC-0500</span><br />
+22.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">19.96</span><br />
-<span class="colorGreen">6.36%</span>						</td>
+<span class="colorGreen">34.74</span><br />
+<span class="colorGreen">11.25%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">63.77</span><br />
-<span class="colorGreen">23.59%</span>						</td>
+<span class="colorGreen">57.98</span><br />
+<span class="colorGreen">20.30%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">83.02</span><br />
-<span class="colorGreen">33.07%</span>						</td>
+<span class="colorGreen">86.55</span><br />
+<span class="colorGreen">33.67%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,492019,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="ANSYS" onclick="window.location.href= '/chart/anss'" style='cursor:pointer' title="ANSYS 1-year Chart"/>						</td>
 				</tr>
@@ -2146,30 +2146,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/antm-stock" title="Anthem">Anthem</a>						</td>
 						<td class="text-right">
-313.22<br />
-313.22						</td>
+306.38<br />
+306.38						</td>
 						<td class="text-right">
-310.56<br />
-314.58						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">3.12</span><br />
-<span class="colorGreen">1.01%</span>						</td>
+<span class="colorRed">-2.26</span><br />
+<span class="colorRed">-0.73%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">57.60</span><br />
-<span class="colorGreen">22.08%</span>						</td>
+<span class="colorGreen">47.24</span><br />
+<span class="colorGreen">17.96%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">29.90</span><br />
-<span class="colorGreen">10.36%</span>						</td>
+<span class="colorGreen">44.52</span><br />
+<span class="colorGreen">16.75%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">34.59</span><br />
-<span class="colorGreen">12.19%</span>						</td>
+<span class="colorGreen">19.50</span><br />
+<span class="colorGreen">6.71%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,26124340,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Anthem" onclick="window.location.href= '/chart/antm'" style='cursor:pointer' title="Anthem 1-year Chart"/>						</td>
 				</tr>
@@ -2177,30 +2177,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/apa-stock" title="Apache">Apache</a>						</td>
 						<td class="text-right">
-15.89<br />
-15.31						</td>
+14.85<br />
+15.33						</td>
 						<td class="text-right">
-15.07<br />
-16.09						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">0.58</span><br />
-<span class="colorGreen">3.79%</span>						</td>
+<span class="colorRed">-0.48</span><br />
+<span class="colorRed">-3.13%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/15/2020 08:00:00 PM UTC-0500</span><br />
-16.12.2020						</td>
+<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/21/2020 08:00:00 PM UTC-0500</span><br />
+22.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">3.01</span><br />
-<span class="colorGreen">25.06%</span>						</td>
+<span class="colorGreen">3.38</span><br />
+<span class="colorGreen">27.21%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">0.19</span><br />
-<span class="colorGreen">1.28%</span>						</td>
+<span class="colorGreen">1.91</span><br />
+<span class="colorGreen">13.75%</span>						</td>
 						<td class="text-right">
-<span class="colorRed">-5.91</span><br />
-<span class="colorRed">-28.24%</span>						</td>
+<span class="colorRed">-6.67</span><br />
+<span class="colorRed">-29.68%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,908137,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Apache" onclick="window.location.href= '/chart/apa'" style='cursor:pointer' title="Apache 1-year Chart"/>						</td>
 				</tr>
@@ -2208,30 +2208,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/aapl-stock" title="Apple">Apple</a>						</td>
 						<td class="text-right">
-127.88<br />
-121.78						</td>
+128.23<br />
+126.66						</td>
 						<td class="text-right">
-124.13<br />
-127.90						</td>
+0.00<br />
+0.00						</td>
 						<td >
 <div class="image_icon_price_green"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">6.10</span><br />
-<span class="colorGreen">5.01%</span>						</td>
+<span class="colorGreen">1.58</span><br />
+<span class="colorGreen">1.24%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/15/2020 08:00:00 PM UTC-0500</span><br />
-16.12.2020						</td>
+<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/21/2020 08:00:00 PM UTC-0500</span><br />
+22.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">11.24</span><br />
-<span class="colorGreen">10.04%</span>						</td>
+<span class="colorGreen">17.47</span><br />
+<span class="colorGreen">15.83%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">38.54</span><br />
-<span class="colorGreen">45.50%</span>						</td>
+<span class="colorGreen">39.91</span><br />
+<span class="colorGreen">45.41%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">55.38</span><br />
-<span class="colorGreen">81.60%</span>						</td>
+<span class="colorGreen">57.71</span><br />
+<span class="colorGreen">82.32%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,908440,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Apple" onclick="window.location.href= '/chart/aapl'" style='cursor:pointer' title="Apple 1-year Chart"/>						</td>
 				</tr>
@@ -2239,61 +2239,92 @@ Chart					</th>
 						<td >
 <a href="/stocks/amat-stock" title="Applied Materials">Applied Materials</a>						</td>
 						<td class="text-right">
-88.47<br />
-88.50						</td>
+86.41<br />
+86.09						</td>
 						<td class="text-right">
-87.96<br />
-90.60						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_red"></div>						</td>
+<div class="image_icon_price_green"></div>						</td>
 						<td class="text-right">
-<span class="colorRed">-0.03</span><br />
-<span class="colorRed">-0.03%</span>						</td>
+<span class="colorGreen">0.32</span><br />
+<span class="colorGreen">0.37%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/15/2020 08:00:00 PM UTC-0500</span><br />
-16.12.2020						</td>
+<span>08:00 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/21/2020 08:00:00 PM UTC-0500</span><br />
+22.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">32.89</span><br />
-<span class="colorGreen">59.80%</span>						</td>
+<span class="colorGreen">32.21</span><br />
+<span class="colorGreen">57.17%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">31.34</span><br />
-<span class="colorGreen">55.42%</span>						</td>
+<span class="colorGreen">28.55</span><br />
+<span class="colorGreen">47.58%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">27.53</span><br />
-<span class="colorGreen">45.61%</span>						</td>
+<span class="colorGreen">27.76</span><br />
+<span class="colorGreen">45.67%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,908542,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Applied Materials" onclick="window.location.href= '/chart/amat'" style='cursor:pointer' title="Applied Materials 1-year Chart"/>						</td>
 				</tr>
 				<tr>
 						<td >
-<a href="/stocks/ajg-stock" title="Arthur J Gallagher &">Arthur J Gallagher &</a>						</td>
+<a href="/stocks/aptv-stock" title="Aptiv (ex Delphi Automotive">Aptiv (ex Delphi Automotive</a>						</td>
 						<td class="text-right">
-123.63<br />
-123.63						</td>
+123.32<br />
+123.32						</td>
 						<td class="text-right">
-121.48<br />
-123.88						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">3.13</span><br />
-<span class="colorGreen">2.60%</span>						</td>
+<span class="colorRed">-0.98</span><br />
+<span class="colorRed">-0.79%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:00 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorGreen">15.55</span><br />
-<span class="colorGreen">15.26%</span>						</td>
+<span class="colorGreen">39.55</span><br />
+<span class="colorGreen">47.48%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">17.07</span><br />
-<span class="colorGreen">17.00%</span>						</td>
+<span class="colorGreen">46.79</span><br />
+<span class="colorGreen">61.53%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">23.60</span><br />
-<span class="colorGreen">25.14%</span>						</td>
+<span class="colorGreen">27.00</span><br />
+<span class="colorGreen">28.17%</span>						</td>
+						<td class="text-right">
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,13108235,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Aptiv (ex Delphi Automotive" onclick="window.location.href= '/chart/aptv'" style='cursor:pointer' title="Aptiv (ex Delphi Automotive 1-year Chart"/>						</td>
+				</tr>
+				<tr>
+						<td >
+<a href="/stocks/ajg-stock" title="Arthur J Gallagher &">Arthur J Gallagher &</a>						</td>
+						<td class="text-right">
+125.00<br />
+125.00						</td>
+						<td class="text-right">
+0.00<br />
+0.00						</td>
+						<td >
+<div class="image_icon_price_red"></div>						</td>
+						<td class="text-right">
+<span class="colorRed">-0.32</span><br />
+<span class="colorRed">-0.26%</span>						</td>
+						<td >
+<div style="width:0px;" class="performanceBarNegative"></div>						</td>
+						<td class="text-right">
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:00 PM UTC-0500</span><br />
+21.12.2020						</td>
+						<td class="text-right">
+<span class="colorGreen">22.74</span><br />
+<span class="colorGreen">21.93%</span>						</td>
+						<td class="text-right">
+<span class="colorGreen">28.10</span><br />
+<span class="colorGreen">28.57%</span>						</td>
+						<td class="text-right">
+<span class="colorGreen">30.78</span><br />
+<span class="colorGreen">32.17%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,932379,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="Arthur J Gallagher &" onclick="window.location.href= '/chart/ajg'" style='cursor:pointer' title="Arthur J Gallagher & 1-year Chart"/>						</td>
 				</tr>
@@ -2301,30 +2332,30 @@ Chart					</th>
 						<td >
 <a href="/stocks/spgi-stock" title="S&P Global">S&P Global</a>						</td>
 						<td class="text-right">
-323.84<br />
-323.84						</td>
+319.58<br />
+319.58						</td>
 						<td class="text-right">
-323.32<br />
-326.68						</td>
+0.00<br />
+0.00						</td>
 						<td >
-<div class="image_icon_price_green"></div>						</td>
+<div class="image_icon_price_red"></div>						</td>
 						<td class="text-right">
-<span class="colorGreen">0.16</span><br />
-<span class="colorGreen">0.05%</span>						</td>
+<span class="colorRed">-2.92</span><br />
+<span class="colorRed">-0.91%</span>						</td>
 						<td >
 <div style="width:0px;" class="performanceBarNegative"></div>						</td>
 						<td class="text-right">
-<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/16/2020 04:15:01 PM UTC-0500</span><br />
-15.12.2020						</td>
+<span>04:15 PM</span><span style="display:none" rel="localdatetime" format="hh:mm tt">12/22/2020 04:15:01 PM UTC-0500</span><br />
+21.12.2020						</td>
 						<td class="text-right">
-<span class="colorRed">-17.20</span><br />
-<span class="colorRed">-4.99%</span>						</td>
+<span class="colorRed">-30.86</span><br />
+<span class="colorRed">-8.77%</span>						</td>
 						<td class="text-right">
-<span class="colorRed">-3.90</span><br />
-<span class="colorRed">-1.18%</span>						</td>
+<span class="colorRed">-5.45</span><br />
+<span class="colorRed">-1.67%</span>						</td>
 						<td class="text-right">
-<span class="colorGreen">55.62</span><br />
-<span class="colorGreen">20.47%</span>						</td>
+<span class="colorGreen">49.31</span><br />
+<span class="colorGreen">18.16%</span>						</td>
 						<td class="text-right">
 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazy" data-original="https://pproxy.markets.businessinsider.com/cst/MarketsInsiderV2/Share/chart.aspx?instruments=13,32303352,13,814&style=miniweiss5025&period=OneYear&timezone=Eastern Standard Time" alt="S&P Global" onclick="window.location.href= '/chart/spgi'" style='cursor:pointer' title="S&P Global 1-year Chart"/>						</td>
 				</tr>
@@ -2487,10 +2518,10 @@ Chart					</th>
 
 
 
-<script src="/Content/Scripts/MDSnG/libs/socket.io.js?v=d825b98a"></script>
-<script src="/Content/Scripts/MDSnG/Config.min.js?v=d825b98a"></script>
-<script src="/Content/Scripts/MDSnG/min/clientApiCore.min.js?v=d825b98a"></script>
-<script src="/Content/Scripts/MDSnG/min/clientApiLibs.min.js?v=d825b98a"></script>
+<script src="/Content/Scripts/MDSnG/libs/socket.io.js?v=5a8d9f7f"></script>
+<script src="/Content/Scripts/MDSnG/Config.min.js?v=5a8d9f7f"></script>
+<script src="/Content/Scripts/MDSnG/min/clientApiCore.min.js?v=5a8d9f7f"></script>
+<script src="/Content/Scripts/MDSnG/min/clientApiLibs.min.js?v=5a8d9f7f"></script>
 
 
 <script>
@@ -2542,6 +2573,6 @@ Chart					</th>
 			*/
 		}
 	</script>
-<script async="async" src="/Content/Scripts/web-push/init.min.js?v=d825b98a"></script>
+<script async="async" src="/Content/Scripts/web-push/init.min.js?v=5a8d9f7f"></script>
 </body>
 </html>

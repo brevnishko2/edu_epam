@@ -29,7 +29,7 @@
 <meta name="Copyright" content="finanzen.net GmbH" />
 <meta name="Robots" content="INDEX,FOLLOW" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" /><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"d362edb6e0","applicationID":"25947051","transactionName":"NVYGNRRQDxAAW0RaXAwcKTclHjILAEpVQHANXRATCV0NBhMXeV1XB0s=","queueTime":70,"applicationTime":564,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"d362edb6e0",applicationID:"25947051"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" /><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"d362edb6e0","applicationID":"25947051","transactionName":"NVYGNRRQDxAAW0RaXAwcKTclHjILAEpVQHANXRATCV0NBhMXeV1XB0s=","queueTime":0,"applicationTime":643,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"d362edb6e0",applicationID:"25947051"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
 <meta name="page-topic" content="Finanzen" />
 <meta name="page-type" content="Kommerzielle Homepage" />
 <meta name="audience" content="Alle" />
@@ -70,7 +70,7 @@
 <link rel="preload" href="/Content/dist/fonts/TiemposTextApp-BoldItalic.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="/Content/dist/fonts/TiemposTextApp-Italic.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="/Content/dist/fonts/TiemposTextApp-Regular.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="/Content/dist/fonts/icon.eot?v=d825b98a" as="font" type="font/eot" crossorigin>
+<link rel="preload" href="/Content/dist/fonts/icon.eot?v=5a8d9f7f" as="font" type="font/eot" crossorigin>
 <link rel="preload" href="/Content/dist/images/business-insider-logo.svg" as="image">
 <link rel="preload" href="/Content/dist/images/insider-intelligence-logo.svg" as="image">
 <link rel="preload" href="/Content/dist/images/insider-logo.svg" as="image">
@@ -93,8 +93,8 @@
 <link rel="dns-prefetch" href="//ping.chartbeat.net">
 <link rel="dns-prefetch" href="//static.chartbeat.com">
 	<!-- Stylesheet -->
-	<link href="/cache/css/style.min.css?v=d825b98a" rel="stylesheet" title="" type="text/css" />
-<link href="/Content/dist/styles.css?v=d825b98a" rel="stylesheet" title="" type="text/css" />
+	<link href="/cache/css/style.min.css?v=5a8d9f7f" rel="stylesheet" title="" type="text/css" />
+<link href="/Content/dist/styles.css?v=5a8d9f7f" rel="stylesheet" title="" type="text/css" />
 
 
 <noscript>
@@ -117,15 +117,15 @@
 
 
 
-<script src="/Content/Scripts/basic.min.js?v=d825b98a"></script>
-<script src="/Content/Scripts/MDSnG/libs/socket.io.js?v=d825b98a"></script>
-<script src="/Content/Scripts/MDSnG/Config.min.js?v=d825b98a"></script>
-<script src="/Content/Scripts/MDSnG/min/clientApiCore.min.js?v=d825b98a"></script>
-<script src="/Content/Scripts/MDSnG/min/clientApiLibs.min.js?v=d825b98a"></script>
+<script src="/Content/Scripts/basic.min.js?v=5a8d9f7f"></script>
+<script src="/Content/Scripts/MDSnG/libs/socket.io.js?v=5a8d9f7f"></script>
+<script src="/Content/Scripts/MDSnG/Config.min.js?v=5a8d9f7f"></script>
+<script src="/Content/Scripts/MDSnG/min/clientApiCore.min.js?v=5a8d9f7f"></script>
+<script src="/Content/Scripts/MDSnG/min/clientApiLibs.min.js?v=5a8d9f7f"></script>
 
 
 
-<script async="async" defer="defer" src="/Content/dist/scripts.js?v=d825b98a"></script>
+<script async="async" defer="defer" src="/Content/dist/scripts.js?v=5a8d9f7f"></script>
 
 <script>
 		var FinandoJsEnvironment = {  VersionNumber : "7", CurrencySeparator : ",", RegexForDateValidation : /^\d{1,2}\/\d{1,2}\/\d{4}$/, RegexForEmailValidation : /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/ }
@@ -154,7 +154,7 @@
   window.loadTinpass = false;
 
   // general time informations
-  timestamp = '202012170034133896';
+  timestamp = '202012221355567108';
   utcTimeOffsetToApplication = '-5';
   isApplicationTimeByUser = 'False';
 
@@ -198,7 +198,7 @@
     </style>
 </noscript>
 
-	<script src="/Content/Scripts/vue-2-6-12.js?v=d825b98a"></script><script src="/Content/Scripts/axios-0-19-2.js?v=d825b98a"></script>
+	<script src="/Content/Scripts/vue-2-6-12.js?v=5a8d9f7f"></script><script src="/Content/Scripts/axios-0-19-2.js?v=5a8d9f7f"></script>
 
 	<!-- Sections for news and tracking -->
 		<link rel="canonical" href="https://markets.businessinsider.com/stocks/mmm-stock" />
@@ -355,11 +355,11 @@
   window.marketsNowSections.configs.push({
   	regionSelector: '#markets-now-section',
   	marketsNowSection:
-		{"isOutOfMarketTime":true,"showFutures":true,"caption":{"doesMarketOpenToday":false,"marketOpenTime":"0001-01-01T00:00:00","marketOpenTimeMillies":-32653400.711000003,"captionText":"U.S. markets closed","captionLink":"/premarket","isShown":true},"clientApiVariable":"clientApiHandler","values":[{"label":"DOW 30","mobileHiddenLabel":null,"url":"/index/dow_jones","premarketObject":{"label":"Dow","mobileHiddenLabel":"Futures","url":"/futures/dow-futures","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y0101313000998313","pushDataField":"Last","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":0.05303,"absoluteValue":16.00000,"currentValue":30187.00000,"previousClose":30161.00000,"roundedCurrent":0,"roundedAbsolute":0,"chartData":null,"RelativeValueText":"+0.05%","AbsoluteValueText":"+16.00","CurrentValueText":"30,187.00"},"valuePushApi":null,"relativeValue":-0.14825,"absoluteValue":-44.77000,"currentValue":30154.54000,"previousClose":30199.31000,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"+0.05%","AbsoluteValueText":"+16.00","CurrentValueText":"30,187.00"},{"label":"S&P 500","mobileHiddenLabel":null,"url":"/index/s&p_500","premarketObject":{"label":"S&P","mobileHiddenLabel":"Futures","url":"/futures/s&p-500-futures","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y01010EA000712045","pushDataField":"Last","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":0.06755,"absoluteValue":2.50000,"currentValue":3703.50000,"previousClose":3700.80000,"roundedCurrent":0,"roundedAbsolute":0,"chartData":null,"RelativeValueText":"+0.07%","AbsoluteValueText":"+2.50","CurrentValueText":"3,703.50"},"valuePushApi":null,"relativeValue":0.17729,"absoluteValue":6.55000,"currentValue":3701.17000,"previousClose":3694.62000,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"+0.07%","AbsoluteValueText":"+2.50","CurrentValueText":"3,703.50"},{"label":"NASDAQ","mobileHiddenLabel":"100","url":"/index/nasdaq_100","premarketObject":{"label":"NASDAQ","mobileHiddenLabel":"Futures","url":"/futures/nasdaq-100-futures","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y01010EA000821881","pushDataField":"Last","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":0.07102,"absoluteValue":9.00000,"currentValue":12681.00000,"previousClose":12665.25000,"roundedCurrent":0,"roundedAbsolute":0,"chartData":null,"RelativeValueText":"+0.07%","AbsoluteValueText":"+9.00","CurrentValueText":"12,681.00"},"valuePushApi":null,"relativeValue":0.57353,"absoluteValue":72.24181,"currentValue":12668.16339,"previousClose":12595.92158,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"+0.07%","AbsoluteValueText":"+9.00","CurrentValueText":"12,681.00"},{"label":"Gold","mobileHiddenLabel":null,"url":"/commodities/gold-price","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y0306000000XAU-USD","pushDataField":"Mid","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":-0.04557,"absoluteValue":-0.85000,"currentValue":1864.50000,"previousClose":1865.35000,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"-0.05%","AbsoluteValueText":"-0.85","CurrentValueText":"1,864.50"},{"label":"Oil (WTI)","mobileHiddenLabel":null,"url":"/commodities/oil-price?type=wti","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y01010080001594836-USD","pushDataField":"Last","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":-0.04177,"absoluteValue":-0.02000,"currentValue":47.86000,"previousClose":47.82000,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"-0.04%","AbsoluteValueText":"-0.02","CurrentValueText":"47.86"},{"label":"EUR/USD","mobileHiddenLabel":null,"url":"/currencies/eur-usd","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y0306000000EURUSD-USD","pushDataField":"Mid","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":-0.01230,"absoluteValue":-0.00015,"currentValue":1.21965,"previousClose":1.21980,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"-0.01%","AbsoluteValueText":"0.00","CurrentValueText":"1.22"}]}
+		{"isOutOfMarketTime":true,"showFutures":true,"caption":{"doesMarketOpenToday":true,"marketOpenTime":"2020-12-22T16:25:55.0892534Z","marketOpenTimeMillies":5644910.7466,"captionText":"U.S. markets open in 1 hour 34 minutes","captionLink":"/premarket","isShown":true},"clientApiVariable":"clientApiHandler","values":[{"label":"DOW 30","mobileHiddenLabel":null,"url":"/index/dow_jones","premarketObject":{"label":"Dow","mobileHiddenLabel":"Futures","url":"/futures/dow-futures","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y0101313000998313","pushDataField":"Last","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":0.13957,"absoluteValue":42.00000,"currentValue":30134.00000,"previousClose":30113.00000,"roundedCurrent":0,"roundedAbsolute":0,"chartData":null,"RelativeValueText":"+0.14%","AbsoluteValueText":"+42.00","CurrentValueText":"30,134.00"},"valuePushApi":null,"relativeValue":0.12393,"absoluteValue":37.40000,"currentValue":30216.45000,"previousClose":30216.45000,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"+0.14%","AbsoluteValueText":"+42.00","CurrentValueText":"30,134.00"},{"label":"S&P 500","mobileHiddenLabel":null,"url":"/index/s&p_500","premarketObject":{"label":"S&P","mobileHiddenLabel":"Futures","url":"/futures/s&p-500-futures","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y01010EA000712045","pushDataField":"Last","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":0.28500,"absoluteValue":10.50000,"currentValue":3694.75000,"previousClose":3685.75000,"roundedCurrent":0,"roundedAbsolute":0,"chartData":null,"RelativeValueText":"+0.29%","AbsoluteValueText":"+10.50","CurrentValueText":"3,694.75"},"valuePushApi":null,"relativeValue":-0.39063,"absoluteValue":-14.49000,"currentValue":3694.92000,"previousClose":3694.92000,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"+0.29%","AbsoluteValueText":"+10.50","CurrentValueText":"3,694.75"},{"label":"NASDAQ","mobileHiddenLabel":"100","url":"/index/nasdaq_100","premarketObject":{"label":"NASDAQ","mobileHiddenLabel":"Futures","url":"/futures/nasdaq-100-futures","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y01010EA000821881","pushDataField":"Last","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":0.49846,"absoluteValue":63.25000,"currentValue":12752.25000,"previousClose":12683.50000,"roundedCurrent":0,"roundedAbsolute":0,"chartData":null,"RelativeValueText":"+0.50%","AbsoluteValueText":"+63.25","CurrentValueText":"12,752.25"},"valuePushApi":null,"relativeValue":-0.37623,"absoluteValue":-47.92436,"currentValue":12690.25693,"previousClose":12690.25693,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"+0.50%","AbsoluteValueText":"+63.25","CurrentValueText":"12,752.25"},{"label":"Gold","mobileHiddenLabel":null,"url":"/commodities/gold-price","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y0306000000XAU-USD","pushDataField":"Mid","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":-0.21044,"absoluteValue":-3.95000,"currentValue":1873.10000,"previousClose":1877.05000,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"-0.21%","AbsoluteValueText":"-3.95","CurrentValueText":"1,873.10"},{"label":"Oil (WTI)","mobileHiddenLabel":null,"url":"/commodities/oil-price?type=wti","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y01010080001594836-USD","pushDataField":"Last","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":-0.56497,"absoluteValue":-0.27000,"currentValue":47.52000,"previousClose":47.74000,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"-0.56%","AbsoluteValueText":"-0.27","CurrentValueText":"47.52"},{"label":"EUR/USD","mobileHiddenLabel":null,"url":"/currencies/eur-usd","premarketObject":null,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y0306000000EURUSD-USD","pushDataField":"Mid","pushRoomIdentifier":null,"template":null,"table":7,"time":null},"relativeValue":0.08172,"absoluteValue":0.00100,"currentValue":1.22475,"previousClose":1.22375,"roundedCurrent":2,"roundedAbsolute":2,"chartData":null,"RelativeValueText":"+0.08%","AbsoluteValueText":"+0.00","CurrentValueText":"1.22"}]}
   });
 </script>
 <fieldset class="markets-now-section" id="markets-now-section">
-	<legend class="markets-now-section__legend"><a href="/premarket">U.S. markets closed</a></legend>
+	<legend class="markets-now-section__legend"><a href="/premarket">U.S. markets open in 1 hour 34 minutes</a></legend>
 	<div class="markets-now-section__row">
 			<div class="markets-now-section__market">
 				<div class="markets-now markets-now--positive ">
@@ -370,9 +370,9 @@
               <a href="#" class="markets-now__caption">Dow <span class="markets-now__sub-caption">Futures</span></a>
           </div>
 					<div class="markets-now__values">
-						<div class="markets-now__relative-value">+0.05%</div>
-						<div class="markets-now__absolute-value">+16.00</div>
-						<div class="markets-now__current-value">30,187.00</div>
+						<div class="markets-now__relative-value">+0.14%</div>
+						<div class="markets-now__absolute-value">+42.00</div>
+						<div class="markets-now__current-value">30,134.00</div>
 					</div>
 				</div>
 			</div>
@@ -385,9 +385,9 @@
               <a href="#" class="markets-now__caption">S&amp;P <span class="markets-now__sub-caption">Futures</span></a>
           </div>
 					<div class="markets-now__values">
-						<div class="markets-now__relative-value">+0.07%</div>
-						<div class="markets-now__absolute-value">+2.50</div>
-						<div class="markets-now__current-value">3,703.50</div>
+						<div class="markets-now__relative-value">+0.29%</div>
+						<div class="markets-now__absolute-value">+10.50</div>
+						<div class="markets-now__current-value">3,694.75</div>
 					</div>
 				</div>
 			</div>
@@ -400,9 +400,9 @@
               <a href="#" class="markets-now__caption">NASDAQ <span class="markets-now__sub-caption">Futures</span></a>
           </div>
 					<div class="markets-now__values">
-						<div class="markets-now__relative-value">+0.07%</div>
-						<div class="markets-now__absolute-value">+9.00</div>
-						<div class="markets-now__current-value">12,681.00</div>
+						<div class="markets-now__relative-value">+0.50%</div>
+						<div class="markets-now__absolute-value">+63.25</div>
+						<div class="markets-now__current-value">12,752.25</div>
 					</div>
 				</div>
 			</div>
@@ -415,9 +415,9 @@
               <a href="#" class="markets-now__caption">Gold <span class="markets-now__sub-caption"></span></a>
           </div>
 					<div class="markets-now__values">
-						<div class="markets-now__relative-value">-0.05%</div>
-						<div class="markets-now__absolute-value">-0.85</div>
-						<div class="markets-now__current-value">1,864.50</div>
+						<div class="markets-now__relative-value">-0.21%</div>
+						<div class="markets-now__absolute-value">-3.95</div>
+						<div class="markets-now__current-value">1,873.10</div>
 					</div>
 				</div>
 			</div>
@@ -430,14 +430,14 @@
               <a href="#" class="markets-now__caption">Oil (WTI) <span class="markets-now__sub-caption"></span></a>
           </div>
 					<div class="markets-now__values">
-						<div class="markets-now__relative-value">-0.04%</div>
-						<div class="markets-now__absolute-value">-0.02</div>
-						<div class="markets-now__current-value">47.86</div>
+						<div class="markets-now__relative-value">-0.56%</div>
+						<div class="markets-now__absolute-value">-0.27</div>
+						<div class="markets-now__current-value">47.52</div>
 					</div>
 				</div>
 			</div>
 			<div class="markets-now-section__market">
-				<div class="markets-now  markets-now--negative">
+				<div class="markets-now markets-now--positive ">
           <div class="markets-now__header">
               <div class="markets-now__up-or-down">
                   <div class="arrow"></div>
@@ -445,8 +445,8 @@
               <a href="#" class="markets-now__caption">EUR/USD <span class="markets-now__sub-caption"></span></a>
           </div>
 					<div class="markets-now__values">
-						<div class="markets-now__relative-value">-0.01%</div>
-						<div class="markets-now__absolute-value">0.00</div>
+						<div class="markets-now__relative-value">+0.08%</div>
+						<div class="markets-now__absolute-value">+0.00</div>
 						<div class="markets-now__current-value">1.22</div>
 					</div>
 				</div>
@@ -677,50 +677,53 @@
 	window.priceSections = window.priceSections || {};
 	window.priceSections.configs = window.priceSections.configs || [];
 	window.priceSections.configs.push({
-		watchListId: '#watch-list-ff47a4293a2a4667bff8c9610ccdb8c8',
-		plus500TradingId: '#plus-500-trading-button',
-		regionSelector: '#price-section-ff47a4293a2a4667bff8c9610ccdb8c8',
-		priceSection: {"label":"3M Co.","symbol":"MMM","instrumentId":402,"exchangeLabel":null,"currency":"","category":"Stock","tradingButton":null,"relativeValue":0.25654,"absoluteValue":0.45,"currentValue":175.86,"previousClose":175.41,"roundedCurrent":2,"roundedAbsolute":2,"roundedRelative":2,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y01013830001405105","pushDataField":"Mid","pushRoomIdentifier":"RY01013830001405105","template":"Mid","table":7,"time":null},"timePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y01013830001405105","pushDataField":"MidTimestamp","pushRoomIdentifier":"RY01013830001405105","template":"MidTimestamp","table":1,"time":"04:19:00 PM"},"plus500TradingLink":"https://www.plus500.com/Trading/Stocks?id=127452&tags=marketsinsider_stocksdetail_buysell&pl=2","preTimePushText":"After-market","postTimePushText":"BTT","timePushText":null,"time":"04:19:00 PM","isFuture":false}
+		watchListId: '#watch-list-0c5e48ff3f714c098888f145fd723878',
+		regionSelector: '#price-section-0c5e48ff3f714c098888f145fd723878',
+		priceSection: {"label":"3M Co.","symbol":"MMM","instrumentId":402,"exchangeLabel":null,"currency":"","category":"Stock","tradingButton":null,"relativeValue":-0.19884,"absoluteValue":-0.34927,"currentValue":175.31073,"previousClose":175.66,"roundedCurrent":2,"roundedAbsolute":2,"roundedRelative":2,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y01013830001405105","pushDataField":"Mid","pushRoomIdentifier":"RY01013830001405105","template":"Mid","table":7,"time":null},"timePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y01013830001405105","pushDataField":"MidTimestamp","pushRoomIdentifier":"RY01013830001405105","template":"MidTimestamp","table":1,"time":"07:56:46 AM"},"plus500TradingLink":"https://www.plus500.com/Trading/Stocks?id=127452&tags=marketsinsider_stocksdetail_buysell&pl=2","preTimePushText":"Pre-market","postTimePushText":"MI Indication","timePushText":null,"time":"07:56:46 AM","isFuture":false}
 	});
 
 	// TODO (at)if (Model.Future != null) not working, why?
 	window.priceSections.configs.push({
-		regionSelector: '#price-section-with-future-ff47a4293a2a4667bff8c9610ccdb8c8',
-		priceSection: {"label":"","symbol":"","instrumentId":402,"exchangeLabel":null,"currency":"","category":"","tradingButton":null,"relativeValue":0.41791,"absoluteValue":0.73,"currentValue":175.41,"previousClose":174.68,"roundedCurrent":2,"roundedAbsolute":2,"roundedRelative":2,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y01010410001405105","pushDataField":"Mid","pushRoomIdentifier":"RY01010410001405105","template":"Mid","table":7,"time":null},"timePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y01010410001405105","pushDataField":"MidTimestamp","pushRoomIdentifier":"RY01010410001405105","template":"MidTimestamp","table":1,"time":"04:15:00 PM"},"plus500TradingLink":null,"preTimePushText":null,"postTimePushText":"NYSE","timePushText":null,"time":"04:15:00 PM","isFuture":true}
+		regionSelector: '#price-section-with-future-0c5e48ff3f714c098888f145fd723878',
+		priceSection: {"label":"","symbol":"","instrumentId":402,"exchangeLabel":null,"currency":"","category":"","tradingButton":null,"relativeValue":-0.43079,"absoluteValue":-0.76,"currentValue":175.66,"previousClose":175.66,"roundedCurrent":2,"roundedAbsolute":2,"roundedRelative":2,"valuePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y01010410001405105","pushDataField":"Mid","pushRoomIdentifier":"RY01010410001405105","template":"Mid","table":7,"time":null},"timePushApi":{"pushApiLibrary":"clientApiHandler","pushIdentifier":"Y01010410001405105","pushDataField":"MidTimestamp","pushRoomIdentifier":"RY01010410001405105","template":"MidTimestamp","table":1,"time":"Official Close 12/21/2020"},"plus500TradingLink":null,"preTimePushText":null,"postTimePushText":"NYSE","timePushText":null,"time":"Official Close 12/21/2020","isFuture":true}
 	});
 </script>
 <div class="graviton">
 	<div class="price-section-with-button">
 		<div class="price-section-with-button__row">
-			<div class="price-section-with-button__price-section-col ">
-				<section id="price-section-ff47a4293a2a4667bff8c9610ccdb8c8" class="price-section">
+			<div class="price-section-with-button__price-section-col price-section--negative">
+				<section id="price-section-0c5e48ff3f714c098888f145fd723878" class="price-section">
 					<div class="price-section__row">
-                        <h1 class="price-section__identifiers">
-                            <span class="price-section__label">3M Co. </span>
-                            <span class="price-section__category">Stock <span>, MMM</span></span>
+						<h1 class="price-section__identifiers">
+							<span class="price-section__label">3M Co. </span>
+							<span class="price-section__category">Stock <span>, MMM</span></span>
 
-                        </h1>
-                        <div class="price-section__values">
-                            <span class="price-section__current-value">175.86</span>
-                            <span class="price-section__breakpoint"></span>
-                            <span class="price-section__absolute-value">+0.45</span>
-                            <span class="price-section__relative-value">+0.26%</span>
-                        </div>
-                        <div class="price-section__additionals">
-                            <span>After-market</span>
-                            <span>04:19:00 PM</span>
-                            <span>BTT</span>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <div class="price-section-with-button__price-section-button-col">
-                <div class="price-section-with-button__button-grid">
-                    <div class="price-section-with-button__button-row">
-                        <div class="price-section-with-button__button-col">
-                            <button id="watch-list-ff47a4293a2a4667bff8c9610ccdb8c8" class="button button--watchlist">Add to watchlist</button>
-                            <button id="plus-500-trading-button" class="button button--primary button--color-blue hidden" title="Plus500. 76.4% of retail CFD accounts lose money">Start Trading >></button>
-                            <div id="tradingButtonContainer" class="tradingBtnContainer hidden">
+						</h1>
+						<div class="price-section__values">
+							<span class="price-section__current-value">175.31</span>
+							<span class="price-section__breakpoint"></span>
+							<span class="price-section__absolute-value">
+-0.35
+							</span>
+							<span class="price-section__relative-value">
+-0.20%
+							</span>
+						</div>
+						<div class="price-section__additionals">
+							<span>Pre-market</span>
+							<span>07:56:46 AM</span>
+							<span>MI Indication</span>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="price-section-with-button__price-section-button-col">
+				<div class="price-section-with-button__button-grid">
+					<div class="price-section-with-button__button-row">
+						<div class="price-section-with-button__button-col">
+							<button id="watch-list-0c5e48ff3f714c098888f145fd723878" class="button button--watchlist">Add to watchlist</button>
+							<button data-plus-500 class="button button--primary button--color-blue hidden" title="Plus500. 76.4% of retail CFD accounts lose money">Start Trading >></button>
+							<div id="tradingButtonContainer" class="tradingBtnContainer hidden">
 
         <div class="htl-ad"
              data-unit="Markets-Insider/Stocks/Quote"
@@ -740,30 +743,35 @@
              data-refresh-secs="60"
              ></div>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                <div class="price-section-with-button__price-section-future-col ">
-                    <section id="price-section-with-future-ff47a4293a2a4667bff8c9610ccdb8c8" class="price-section price-section--future">
-                        <div class="price-section__row">
-                            <div class="price-section__values">
-                                <span class="price-section__current-value">175.41</span>
-                                <span class="price-section__breakpoint"></span>
-                                <span class="price-section__absolute-value">+0.73</span>
-                                <span class="price-section__relative-value">+0.42%</span>
-                            </div>
-                            <div class="price-section__additionals">
-                                <span></span>
-                                <span>04:15:00 PM</span>
-                                <span>NYSE</span>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-        </div>
-    </div>
+							</div>
+						</div>
+					</div>
+					<div data-plus-500 class="hidden price-section-with-button__button-row instrument-description plus-500-description grid--d-none grid--d-s-block">Plus500. 76.4% of retail CFD accounts lose money</div>
+				</div>
+			</div>
+				<div class="price-section-with-button__price-section-future-col price-section--negative">
+					<section id="price-section-with-future-0c5e48ff3f714c098888f145fd723878" class="price-section price-section--future">
+						<div class="price-section__row">
+							<div class="price-section__values">
+								<span class="price-section__current-value">175.66</span>
+								<span class="price-section__breakpoint"></span>
+								<span class="price-section__absolute-value">
+-0.76
+								</span>
+								<span class="price-section__relative-value">
+-0.43%
+								</span>
+							</div>
+							<div class="price-section__additionals">
+								<span></span>
+								<span>Official Close 12/21/2020</span>
+								<span>NYSE</span>
+							</div>
+						</div>
+					</section>
+				</div>
+		</div>
+	</div>
 </div>
 
 </div>
@@ -798,8 +806,8 @@
 <div id='lgPositionDetailChart'></div><div class='responsivePosition' id='DetailChart'>
 
 
-<script src="/Content/Scripts/Chart/chartiq/chartiq.min.js?v=d825b98a"></script>
-<script src="/Content/Scripts/Chart/chartiq/addOns.js?v=d825b98a"></script>
+<script src="/Content/Scripts/Chart/chartiq/chartiq.min.js?v=5a8d9f7f"></script>
+<script src="/Content/Scripts/Chart/chartiq/addOns.js?v=5a8d9f7f"></script>
 <style>
     .stx_mountain_chart {
         background: #01498a !important;
@@ -812,7 +820,7 @@
 
 
 <script>
-	var detailChartViewmodel = { "ChartSource" : "65", "ChartValor" : "1405105", "ChartExchange" : "65", "ChartCurrency" : "333", "TKData" : "65,1405105,65,333", "ChartData" : null, "intradayTkData" : "65,1405105,899,333", "InstrumentID" : 402, "InstrumentTypeID" : 3, "InstrumentType" : "Share", "StockMarkets" : { "NYSE" : "New York", "BTT" : "BATS Trading", "NYSE MKT" : "AMEX", "BAE" : "Baader Bank", "BER" : "Berlin", "BRX" : "BX Swiss", "DUS" : "Düsseldorf", "FSE" : "Frankfurt", "GVIE" : "GVIE", "HAM" : "Hamburg", "HAN" : "Hannover", "MUN" : "München", "MXK" : "Mexiko", "XETRA" : "XUS", "STU" : "Stuttgart", "SWX" : "Swiss Exchange", "TGT" : "Tradegate", "XQTX" : "XQTX" }, "Tabs" : [{ "Name" : "IntradayAvailability", "ShortName" : "Intraday" }, { "Name" : "OneWeek", "ShortName" : "1W" }, { "Name" : "OneMonth", "ShortName" : "1M" }, { "Name" : "ThreeMonths", "ShortName" : "3M" }, { "Name" : "SixMonths", "ShortName" : "6M" }, { "Name" : "YTD", "ShortName" : "YTD" }, { "Name" : "OneYear", "ShortName" : "1Y" }, { "Name" : "ThreeYears", "ShortName" : "3Y" }, { "Name" : "FiveYears", "ShortName" : "5Y" }, { "Name" : "TenYears", "ShortName" : "10Y" }, { "Name" : "Maximum", "ShortName" : "MAX" }], "PushIdentifier" : "Y01010410001405105", "PushDataField" : null, "StockUrl" : "/stocks/mmm/price", "Currency" : "USD", "StockMarketsExchanges" : [{ "TKData" : "65,1405105,65,333", "ExchangeName" : "New York", "ExchangeNameShort" : "NYSE" }, { "TKData" : "65,1405105,899,333", "ExchangeName" : "BATS Trading", "ExchangeNameShort" : "BTT" }, { "TKData" : "65,1405105,3319,333", "ExchangeName" : "Baader Bank", "ExchangeNameShort" : "BAE" }, { "TKData" : "65,1405105,18,333", "ExchangeName" : "Berlin-Bremen", "ExchangeNameShort" : "BER" }, { "TKData" : "65,1405105,1174,333", "ExchangeName" : "BX Swiss", "ExchangeNameShort" : "BRX" }, { "TKData" : "65,1405105,14,333", "ExchangeName" : "Düsseldorf", "ExchangeNameShort" : "DUS" }, { "TKData" : "65,1405105,13,333", "ExchangeName" : "Frankfurt", "ExchangeNameShort" : "FSE" }, { "TKData" : "65,1405105,1523,333", "ExchangeName" : "Vienna EX 3", "ExchangeNameShort" : "GVIE" }, { "TKData" : "65,1405105,17,333", "ExchangeName" : "Hamburg", "ExchangeNameShort" : "HAM" }, { "TKData" : "65,1405105,19,333", "ExchangeName" : "Hannover", "ExchangeNameShort" : "HAN" }, { "TKData" : "65,1405105,15,333", "ExchangeName" : "München", "ExchangeNameShort" : "MUN" }, { "TKData" : "65,1405105,80,333", "ExchangeName" : "MXK", "ExchangeNameShort" : "MXK" }, { "TKData" : "65,1405105,44,333", "ExchangeName" : "XETRA", "ExchangeNameShort" : "XETRA" }, { "TKData" : "65,1405105,16,333", "ExchangeName" : "Stuttgart", "ExchangeNameShort" : "STU" }, { "TKData" : "65,1405105,4,333", "ExchangeName" : "SIX SX", "ExchangeNameShort" : "SWX" }, { "TKData" : "65,1405105,6829,333", "ExchangeName" : "QUOTRIXDDORF", "ExchangeNameShort" : "XQTX" }], "InstrumentName" : "mmm-stock", "isOutOfMarketTime" : true, "isAmericanStock" : true, "isAsiaStock" : false, "intradayUrl" : "instruments=65,1405105,899,333&style=instrument_intraday_novolume&period=IntradayAvailability&timezone=Eastern Standard Time", "PreviousClose" : "174.68000", "AllwaysManipulatePreviuosClose" : false, "TabIdentifier" : null, "ChartNumber" : 0, "ActiveTab" : "OneYear", "HasIntradyData" : false, "Usedecimal" : false, "ShowTransferwiseIntegration" : false };
+	var detailChartViewmodel = { "ChartSource" : "65", "ChartValor" : "1405105", "ChartExchange" : "65", "ChartCurrency" : "333", "TKData" : "65,1405105,65,333", "ChartData" : null, "intradayTkData" : "65,1405105,899,333", "InstrumentID" : 402, "InstrumentTypeID" : 3, "InstrumentType" : "Share", "StockMarkets" : { "NYSE" : "New York", "BTT" : "BATS Trading", "NYSE MKT" : "AMEX", "BAE" : "Baader Bank", "BER" : "Berlin", "BRX" : "BX Swiss", "DUS" : "Düsseldorf", "FSE" : "Frankfurt", "GVIE" : "GVIE", "HAM" : "Hamburg", "HAN" : "Hannover", "MUN" : "München", "MXK" : "Mexiko", "NDN" : "NDN", "XETRA" : "XUS", "STU" : "Stuttgart", "SWX" : "Swiss Exchange", "TGT" : "Tradegate", "XQTX" : "XQTX" }, "Tabs" : [{ "Name" : "IntradayAvailability", "ShortName" : "Intraday" }, { "Name" : "OneWeek", "ShortName" : "1W" }, { "Name" : "OneMonth", "ShortName" : "1M" }, { "Name" : "ThreeMonths", "ShortName" : "3M" }, { "Name" : "SixMonths", "ShortName" : "6M" }, { "Name" : "YTD", "ShortName" : "YTD" }, { "Name" : "OneYear", "ShortName" : "1Y" }, { "Name" : "ThreeYears", "ShortName" : "3Y" }, { "Name" : "FiveYears", "ShortName" : "5Y" }, { "Name" : "TenYears", "ShortName" : "10Y" }, { "Name" : "Maximum", "ShortName" : "MAX" }], "PushIdentifier" : "Y01010410001405105", "PushDataField" : null, "StockUrl" : "/stocks/mmm/price", "Currency" : "USD", "StockMarketsExchanges" : [{ "TKData" : "65,1405105,65,333", "ExchangeName" : "New York", "ExchangeNameShort" : "NYSE" }, { "TKData" : "65,1405105,899,333", "ExchangeName" : "BATS Trading", "ExchangeNameShort" : "BTT" }, { "TKData" : "65,1405105,3319,333", "ExchangeName" : "Baader Bank", "ExchangeNameShort" : "BAE" }, { "TKData" : "65,1405105,18,333", "ExchangeName" : "Berlin-Bremen", "ExchangeNameShort" : "BER" }, { "TKData" : "65,1405105,1174,333", "ExchangeName" : "BX Swiss", "ExchangeNameShort" : "BRX" }, { "TKData" : "65,1405105,14,333", "ExchangeName" : "Düsseldorf", "ExchangeNameShort" : "DUS" }, { "TKData" : "65,1405105,13,333", "ExchangeName" : "Frankfurt", "ExchangeNameShort" : "FSE" }, { "TKData" : "65,1405105,1523,333", "ExchangeName" : "Vienna EX 3", "ExchangeNameShort" : "GVIE" }, { "TKData" : "65,1405105,17,333", "ExchangeName" : "Hamburg", "ExchangeNameShort" : "HAM" }, { "TKData" : "65,1405105,19,333", "ExchangeName" : "Hannover", "ExchangeNameShort" : "HAN" }, { "TKData" : "65,1405105,15,333", "ExchangeName" : "München", "ExchangeNameShort" : "MUN" }, { "TKData" : "65,1405105,80,333", "ExchangeName" : "MXK", "ExchangeNameShort" : "MXK" }, { "TKData" : "65,1405105,44,333", "ExchangeName" : "XETRA", "ExchangeNameShort" : "XETRA" }, { "TKData" : "65,1405105,16,333", "ExchangeName" : "Stuttgart", "ExchangeNameShort" : "STU" }, { "TKData" : "65,1405105,4,333", "ExchangeName" : "SIX SX", "ExchangeNameShort" : "SWX" }, { "TKData" : "65,1405105,6829,333", "ExchangeName" : "QUOTRIXDDORF", "ExchangeNameShort" : "XQTX" }], "InstrumentName" : "mmm-stock", "isOutOfMarketTime" : true, "isAmericanStock" : true, "isAsiaStock" : false, "intradayUrl" : "instruments=65,1405105,899,333&style=instrument_intraday_novolume&period=IntradayAvailability&timezone=Eastern Standard Time", "PreviousClose" : "175.66000", "AllwaysManipulatePreviuosClose" : false, "TabIdentifier" : null, "ChartNumber" : 0, "ActiveTab" : "OneYear", "HasIntradyData" : false, "Usedecimal" : false, "ShowTransferwiseIntegration" : false };
 	var utcOffset = -5;
 </script>
 
@@ -876,7 +884,7 @@
 </style>
     <link rel="stylesheet" href="/Content/Chart/finando-chartengine/styles.css">
     <app-root></app-root>
-<script src="/Content/Scripts/chartiq.addons.min.js?v=d825b98a"></script><script src="/Content/Scripts/Chart/chartiq/runtime.js?v=d825b98a"></script><script src="/Content/Scripts/Chart/chartiq/polyfills.js?v=d825b98a"></script><script src="/Content/Scripts/Chart/chartiq/scripts.js?v=d825b98a"></script><script src="/Content/Scripts/Chart/chartiq/main.js?v=d825b98a"></script>
+<script src="/Content/Scripts/chartiq.addons.min.js?v=5a8d9f7f"></script><script src="/Content/Scripts/Chart/chartiq/runtime.js?v=5a8d9f7f"></script><script src="/Content/Scripts/Chart/chartiq/polyfills.js?v=5a8d9f7f"></script><script src="/Content/Scripts/Chart/chartiq/scripts.js?v=5a8d9f7f"></script><script src="/Content/Scripts/Chart/chartiq/main.js?v=5a8d9f7f"></script>
 
 							<div class="spacer-50 mobile-spacer-25"></div>
 </div>						<span id="cposition_3"></span>
@@ -923,10 +931,36 @@
 			</h2>
 
 		<section class="instrument-stories">
+				<div class="instrument-stories__story instrument-stories__story--no-image">
+					<div class="instrument-stories__meta">
+						<span class="instrument-stories__source">Zacks</span>
+						<time class="instrument-stories__date" datetime="2020-21-12 23:50">14h</time>
+					</div>
+					<h3 class="instrument-stories__title">
+						<a class="instrument-stories__link" href="/news/stocks/3m-mmm-dips-more-than-broader-markets--what-you-should-know-9636998" >3M (MMM) Dips More Than Broader Markets: What You Should Know</a>
+					</h3>
+					<p class="instrument-stories__teaser">
+						<a class="instrument-stories__link" href="/news/stocks/3m-mmm-dips-more-than-broader-markets--what-you-should-know-9636998" ></a>
+					</p>
+					<div class="instrument-stories__clear"></div>
+				</div>
+				<div class="instrument-stories__story instrument-stories__story--no-image">
+					<div class="instrument-stories__meta">
+						<span class="instrument-stories__source">Forbes</span>
+						<time class="instrument-stories__date" datetime="2020-18-12 13:00">4d</time>
+					</div>
+					<h3 class="instrument-stories__title">
+						<a class="instrument-stories__link" href="/news/stocks/3m-stock-can-offer-better-gains-compared-to-medtronic-9629630" >3M Stock Can Offer Better Gains Compared To Medtronic</a>
+					</h3>
+					<p class="instrument-stories__teaser">
+						<a class="instrument-stories__link" href="/news/stocks/3m-stock-can-offer-better-gains-compared-to-medtronic-9629630" ></a>
+					</p>
+					<div class="instrument-stories__clear"></div>
+				</div>
 				<div class="instrument-stories__story ">
 					<div class="instrument-stories__meta">
 						<span class="instrument-stories__source">InvestorPlace</span>
-						<time class="instrument-stories__date" datetime="2020-16-12 19:21">5h</time>
+						<time class="instrument-stories__date" datetime="2020-16-12 19:21">6d</time>
 					</div>
 						<a class="instrument-stories__image-link" href="/news/stocks/4-large-cap-stocks-to-buy-years-end-1029900161" >
 							<img alt="" class="lazy instrument-stories__image" data-original="https://investorplace.com/wp-content/uploads/2020/08/bdx-stock-1-300x169.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
@@ -941,53 +975,27 @@
 				</div>
 				<div class="instrument-stories__story instrument-stories__story--no-image">
 					<div class="instrument-stories__meta">
+						<span class="instrument-stories__source">Zacks</span>
+						<time class="instrument-stories__date" datetime="2020-16-12 16:52">6d</time>
+					</div>
+					<h3 class="instrument-stories__title">
+						<a class="instrument-stories__link" href="/news/stocks/the-zacks-analyst-blog-highlights--coca-cola--oracle--chevron--boeing-and-3m-9621851" >The Zacks Analyst Blog Highlights: Coca-Cola, Oracle, Chevron, Boeing and 3M</a>
+					</h3>
+					<p class="instrument-stories__teaser">
+						<a class="instrument-stories__link" href="/news/stocks/the-zacks-analyst-blog-highlights--coca-cola--oracle--chevron--boeing-and-3m-9621851" ></a>
+					</p>
+					<div class="instrument-stories__clear"></div>
+				</div>
+				<div class="instrument-stories__story instrument-stories__story--no-image">
+					<div class="instrument-stories__meta">
 						<span class="instrument-stories__source">TechCrunch</span>
-						<time class="instrument-stories__date" datetime="2020-15-12 10:00">2d</time>
+						<time class="instrument-stories__date" datetime="2020-15-12 10:00">7d</time>
 					</div>
 					<h3 class="instrument-stories__title">
 						<a class="instrument-stories__link" href="/news/stocks/data-privacy-startup-exate-raises-&#163;2-3m-seed-led-by-outward-vc-9614187" >Data privacy startup eXate raises £2.3M Seed led by Outward VC</a>
 					</h3>
 					<p class="instrument-stories__teaser">
 						<a class="instrument-stories__link" href="/news/stocks/data-privacy-startup-exate-raises-&#163;2-3m-seed-led-by-outward-vc-9614187" ></a>
-					</p>
-					<div class="instrument-stories__clear"></div>
-				</div>
-				<div class="instrument-stories__story instrument-stories__story--no-image">
-					<div class="instrument-stories__meta">
-						<span class="instrument-stories__source">Zacks</span>
-						<time class="instrument-stories__date" datetime="2020-14-12 23:45">2d</time>
-					</div>
-					<h3 class="instrument-stories__title">
-						<a class="instrument-stories__link" href="/news/stocks/3m-mmm-dips-more-than-broader-markets--what-you-should-know-9613137" >3M (MMM) Dips More Than Broader Markets: What You Should Know</a>
-					</h3>
-					<p class="instrument-stories__teaser">
-						<a class="instrument-stories__link" href="/news/stocks/3m-mmm-dips-more-than-broader-markets--what-you-should-know-9613137" ></a>
-					</p>
-					<div class="instrument-stories__clear"></div>
-				</div>
-				<div class="instrument-stories__story instrument-stories__story--no-image">
-					<div class="instrument-stories__meta">
-						<span class="instrument-stories__source">MotleyFool</span>
-						<time class="instrument-stories__date" datetime="2020-14-12 20:53">2d</time>
-					</div>
-					<h3 class="instrument-stories__title">
-						<a class="instrument-stories__link" href="/news/stocks/3m-is-entering-2021-in-good-shape-9612639" >3M Is Entering 2021 in Good Shape</a>
-					</h3>
-					<p class="instrument-stories__teaser">
-						<a class="instrument-stories__link" href="/news/stocks/3m-is-entering-2021-in-good-shape-9612639" ></a>
-					</p>
-					<div class="instrument-stories__clear"></div>
-				</div>
-				<div class="instrument-stories__story instrument-stories__story--no-image">
-					<div class="instrument-stories__meta">
-						<span class="instrument-stories__source">MotleyFool</span>
-						<time class="instrument-stories__date" datetime="2020-14-12 17:29">2d</time>
-					</div>
-					<h3 class="instrument-stories__title">
-						<a class="instrument-stories__link" href="/news/stocks/dow-jones-rallies-as-vaccine-rolls-out;-analyst-cools-on-disney-stock;-3m-reports-8percent-november-sales-growth-9611927" >Dow Jones Rallies as Vaccine Rolls Out; Analyst Cools on Disney Stock; 3M Reports 8% November Sales Growth</a>
-					</h3>
-					<p class="instrument-stories__teaser">
-						<a class="instrument-stories__link" href="/news/stocks/dow-jones-rallies-as-vaccine-rolls-out;-analyst-cools-on-disney-stock;-3m-reports-8percent-november-sales-growth-9611927" ></a>
 					</p>
 					<div class="instrument-stories__clear"></div>
 				</div>
@@ -1040,7 +1048,7 @@
     window.historicalPrices.configs = window.historicalPrices.configs || [];
     window.historicalPrices.configs.push({
         regionSelector: '#historicPrices',
-        historicalPrices: {"instrumentName":"3M Co.","startDate":"Nov. 17 2020","endDate":"Dec. 17 2020","currentStockMarket":"BTT","instrumentIdentifier":"1405105","instrumentTypeName":"Valor","headerCells":["Date","Open","Close","Daily High","Daily Low","Volume"],"columns":["Date","Open","Close","High","Low","Volume"],"model":[{"Open":174.00000,"Close":174.78000,"High":175.06000,"Low":172.56000,"Volume":"138,946.00","Date":"12/15/20"},{"Open":174.09000,"Close":173.69000,"High":176.20000,"Low":172.96000,"Volume":"176,930.00","Date":"12/14/20"},{"Open":172.50000,"Close":174.06000,"High":174.63000,"Low":172.30000,"Volume":"116,087.00","Date":"12/11/20"},{"Open":175.00000,"Close":173.41000,"High":175.40000,"Low":172.69000,"Volume":"139,047.00","Date":"12/10/20"},{"Open":172.89000,"Close":175.32000,"High":175.62000,"Low":172.13000,"Volume":"148,064.00","Date":"12/09/20"},{"Open":169.50000,"Close":172.47000,"High":172.79000,"Low":169.50000,"Volume":"98,658.00","Date":"12/08/20"},{"Open":171.30000,"Close":170.06000,"High":172.46000,"Low":169.21000,"Volume":"136,894.00","Date":"12/07/20"},{"Open":171.87000,"Close":172.40000,"High":173.13000,"Low":171.59000,"Volume":"133,747.00","Date":"12/04/20"},{"Open":171.30000,"Close":171.85000,"High":174.00000,"Low":171.30000,"Volume":"136,070.00","Date":"12/03/20"},{"Open":170.52000,"Close":171.80000,"High":172.50000,"Low":170.20000,"Volume":"134,696.00","Date":"12/02/20"},{"Open":174.57000,"Close":171.00000,"High":175.64000,"Low":170.01000,"Volume":"221,110.00","Date":"12/01/20"},{"Open":176.02000,"Close":173.73000,"High":176.53000,"Low":172.71000,"Volume":"296,929.00","Date":"11/30/20"},{"Open":177.12000,"Close":176.79000,"High":179.60000,"Low":175.66000,"Volume":"67,052.00","Date":"11/27/20"},{"Open":177.08000,"Close":177.11000,"High":177.61000,"Low":175.45000,"Volume":"148,627.00","Date":"11/25/20"},{"Open":175.50000,"Close":177.12000,"High":177.22000,"Low":175.08000,"Volume":"177,270.00","Date":"11/24/20"},{"Open":173.54000,"Close":174.29000,"High":174.84000,"Low":173.00000,"Volume":"165,544.00","Date":"11/23/20"},{"Open":171.14000,"Close":171.61000,"High":172.91500,"Low":170.99000,"Volume":"163,224.00","Date":"11/20/20"},{"Open":170.73000,"Close":171.62000,"High":171.86000,"Low":169.31000,"Volume":"174,090.00","Date":"11/19/20"},{"Open":174.00000,"Close":171.30000,"High":174.99000,"Low":171.30000,"Volume":"111,231.00","Date":"11/18/20"},{"Open":173.40000,"Close":173.79000,"High":174.48000,"Low":170.84000,"Volume":"110,864.00","Date":"11/17/20"}],"instrumentId":402}
+        historicalPrices: {"instrumentName":"3M Co.","startDate":"Nov. 22 2020","endDate":"Dec. 22 2020","currentStockMarket":"STU","instrumentIdentifier":"1405105","instrumentTypeName":"Valor","headerCells":["Date","Open","Close","Daily High","Daily Low","Volume"],"columns":["Date","Open","Close","High","Low","Volume"],"model":[{"Open":144.96000,"Close":143.04000,"High":144.96000,"Low":142.10000,"Volume":"311.00","Date":"12/21/20"},{"Open":143.66000,"Close":144.10000,"High":144.44000,"Low":143.66000,"Volume":"1,078.00","Date":"12/18/20"},{"Open":143.60000,"Close":144.68000,"High":144.68000,"Low":143.60000,"Volume":"25.00","Date":"12/17/20"},{"Open":143.30000,"Close":143.40000,"High":144.02000,"Low":143.30000,"Volume":"39.00","Date":"12/16/20"},{"Open":142.60000,"Close":143.50000,"High":143.76000,"Low":141.90000,"Volume":"345.00","Date":"12/15/20"},{"Open":143.96000,"Close":143.76000,"High":144.50000,"Low":141.92000,"Volume":"94.00","Date":"12/14/20"},{"Open":142.42000,"Close":143.72000,"High":143.96000,"Low":142.42000,"Volume":"22.00","Date":"12/11/20"},{"Open":144.72000,"Close":143.92000,"High":144.72000,"Low":143.48000,"Volume":"400.00","Date":"12/10/20"},{"Open":142.00000,"Close":144.20000,"High":144.20000,"Low":142.00000,"Volume":"207.00","Date":"12/09/20"},{"Open":139.56000,"Close":142.04000,"High":142.08000,"Low":139.56000,"Volume":"235.00","Date":"12/08/20"},{"Open":142.18000,"Close":140.08000,"High":142.46000,"Low":139.76000,"Volume":"262.00","Date":"12/07/20"},{"Open":141.36000,"Close":142.12000,"High":142.12000,"Low":141.36000,"Volume":"57.00","Date":"12/04/20"},{"Open":141.42000,"Close":141.70000,"High":142.22000,"Low":141.42000,"Volume":"236.00","Date":"12/03/20"},{"Open":141.24000,"Close":142.24000,"High":142.24000,"Low":141.20000,"Volume":"1,130.00","Date":"12/02/20"},{"Open":146.48000,"Close":141.34000,"High":146.48000,"Low":141.34000,"Volume":"258.00","Date":"12/01/20"},{"Open":147.32000,"Close":145.52000,"High":147.56000,"Low":145.52000,"Volume":"226.00","Date":"11/30/20"},{"Open":148.78000,"Close":147.02000,"High":150.04000,"Low":147.02000,"Volume":"478.00","Date":"11/27/20"},{"Open":148.44000,"Close":149.22000,"High":149.26000,"Low":148.40000,"Volume":"98.00","Date":"11/26/20"},{"Open":148.76000,"Close":148.12000,"High":148.76000,"Low":148.12000,"Volume":"81.00","Date":"11/25/20"},{"Open":148.26000,"Close":148.26000,"High":148.44000,"Low":148.26000,"Volume":"1,200.00","Date":"11/24/20"},{"Open":145.02000,"Close":146.76000,"High":147.06000,"Low":145.02000,"Volume":"42.00","Date":"11/23/20"}],"instrumentId":402}
     });
 </script>
 
@@ -1153,7 +1161,7 @@
 <script>
 window.analyseChartConfigs = window.analyseChartConfigs || [];
 window.analyseChartConfigs.push({
-    config: {"InstrumentName":null,"NumberOfAnalysis":17,"NumberOfBuy":3,"NumberOfNeutral":11,"NumberOfSell":3,"LowestPriceTarget":146.0,"HighestPriceTarget":197.0,"MedianPriceTarget":165.88235294117646,"AllPriceTargetAmount":2820.0,"Model":[{"Close":131.12,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":156.0,"Date":"20200317"},{"Close":132.51,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":159.0,"Date":"20200327"},{"Close":133.35,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":146.0,"Date":"20200401"},{"Close":148.25,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":158.0,"Date":"20200409"},{"Close":156.15,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":166.1875,"Date":"20200429"},{"Close":148.6,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":160.0,"Date":"20200501"},{"Close":154.76,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":156.0,"Date":"20200707"},{"Close":156.26,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":170.25,"Date":"20200729"},{"Close":169.95,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":197.0,"Date":"20200916"},{"Close":166.69,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":173.0,"Date":"20201013"},{"Close":158.27,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":176.0,"Date":"20201028"}],"Markers":[{"PriceTarget":156.0,"InternalRating":"neutral","Date":1584465840000.0,"DateLabel":"03/17/2020","Company":"Morgan Stanley","RealDate":"2020-03-17T17:24:00+01:00"},{"PriceTarget":159.0,"InternalRating":"neutral","Date":1585347802000.0,"DateLabel":"03/27/2020","Company":"Goldman Sachs","RealDate":"2020-03-27T22:23:22+01:00"},{"PriceTarget":146.0,"InternalRating":"neutral","Date":1585779802000.0,"DateLabel":"04/01/2020","Company":"Citigroup Corp.","RealDate":"2020-04-01T22:23:22+02:00"},{"PriceTarget":158.0,"InternalRating":"neutral","Date":1586463817000.0,"DateLabel":"04/09/2020","Company":"Deutsche Bank","RealDate":"2020-04-09T20:23:37+02:00"},{"PriceTarget":180.0,"InternalRating":"gut","Date":1588173802000.0,"DateLabel":"04/29/2020","Company":"Credit Suisse","RealDate":"2020-04-29T15:23:22+02:00"},{"PriceTarget":163.0,"InternalRating":"neutral","Date":1588173808000.0,"DateLabel":"04/29/2020","Company":"Deutsche Bank","RealDate":"2020-04-29T15:23:28+02:00"},{"PriceTarget":170.0,"InternalRating":"neutral","Date":1588191810000.0,"DateLabel":"04/29/2020","Company":"Bank of America Merrill Lynch","RealDate":"2020-04-29T20:23:30+02:00"},{"PriceTarget":154.0,"InternalRating":"schlecht","Date":1588191811000.0,"DateLabel":"04/29/2020","Company":"Barclays Capital","RealDate":"2020-04-29T20:23:31+02:00"},{"PriceTarget":170.0,"InternalRating":"neutral","Date":1588191816000.0,"DateLabel":"04/29/2020","Company":"Citigroup Corp.","RealDate":"2020-04-29T20:23:36+02:00"},{"PriceTarget":160.0,"InternalRating":"neutral","Date":1588353827000.0,"DateLabel":"05/01/2020","Company":"Morgan Stanley","RealDate":"2020-05-01T17:23:47+02:00"},{"PriceTarget":156.0,"InternalRating":"schlecht","Date":1594142603000.0,"DateLabel":"07/07/2020","Company":"Barclays Capital","RealDate":"2020-07-07T17:23:23+02:00"},{"PriceTarget":166.0,"InternalRating":"neutral","Date":1596032608000.0,"DateLabel":"07/29/2020","Company":"Morgan Stanley","RealDate":"2020-07-29T14:23:28+02:00"},{"PriceTarget":157.0,"InternalRating":"schlecht","Date":1596032610000.0,"DateLabel":"07/29/2020","Company":"Barclays Capital","RealDate":"2020-07-29T14:23:30+02:00"},{"PriceTarget":179.0,"InternalRating":"gut","Date":1596050617000.0,"DateLabel":"07/29/2020","Company":"Credit Suisse","RealDate":"2020-07-29T19:23:37+02:00"},{"PriceTarget":197.0,"InternalRating":"gut","Date":1600280608000.0,"DateLabel":"09/16/2020","Company":"Credit Suisse","RealDate":"2020-09-16T18:23:28+02:00"},{"PriceTarget":173.0,"InternalRating":"neutral","Date":1602602608000.0,"DateLabel":"10/13/2020","Company":"Morgan Stanley","RealDate":"2020-10-13T15:23:28+02:00"},{"PriceTarget":176.0,"InternalRating":"neutral","Date":1603898619000.0,"DateLabel":"10/28/2020","Company":"Morgan Stanley","RealDate":"2020-10-28T15:23:39+01:00"}]},
+    config: {"InstrumentName":null,"NumberOfAnalysis":17,"NumberOfBuy":3,"NumberOfNeutral":11,"NumberOfSell":3,"LowestPriceTarget":146.0,"HighestPriceTarget":197.0,"MedianPriceTarget":165.88235294117646,"AllPriceTargetAmount":2820.0,"Model":[{"Close":119.88,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":156.0,"Date":"20200317"},{"Close":120.9,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":159.0,"Date":"20200327"},{"Close":120.7,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":146.0,"Date":"20200401"},{"Close":136.18,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":158.0,"Date":"20200409"},{"Close":144.72,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":166.1875,"Date":"20200429"},{"Close":137.6,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":156.0,"Date":"20200707"},{"Close":132.84,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":170.25,"Date":"20200729"},{"Close":142.16,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":197.0,"Date":"20200916"},{"Close":141.88,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":173.0,"Date":"20201013"},{"Close":135.5,"Open":0.0,"High":0.0,"Low":0.0,"Volume":0.0,"Estimate":176.0,"Date":"20201028"}],"Markers":[{"PriceTarget":156.0,"InternalRating":"neutral","Date":1584465840000.0,"DateLabel":"03/17/2020","Company":"Morgan Stanley","RealDate":"2020-03-17T17:24:00+01:00"},{"PriceTarget":159.0,"InternalRating":"neutral","Date":1585347802000.0,"DateLabel":"03/27/2020","Company":"Goldman Sachs","RealDate":"2020-03-27T22:23:22+01:00"},{"PriceTarget":146.0,"InternalRating":"neutral","Date":1585779802000.0,"DateLabel":"04/01/2020","Company":"Citigroup Corp.","RealDate":"2020-04-01T22:23:22+02:00"},{"PriceTarget":158.0,"InternalRating":"neutral","Date":1586463817000.0,"DateLabel":"04/09/2020","Company":"Deutsche Bank","RealDate":"2020-04-09T20:23:37+02:00"},{"PriceTarget":180.0,"InternalRating":"gut","Date":1588173802000.0,"DateLabel":"04/29/2020","Company":"Credit Suisse","RealDate":"2020-04-29T15:23:22+02:00"},{"PriceTarget":163.0,"InternalRating":"neutral","Date":1588173808000.0,"DateLabel":"04/29/2020","Company":"Deutsche Bank","RealDate":"2020-04-29T15:23:28+02:00"},{"PriceTarget":170.0,"InternalRating":"neutral","Date":1588191810000.0,"DateLabel":"04/29/2020","Company":"Bank of America Merrill Lynch","RealDate":"2020-04-29T20:23:30+02:00"},{"PriceTarget":154.0,"InternalRating":"schlecht","Date":1588191811000.0,"DateLabel":"04/29/2020","Company":"Barclays Capital","RealDate":"2020-04-29T20:23:31+02:00"},{"PriceTarget":170.0,"InternalRating":"neutral","Date":1588191816000.0,"DateLabel":"04/29/2020","Company":"Citigroup Corp.","RealDate":"2020-04-29T20:23:36+02:00"},{"PriceTarget":160.0,"InternalRating":"neutral","Date":1588353827000.0,"DateLabel":"05/01/2020","Company":"Morgan Stanley","RealDate":"2020-05-01T17:23:47+02:00"},{"PriceTarget":156.0,"InternalRating":"schlecht","Date":1594142603000.0,"DateLabel":"07/07/2020","Company":"Barclays Capital","RealDate":"2020-07-07T17:23:23+02:00"},{"PriceTarget":166.0,"InternalRating":"neutral","Date":1596032608000.0,"DateLabel":"07/29/2020","Company":"Morgan Stanley","RealDate":"2020-07-29T14:23:28+02:00"},{"PriceTarget":157.0,"InternalRating":"schlecht","Date":1596032610000.0,"DateLabel":"07/29/2020","Company":"Barclays Capital","RealDate":"2020-07-29T14:23:30+02:00"},{"PriceTarget":179.0,"InternalRating":"gut","Date":1596050617000.0,"DateLabel":"07/29/2020","Company":"Credit Suisse","RealDate":"2020-07-29T19:23:37+02:00"},{"PriceTarget":197.0,"InternalRating":"gut","Date":1600280608000.0,"DateLabel":"09/16/2020","Company":"Credit Suisse","RealDate":"2020-09-16T18:23:28+02:00"},{"PriceTarget":173.0,"InternalRating":"neutral","Date":1602602608000.0,"DateLabel":"10/13/2020","Company":"Morgan Stanley","RealDate":"2020-10-13T15:23:28+02:00"},{"PriceTarget":176.0,"InternalRating":"neutral","Date":1603898619000.0,"DateLabel":"10/28/2020","Company":"Morgan Stanley","RealDate":"2020-10-28T15:23:39+01:00"}]},
     regionId: 'analysis-chart-xcsdf4234'
 });
 </script>							<div class="spacer-50 mobile-spacer-25"></div>
@@ -1163,7 +1171,7 @@ window.analyseChartConfigs.push({
 <div class="graviton">
 			<h2 class="header-underline">Analyst Opinions for 3M Co.</h2>
 			<div class="grid--d-flex grid--justify-content-end">
-			<div class="dropdown dropdown--m-stretch" data-table-filter="16733dae8f794093b35ac2a547f494a3" data-table-filter-type="dropdown">
+			<div class="dropdown dropdown--m-stretch" data-table-filter="c8070e1e97fa43dfa8822c52848f311d" data-table-filter-type="dropdown">
 				<button class="dropdown__trigger button button--with-icon button--m-stretch button--s-stretch margin-bottom--smaller">
 					<span class="button__label">All</span>
 					<span class="icon icon-arrow-down icon--size-small"></span>
@@ -1179,7 +1187,7 @@ window.analyseChartConfigs.push({
 		</div>
 
 	<div class="grid--vertical-scrolling">
-		<table class="table table--fixed table--suppresses-line-breaks" data-table-filter-table="16733dae8f794093b35ac2a547f494a3">
+		<table class="table table--fixed table--suppresses-line-breaks" data-table-filter-table="c8070e1e97fa43dfa8822c52848f311d">
 			<tbody class="table__tbody">
 						<tr class="table__tr">
 										<td class="table__td"  >
@@ -1696,13 +1704,13 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">Revenue</td>
 
 									<td width="18%" class="table__td text-right" >
-										31,881
+										31,898
 									</td>
 									<td width="18%" class="table__td text-right" >
-										33,773
+										33,803
 									</td>
 									<td width="18%" class="table__td text-right" >
-										35,293
+										35,336
 									</td>
 									<td width="18%" class="table__td text-right" >
 										36,653
@@ -1728,29 +1736,29 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">Dividend Yield (in %)</td>
 
 									<td width="18%" class="table__td text-right" >
-										3.42 %
+										3.36 %
 									</td>
 									<td width="18%" class="table__td text-right" >
-										3.45 %
+										3.39 %
 									</td>
 									<td width="18%" class="table__td text-right" >
-										3.53 %
+										3.47 %
 									</td>
 									<td width="18%" class="table__td text-right" >
-										4.05 %
+										3.98 %
 									</td>
 						</tr>
 						<tr class="table__tr">
 							<td class="table__td black" width="25%">EPS</td>
 
 									<td width="18%" class="table__td text-right" >
-										8.55
+										8.53
 									</td>
 									<td width="18%" class="table__td text-right" >
-										9.45
+										9.46
 									</td>
 									<td width="18%" class="table__td text-right" >
-										10.23
+										10.26
 									</td>
 									<td width="18%" class="table__td text-right" >
 										11.22
@@ -1760,29 +1768,29 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">P/E Ratio</td>
 
 									<td width="18%" class="table__td text-right" >
-										20.19
+										20.57
 									</td>
 									<td width="18%" class="table__td text-right" >
-										18.26
+										18.54
 									</td>
 									<td width="18%" class="table__td text-right" >
-										16.87
+										17.10
 									</td>
 									<td width="18%" class="table__td text-right" >
-										15.39
+										15.64
 									</td>
 						</tr>
 						<tr class="table__tr">
 							<td class="table__td black" width="25%">EBIT</td>
 
 									<td width="18%" class="table__td text-right" >
-										6,763
+										6,751
 									</td>
 									<td width="18%" class="table__td text-right" >
-										7,371
+										7,380
 									</td>
 									<td width="18%" class="table__td text-right" >
-										7,911
+										7,937
 									</td>
 									<td width="18%" class="table__td text-right" >
 										8,479
@@ -1792,13 +1800,13 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">EBITDA</td>
 
 									<td width="18%" class="table__td text-right" >
-										8,534
+										8,519
 									</td>
 									<td width="18%" class="table__td text-right" >
-										9,117
+										9,153
 									</td>
 									<td width="18%" class="table__td text-right" >
-										9,615
+										9,669
 									</td>
 									<td width="18%" class="table__td text-right" >
 										10,367
@@ -1808,13 +1816,13 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">Net Profit</td>
 
 									<td width="18%" class="table__td text-right" >
-										4,975
+										4,963
 									</td>
 									<td width="18%" class="table__td text-right" >
-										5,475
+										5,484
 									</td>
 									<td width="18%" class="table__td text-right" >
-										5,889
+										5,915
 									</td>
 									<td width="18%" class="table__td text-right" >
 										6,306
@@ -1824,13 +1832,13 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">Net Profit Adjusted</td>
 
 									<td width="18%" class="table__td text-right" >
-										4,971
+										4,957
 									</td>
 									<td width="18%" class="table__td text-right" >
-										5,503
+										5,514
 									</td>
 									<td width="18%" class="table__td text-right" >
-										5,946
+										5,979
 									</td>
 									<td width="18%" class="table__td text-right" >
 										6,520
@@ -1840,13 +1848,13 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">Pre-Tax Profit</td>
 
 									<td width="18%" class="table__td text-right" >
-										6,352
+										6,337
 									</td>
 									<td width="18%" class="table__td text-right" >
-										6,919
+										6,931
 									</td>
 									<td width="18%" class="table__td text-right" >
-										7,459
+										7,492
 									</td>
 									<td width="18%" class="table__td text-right" >
 										8,001
@@ -1872,13 +1880,13 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">EPS (Non-GAAP) ex. SOE</td>
 
 									<td width="18%" class="table__td text-right" >
-										8.55
+										8.53
 									</td>
 									<td width="18%" class="table__td text-right" >
-										9.45
+										9.46
 									</td>
 									<td width="18%" class="table__td text-right" >
-										10.23
+										10.26
 									</td>
 									<td width="18%" class="table__td text-right" >
 										11.22
@@ -1888,13 +1896,13 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">EPS (GAAP)</td>
 
 									<td width="18%" class="table__td text-right" >
-										8.94
+										8.90
 									</td>
 									<td width="18%" class="table__td text-right" >
-										9.38
+										9.39
 									</td>
 									<td width="18%" class="table__td text-right" >
-										10.08
+										10.14
 									</td>
 									<td width="18%" class="table__td text-right" >
 										10.95
@@ -1904,13 +1912,13 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">Gross Income</td>
 
 									<td width="18%" class="table__td text-right" >
-										15,364
+										15,362
 									</td>
 									<td width="18%" class="table__td text-right" >
-										16,432
+										16,474
 									</td>
 									<td width="18%" class="table__td text-right" >
-										17,163
+										17,262
 									</td>
 									<td width="18%" class="table__td text-right" >
 										18,598
@@ -1920,13 +1928,13 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">Cash Flow from Investing</td>
 
 									<td width="18%" class="table__td text-right" >
-										-1,068
+										-1,074
 									</td>
 									<td width="18%" class="table__td text-right" >
-										-1,598
+										-1,603
 									</td>
 									<td width="18%" class="table__td text-right" >
-										-1,639
+										-1,643
 									</td>
 									<td width="18%" class="table__td text-right" >
 										-
@@ -1936,13 +1944,13 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">Cash Flow from Operations</td>
 
 									<td width="18%" class="table__td text-right" >
-										7,214
+										7,181
 									</td>
 									<td width="18%" class="table__td text-right" >
-										7,216
+										7,222
 									</td>
 									<td width="18%" class="table__td text-right" >
-										7,620
+										7,688
 									</td>
 									<td width="18%" class="table__td text-right" >
 										8,566
@@ -1952,7 +1960,7 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">Cash Flow from Financing</td>
 
 									<td width="18%" class="table__td text-right" >
-										-3,918
+										-4,868
 									</td>
 									<td width="18%" class="table__td text-right" >
 										-4,005
@@ -1968,7 +1976,7 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">Cash Flow per Share</td>
 
 									<td width="18%" class="table__td text-right" >
-										12.09
+										12.05
 									</td>
 									<td width="18%" class="table__td text-right" >
 										12.38
@@ -1984,13 +1992,13 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">Free Cash Flow</td>
 
 									<td width="18%" class="table__td text-right" >
-										5,821
+										5,801
 									</td>
 									<td width="18%" class="table__td text-right" >
-										5,674
+										5,676
 									</td>
 									<td width="18%" class="table__td text-right" >
-										6,136
+										6,169
 									</td>
 									<td width="18%" class="table__td text-right" >
 										6,770
@@ -2016,13 +2024,13 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">Book Value per Share</td>
 
 									<td width="18%" class="table__td text-right" >
-										21.35
+										21.33
 									</td>
 									<td width="18%" class="table__td text-right" >
-										24.57
+										24.55
 									</td>
 									<td width="18%" class="table__td text-right" >
-										27.61
+										27.65
 									</td>
 									<td width="18%" class="table__td text-right" >
 										30.27
@@ -2032,13 +2040,13 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">Net Debt</td>
 
 									<td width="18%" class="table__td text-right" >
-										15,456
+										15,476
 									</td>
 									<td width="18%" class="table__td text-right" >
-										13,843
+										13,861
 									</td>
 									<td width="18%" class="table__td text-right" >
-										12,298
+										12,288
 									</td>
 									<td width="18%" class="table__td text-right" >
 										10,295
@@ -2051,10 +2059,10 @@ window.analyseChartConfigs.push({
 										1,890
 									</td>
 									<td width="18%" class="table__td text-right" >
-										1,964
+										1,967
 									</td>
 									<td width="18%" class="table__td text-right" >
-										2,074
+										2,080
 									</td>
 									<td width="18%" class="table__td text-right" >
 										2,211
@@ -2064,13 +2072,13 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">Capital Expenditure</td>
 
 									<td width="18%" class="table__td text-right" >
-										1,446
+										1,448
 									</td>
 									<td width="18%" class="table__td text-right" >
-										1,635
+										1,636
 									</td>
 									<td width="18%" class="table__td text-right" >
-										1,684
+										1,685
 									</td>
 									<td width="18%" class="table__td text-right" >
 										1,730
@@ -2080,13 +2088,13 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">Selling, General & Admin. Exp.</td>
 
 									<td width="18%" class="table__td text-right" >
-										6,728
+										6,738
 									</td>
 									<td width="18%" class="table__td text-right" >
-										7,000
+										7,007
 									</td>
 									<td width="18%" class="table__td text-right" >
-										7,174
+										7,197
 									</td>
 									<td width="18%" class="table__td text-right" >
 										7,738
@@ -2096,13 +2104,13 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">Shareholder’s Equity</td>
 
 									<td width="18%" class="table__td text-right" >
-										12,361
+										12,351
 									</td>
 									<td width="18%" class="table__td text-right" >
-										13,822
+										13,810
 									</td>
 									<td width="18%" class="table__td text-right" >
-										15,004
+										15,031
 									</td>
 									<td width="18%" class="table__td text-right" >
 										15,461
@@ -2112,13 +2120,13 @@ window.analyseChartConfigs.push({
 							<td class="table__td black" width="25%">Total Assets</td>
 
 									<td width="18%" class="table__td text-right" >
-										45,919
+										45,277
 									</td>
 									<td width="18%" class="table__td text-right" >
-										46,596
+										45,950
 									</td>
 									<td width="18%" class="table__td text-right" >
-										47,774
+										47,175
 									</td>
 									<td width="18%" class="table__td text-right" >
 										45,905
@@ -2191,16 +2199,16 @@ window.analyseChartConfigs.push({
         2.262 USD
       </td>
       <td class="table__td text-right">
-        2.191 USD
+        2.176 USD
       </td>
       <td class="table__td text-right">
         2.297 USD
       </td>
       <td class="table__td text-right">
-        8.546 USD
+        8.532 USD
       </td>
       <td class="table__td text-right">
-        9.452 USD
+        9.463 USD
       </td>
     </tr>
     <tr>
@@ -2218,7 +2226,7 @@ window.analyseChartConfigs.push({
         8.890 USD
       </td>
       <td class="table__td text-right">
-        8.546 USD
+        8.532 USD
       </td>
     </tr>
     <tr>
@@ -2233,10 +2241,10 @@ window.analyseChartConfigs.push({
         4/27/2021
       </td>
       <td class="table__td text-right">
-        12/14/2020
+        12/18/2020
       </td>
       <td class="table__td text-right">
-        12/14/2020
+        12/18/2020
       </td>
     </tr>
 
@@ -2267,16 +2275,16 @@ window.analyseChartConfigs.push({
         8,309 USD
       </td>
       <td class="table__td text-right">
-        8,283 USD
+        8,301 USD
       </td>
       <td class="table__td text-right">
         8,315 USD
       </td>
       <td class="table__td text-right">
-        31,881 USD
+        31,898 USD
       </td>
       <td class="table__td text-right">
-        33,773 USD
+        33,803 USD
       </td>
     </tr>
     <tr>
@@ -2294,7 +2302,7 @@ window.analyseChartConfigs.push({
         32,136 USD
       </td>
       <td class="table__td text-right">
-        31,881 USD
+        31,898 USD
       </td>
     </tr>
     <tr>
@@ -2309,10 +2317,10 @@ window.analyseChartConfigs.push({
         4/27/2021
       </td>
       <td class="table__td text-right">
-        12/14/2020
+        12/20/2020
       </td>
       <td class="table__td text-right">
-        12/11/2020
+        12/20/2020
       </td>
     </tr>
 
@@ -2369,6 +2377,75 @@ option							</th>
 					</tr>
 				</thead>
 			<tbody class="table__tbody">
+						<tr class="table__tr">
+										<td class="table__td"  >
+											<a href="/stocks/insideractivitytrader/ashish-khandpur-k-940331" onclick="silentTrackPI()"onclick="silentTrackPI()"><strong>Ashish Khandpur K</strong></a>
+										</td>
+										<td class="table__td text-center"  >
+											12/16/2020
+										</td>
+										<td class="table__td text-center"  >
+											5,760.00
+										</td>
+										<td class="table__td text-center"  >
+											15,958.57
+										</td>
+										<td class="table__td text-center"  >
+											176.44
+										</td>
+										<td class="table__td text-center"  >
+											Sell
+										</td>
+										<td class="table__td text-center"  >
+											No
+										</td>
+						</tr>
+						<tr class="table__tr">
+										<td class="table__td"  >
+											<a href="/stocks/insideractivitytrader/hammes-eric-d.-937423" onclick="silentTrackPI()"onclick="silentTrackPI()"><strong>Hammes Eric D.</strong></a>
+										</td>
+										<td class="table__td text-center"  >
+											12/16/2020
+										</td>
+										<td class="table__td text-center"  >
+											5,076.00
+										</td>
+										<td class="table__td text-center"  >
+											4,778.30
+										</td>
+										<td class="table__td text-center"  >
+											176.67
+										</td>
+										<td class="table__td text-center"  >
+											Sell
+										</td>
+										<td class="table__td text-center"  >
+											No
+										</td>
+						</tr>
+						<tr class="table__tr">
+										<td class="table__td"  >
+											<a href="/stocks/insideractivitytrader/ashish-khandpur-k-940331" onclick="silentTrackPI()"onclick="silentTrackPI()"><strong>Ashish Khandpur K</strong></a>
+										</td>
+										<td class="table__td text-center"  >
+											12/16/2020
+										</td>
+										<td class="table__td text-center"  >
+											5,760.00
+										</td>
+										<td class="table__td text-center"  >
+											21,718.57
+										</td>
+										<td class="table__td text-center"  >
+											87.89
+										</td>
+										<td class="table__td text-center"  >
+											Buy
+										</td>
+										<td class="table__td text-center"  >
+											No
+										</td>
+						</tr>
 						<tr class="table__tr">
 										<td class="table__td"  >
 											<a href="/stocks/insideractivitytrader/lavers-jeffrey-r-1124965" onclick="silentTrackPI()"onclick="silentTrackPI()"><strong>Lavers Jeffrey R</strong></a>
@@ -2875,75 +2952,6 @@ option							</th>
 											No
 										</td>
 						</tr>
-						<tr class="table__tr">
-										<td class="table__td"  >
-											<a href="/stocks/insideractivitytrader/eskew-michael-l-415478" onclick="silentTrackPI()"onclick="silentTrackPI()"><strong>ESKEW MICHAEL L</strong></a>
-										</td>
-										<td class="table__td text-center"  >
-											05/11/2020
-										</td>
-										<td class="table__td text-center"  >
-											1,166.54
-										</td>
-										<td class="table__td text-center"  >
-											44,531.76
-										</td>
-										<td class="table__td text-center"  >
-											n/a
-										</td>
-										<td class="table__td text-center"  >
-											Buy
-										</td>
-										<td class="table__td text-center"  >
-											No
-										</td>
-						</tr>
-						<tr class="table__tr">
-										<td class="table__td"  >
-											<a href="/stocks/insideractivitytrader/dillon-david-b-387862" onclick="silentTrackPI()"onclick="silentTrackPI()"><strong>DILLON DAVID B</strong></a>
-										</td>
-										<td class="table__td text-center"  >
-											05/11/2020
-										</td>
-										<td class="table__td text-center"  >
-											1,166.54
-										</td>
-										<td class="table__td text-center"  >
-											5,463.74
-										</td>
-										<td class="table__td text-center"  >
-											n/a
-										</td>
-										<td class="table__td text-center"  >
-											Buy
-										</td>
-										<td class="table__td text-center"  >
-											No
-										</td>
-						</tr>
-						<tr class="table__tr">
-										<td class="table__td"  >
-											<a href="/stocks/insideractivitytrader/craig-pamela-j.-594710" onclick="silentTrackPI()"onclick="silentTrackPI()"><strong>Craig Pamela J.</strong></a>
-										</td>
-										<td class="table__td text-center"  >
-											05/11/2020
-										</td>
-										<td class="table__td text-center"  >
-											1,166.54
-										</td>
-										<td class="table__td text-center"  >
-											2,178.41
-										</td>
-										<td class="table__td text-center"  >
-											n/a
-										</td>
-										<td class="table__td text-center"  >
-											Buy
-										</td>
-										<td class="table__td text-center"  >
-											No
-										</td>
-						</tr>
 			</tbody>
 		</table>
 	</div>
@@ -3360,7 +3368,7 @@ Yield *							</th>
             <tr class="table__tr">
 
                 <td class="table__td">Earnings Report</td>
-                <td class="text-center table__td">2.191 USD </td>
+                <td class="text-center table__td">2.176 USD </td>
                 <td class="text-center table__td">Q4 2020 Earnings Release</td>
                 <td class="text-center table__td">02/02/2021</td>
 
@@ -3484,15 +3492,15 @@ Yield *							</th>
 	<h2 class="header-underline">Stock Snapshot</h2>
 	<div class="snapshot">
 			<div class="snapshot__data-item">
-				174.68
+				175.66
 				<div class="snapshot__header">Prev. Close</div>
 			</div>
 			<div class="snapshot__data-item">
-				174.61
+				0.00
 				<div class="snapshot__header">Open</div>
 			</div>
 			<div class="snapshot__data-item">
-				99.91 B
+				101.95 B
 				<div class="snapshot__header">Market Cap</div>
 			</div>
 			<div class="snapshot__data-item">
@@ -3501,21 +3509,6 @@ Yield *							</th>
 			</div>
 					<div class="snapshot__line"></div>
 		<div id="snapshot-highlow" class="snapshot__highlow-container">
-				<div class="snapshot__highlow">
-					<div class="snapshot__data-item snapshot__data-item--small">
-						{{lowDisplay}}
-						<div class="snapshot__header">Day Low</div>
-					</div>
-					<div class="snapshot__data-item snapshot__data-item--small snapshot__data-item--right">
-						{{highDisplay}}
-						<div class="snapshot__header">Day High</div>
-					</div>
-
-					<div class="snapshot__line snapshot__line--highlow" id="high-low-bar">
-						<div class="snapshot__indicator" v-bind:style="{left:posRight +'px'}"></div>
-						<div class="snapshot__price-label" id="price-label" v-bind:style="{left:posRightLabel +'px'}">{{priceDisplay}}</div>
-					</div>
-				</div>
 							<div class="snapshot__highlow">
 					<div class="snapshot__data-item snapshot__data-item--small">
 						{{low52weeksDisplay}}
@@ -3536,16 +3529,16 @@ Yield *							</th>
 			var snapshotVue = new Vue({
 				el: '#snapshot-highlow',
 				data: {
-					high: 175.85,
-					low: 174.36,
+					high: 0,
+					low: 0,
 					high52weeks: 182.53,
 					low52weeks: 114.04,
-					price: 175.41,
-					highDisplay: '175.85',
-					lowDisplay: '174.36',
+					price: 175.66,
+					highDisplay: '0.00',
+					lowDisplay: '0.00',
 					high52weeksDisplay: '182.53',
 					low52weeksDisplay: '114.04',
-					priceDisplay: '175.41',
+					priceDisplay: '175.66',
 					barWidth: 0,
 					priceLabelWidth: 0
 				},
@@ -3633,15 +3626,15 @@ Yield *							</th>
 				<div class="snapshot__header">Free Float in %</div>
 			</div>
 			<div class="snapshot__data-item">
-				8.55
+				8.53
 				<div class="snapshot__header">EPS 2020</div>
 			</div>
 			<div class="snapshot__data-item">
-				21.35
+				21.33
 				<div class="snapshot__header">Book Value per Share</div>
 			</div>
 			<div class="snapshot__data-item">
-				12.09
+				12.05
 				<div class="snapshot__header">Cash Flow per Share</div>
 			</div>
 	</div>
@@ -3825,20 +3818,12 @@ Profile 3M            </h2>
                         <td class="table__td text-right">5.31</td>
                     </tr>
                     <tr class="table__tr">
-                        <td class="table__td table--allow-wrap">Vanguard Total Stock Market Index Fund</td>
-                        <td class="table__td text-right">2.82</td>
-                    </tr>
-                    <tr class="table__tr">
                         <td class="table__td table--allow-wrap">BlackRock Institutional Trust Co. NA</td>
                         <td class="table__td text-right">2.48</td>
                     </tr>
                     <tr class="table__tr">
                         <td class="table__td table--allow-wrap">BlackRock Fund Advisors</td>
                         <td class="table__td text-right">2.13</td>
-                    </tr>
-                    <tr class="table__tr">
-                        <td class="table__td table--allow-wrap">Vanguard 500 Index Fund</td>
-                        <td class="table__td text-right">2.04</td>
                     </tr>
                     <tr class="table__tr">
                         <td class="table__td table--allow-wrap">Newport Trust Co.</td>
@@ -3867,6 +3852,14 @@ Profile 3M            </h2>
                     <tr class="table__tr">
                         <td class="table__td table--allow-wrap">Charles Schwab Investment Management, Inc.</td>
                         <td class="table__td text-right">1.23</td>
+                    </tr>
+                    <tr class="table__tr">
+                        <td class="table__td table--allow-wrap">Norges Bank (13F)</td>
+                        <td class="table__td text-right">0.86</td>
+                    </tr>
+                    <tr class="table__tr">
+                        <td class="table__td table--allow-wrap">Fisher Asset Management LLC</td>
+                        <td class="table__td text-right">0.81</td>
                     </tr>
             </tbody>
         </table>
@@ -4152,12 +4145,12 @@ Profile 3M            </h2>
 
 
 
-	<script src="/Content/Scripts/portfolio.min.js?v=d825b98a"></script><script src="/Content/Scripts/vue/vue-finando.umd.min.js?v=d825b98a"></script>
+	<script src="/Content/Scripts/portfolio.min.js?v=5a8d9f7f"></script><script src="/Content/Scripts/vue/vue-finando.umd.min.js?v=5a8d9f7f"></script>
 
-<script src="/Content/Scripts/MDSnG/libs/socket.io.js?v=d825b98a"></script>
-<script src="/Content/Scripts/MDSnG/Config.min.js?v=d825b98a"></script>
-<script src="/Content/Scripts/MDSnG/min/clientApiCore.min.js?v=d825b98a"></script>
-<script src="/Content/Scripts/MDSnG/min/clientApiLibs.min.js?v=d825b98a"></script>
+<script src="/Content/Scripts/MDSnG/libs/socket.io.js?v=5a8d9f7f"></script>
+<script src="/Content/Scripts/MDSnG/Config.min.js?v=5a8d9f7f"></script>
+<script src="/Content/Scripts/MDSnG/min/clientApiCore.min.js?v=5a8d9f7f"></script>
+<script src="/Content/Scripts/MDSnG/min/clientApiLibs.min.js?v=5a8d9f7f"></script>
 
 
 <script>
@@ -4209,6 +4202,6 @@ Profile 3M            </h2>
 			*/
 		}
 	</script>
-<script async="async" src="/Content/Scripts/web-push/init.min.js?v=d825b98a"></script>
+<script async="async" src="/Content/Scripts/web-push/init.min.js?v=5a8d9f7f"></script>
 </body>
 </html>

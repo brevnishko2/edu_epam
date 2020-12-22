@@ -1,233 +1,184 @@
-from bs4 import BeautifulSoup
-import requests
-import concurrent.futures
-import datetime
 import asyncio
-import aiohttp
-from operator import itemgetter
 import json
+import re
+from operator import itemgetter
+from typing import Dict, List, Tuple
+
+import aiohttp
+import requests
+from bs4 import BeautifulSoup
 
 
-class ThreadParsingToJSON:
+class NewParsing:
+    """Takes data from https://markets.businessinsider.com and create 4
+    json files with top-10 companies in:
+    - 1-year growth;
+    - P/E
+    - stock price (conv to rub)
+    - difference(profit) between 52 weeks highest and lowest stock price
+
+    """
+
     def __init__(self):
         self.path = "https://markets.businessinsider.com"
-        self.now = datetime.datetime.now()
-        self.valute = self.get_valute()
+        self.conversion_rate = self.get_conversion_rate()
 
-    def get_page_content(self, i):
-        end = f"/index/components/s&p_500?p={i}"
-        return requests.get("".join([self.path, end])).text
+    def get_conversion_rate(self) -> float:
+        """Takes current conversion rate rub to dollar
+        Returns:
+            float: 1 dollar price
 
-    def get_co_info(self, link):
-        return requests.get("".join([self.path, link])).text
-
-    def convert_to_number(self, string):
-        lst = []
-        for char in string:
-            if char.isdigit() or char in ".-":
-                lst.append(char)
-        return float("".join(lst))
-
-    def get_script_value(self, scripts):
-        for script in scripts:
-            if "low52weeks" in repr(script):
-                index = repr(script).find("low52weeks")
-                lowest = self.convert_to_number((repr(script)[index + 12 : index + 20]))
-                index = repr(script).find("high52weeks")
-                highest = self.convert_to_number(
-                    (repr(script)[index + 13 : index + 20])
-                )
-        return f"{(highest - lowest):.{2}f}"
-
-    def get_valute(self):
-        path_cb = "http://www.cbr.ru/scripts/XML_daily.asp?date_req="
-        request = requests.get(
-            path_cb + "/".join(map(str, [self.now.day, self.now.month, self.now.year]))
-        ).text
-        soup = BeautifulSoup(request, "lxml")
+        """
+        path_cb = "http://www.cbr.ru/scripts/XML_daily.asp"
+        response = requests.get(path_cb).text
+        soup = BeautifulSoup(response, "lxml")
         return float(
             soup.find("valute", id="R01235").find("value").text.replace(",", ".")
         )
 
-    def get_co_information(self, link):
-        soup = BeautifulSoup(self.get_co_info(link), "lxml")
-        co_code = link[8 : link.find("-stock")]
-        pe = (
-            soup.find("div", id="snapshot")
-            .find_all("div", class_="snapshot__data-item")[8]
-            .text.split()[0]
-        )
-        profit = self.get_script_value(soup.find_all("script"))
-        market_cap = (
-            soup.find("div", id="snapshot")
-            .find_all("div", class_="snapshot__data-item")[2]
-            .text.split()[0][0:-2]
-        )
-        return (
-            co_code,
-            self.convert_to_number(pe),
-            self.convert_to_number(profit),
-            self.convert_to_number(market_cap),
-        )
+    def get_script_value(self, script: str) -> float:
+        """Find 52 weeks lowest and highest value in script code.
+        Args:
+            script: first script from soup.find("div", id="snapshot")
 
-    def get_result(self, page):
-        result_list = []
-        soup = BeautifulSoup(self.get_page_content(page), "lxml")
-        table = soup.find("table", class_="table table-small")
-        for line in table.find_all("tr")[1:]:
-            link = line.find("td").find("a").get("href")
-            price = float(line.find_all("td")[1].text.split("\n")[1].replace(",", ""))
+        Returns:
+            profit: difference between highest and lowest price
 
-            code, pe, profit, market_cap = self.get_co_information(link)
+        """
+        value = re.search(r"low52weeks: (\d*.\d*)", script)
+        low = float(value.group().split()[1].replace(",", ""))
+        value = re.search(r"high52weeks: (\d*.\d*)", script)
+        high = float(value.group().split()[1].replace(",", ""))
+        return high - low
 
-            result_list.append(
-                {
-                    "co_code": code,
-                    "co_name": line.find("td").text.strip(),
-                    "price": price,
-                    "P/E": pe,
-                    "growth": float(
-                        line.find_all("td")[9].text.strip().split("\n")[1][:-1]
-                    ),
-                    "potential profit": profit,
-                    "market_cap": market_cap * self.valute,
-                }
-            )
-        return result_list
+    async def get_page_content(self, i) -> str:
+        """Takes html-code of page
+        Args:
+            i: page number
 
-    def create_json(self):
-        result = []
-        with concurrent.futures.ThreadPoolExecutor() as executor:
-            futures = []
-            for i in range(1, 11):
-                futures.append(executor.submit(self.get_result, i))
-            for future in concurrent.futures.as_completed(futures):
-                result.extend(future.result())
-        price = sorted(result, reverse=True, key=itemgetter("price"))[:10]
-        pe = sorted(result, key=itemgetter("P/E"))[:10]
-        growth = sorted(result, reverse=True, key=itemgetter("growth"))[:10]
-        profit = sorted(result, reverse=True, key=itemgetter("potential profit"))[:10]
-        top_10 = [price, pe, growth, profit]
-        names_for_files = [
-            "top_10_price",
-            "top_10_pe",
-            "top_10_growth",
-            "top_10_profit",
-        ]
-        for i in range(len(top_10)):
-            with open(f"{names_for_files[i]}.json", "w") as ouf:
-                ouf.write(json.dumps(top_10[i], indent=4))
+        Returns:
+            html: page's html-code
 
-        def start(self):
-            asyncio.run(self.print_to_json())
-
-
-class AsyncParsingToJSON:
-    def __init__(self):
-        self.path = "https://markets.businessinsider.com"
-        self.now = datetime.datetime.now()
-        self.valute = self.get_valute()
-
-    async def get_page_content(self, i):
+        """
         end = f"/index/components/s&p_500?p={i}"
         async with aiohttp.ClientSession() as session:
             async with session.get("".join([self.path, end])) as resp:
                 html = await resp.text()
                 return html
 
-    async def get_company_info(self, link):
+    async def get_company_page(self, link) -> Tuple[str, str]:
+        """Takes html-code of page
+        Args:
+            link ():
+
+        Returns:
+            tuple: html-code and company's growth
+
+        """
         async with aiohttp.ClientSession() as session:
-            async with session.get("".join([self.path, link])) as resp:
+            async with session.get("".join([self.path, link[0]])) as resp:
                 html = await resp.text()
-                return html
+                return html, link[1]
 
-    def convert_to_number(self, string):
-        lst = []
-        for char in string:
-            if char.isdigit() or char in ".-":
-                lst.append(char)
-        return float("".join(lst))
+    async def get_companies_list(self, page) -> List[List]:
+        """Collect ref of all companies pages from page into one list.
+        Also collect 1-year growth of company
+        Args:
+            page: number of page
 
-    def get_script_value(self, scripts):
-        for script in scripts:
-            if "low52weeks" in repr(script):
-                index = repr(script).find("low52weeks")
-                lowest = self.convert_to_number((repr(script)[index + 12 : index + 20]))
-                index = repr(script).find("high52weeks")
-                highest = self.convert_to_number(
-                    (repr(script)[index + 13 : index + 20])
-                )
-        return f"{(highest - lowest):.{2}f}"
+        Returns:
+            companies_list: list with refs
 
-    def get_valute(self):
-        path_cb = "http://www.cbr.ru/scripts/XML_daily.asp?date_req="
-        request = requests.get(
-            path_cb + "/".join(map(str, [self.now.day, self.now.month, self.now.year]))
-        ).text
-        soup = BeautifulSoup(request, "lxml")
-        return float(
-            soup.find("valute", id="R01235").find("value").text.replace(",", ".")
-        )
-
-    async def get_co_information(self, link):
-        soup = BeautifulSoup(await self.get_company_info(link), "lxml")
-        co_code = link[8 : link.find("-stock")]
-        pe = (
-            soup.find("div", id="snapshot")
-            .find_all("div", class_="snapshot__data-item")[8]
-            .text.split()[0]
-        )
-        profit = self.get_script_value(soup.find_all("script"))
-        market_cap = (
-            soup.find("div", id="snapshot")
-            .find_all("div", class_="snapshot__data-item")[2]
-            .text.split()[0][0:-2]
-        )
-        return (
-            co_code,
-            self.convert_to_number(pe),
-            self.convert_to_number(profit),
-            self.convert_to_number(market_cap),
-        )
-
-    async def get_result(self, page):
-        result_list = []
+        """
+        companies_list = []
         soup = BeautifulSoup(await self.get_page_content(i=page), "lxml")
         table = soup.find("table", class_="table table-small")
         for line in table.find_all("tr")[1:]:
             link = line.find("td").find("a").get("href")
-            price = float(line.find_all("td")[1].text.split("\n")[1].replace(",", ""))
+            growth = line.find_all("td")[9].text.strip().split("\n")[1][:-1]
+            companies_list.append([link, growth])
+        return companies_list
 
-            code, pe, profit, market_cap = await self.get_co_information(link)
+    async def async_access(self) -> List[List]:
+        """Some async magic to make get_companies_list() faster.
+        Collect refs from 1-10 site's pages
+        Returns:
+            result: list with refs
 
-            result_list.append(
-                {
-                    "co_code": code,
-                    "co_name": line.find("td").text.strip(),
-                    "price": price,
-                    "P/E": pe,
-                    "growth": float(
-                        line.find_all("td")[9].text.strip().split("\n")[1][:-1]
-                    ),
-                    "potential profit": profit,
-                    "market_cap": market_cap * self.valute,
-                }
-            )
-        return result_list
-
-    async def async_access(self):
+        """
         result = []
-        result_lists = await asyncio.gather(*(self.get_result(i) for i in range(1, 11)))
+        result_lists = await asyncio.gather(
+            *(self.get_companies_list(i) for i in range(1, 11))
+        )
         for lst in result_lists:
             result.extend(lst)
         return result
 
-    async def print_to_json(self):
-        result = await self.async_access()
+    async def get_companies_info(self) -> List[Dict]:
+        """Takes html-code of all companies and collect following
+        company's info into a dict:
+        - name
+        - code
+        - 1-year growth
+        - stock price
+        - profit
+        - P/E
+        Returns:
+            result: list of dicts
+
+        """
+        result_list = []
+        temp_result = await asyncio.gather(
+            *(self.get_company_page(link) for link in await self.async_access())
+        )
+        for company in temp_result:
+            soup = BeautifulSoup(company[0], "lxml")
+            growth = float(company[1])
+            table_with_name = soup.find("div", class_="price-section__row")
+            name = table_with_name.find("span", class_="price-section__label").text
+            code = (
+                table_with_name.find("span", class_="price-section__category")
+                .find("span")
+                .text.split()[1]
+            )
+            table_with_price = soup.find("div", class_="price-section__values")
+            price = float(
+                table_with_price.find(
+                    "span", class_="price-section__current-value"
+                ).text.replace(",", "")
+            )
+            snapshot = soup.find("div", id="snapshot")
+            profit = self.get_script_value(snapshot.find("script").decode())
+            try:
+                pe = float(
+                    snapshot.find("div", class_="snapshot__header", text="P/E Ratio")
+                    .parent.text.split()[0]
+                    .replace(",", "")
+                )
+            except AttributeError:
+                continue
+            result_list.append(
+                {
+                    "name": name,
+                    "code": code,
+                    "price": round(price * self.conversion_rate, 2),
+                    "profit": round(profit, 2),
+                    "growth": growth,
+                    "P/E": pe,
+                }
+            )
+        return result_list
+
+    def start(self):
+        """final action that takes all data and create 4 top-10
+        json files.
+
+        """
+        result = list(asyncio.run(self.get_companies_info()))
         price = sorted(result, reverse=True, key=itemgetter("price"))[:10]
         pe = sorted(result, key=itemgetter("P/E"))[:10]
         growth = sorted(result, reverse=True, key=itemgetter("growth"))[:10]
-        profit = sorted(result, reverse=True, key=itemgetter("potential profit"))[:10]
+        profit = sorted(result, reverse=True, key=itemgetter("profit"))[:10]
         top_10 = [price, pe, growth, profit]
         names_for_files = [
             "top_10_price",
@@ -239,10 +190,7 @@ class AsyncParsingToJSON:
             with open(f"{names_for_files[i]}.json", "w") as ouf:
                 ouf.write(json.dumps(top_10[i], indent=4))
 
-    def start(self):
-        asyncio.run(self.print_to_json())
-
 
 if __name__ == "__main__":
-    instance = AsyncParsingToJSON()
+    instance = NewParsing()
     instance.start()
