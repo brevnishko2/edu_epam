@@ -2,81 +2,51 @@
     {
         "name": "Amazon ",
         "code": "AMZN",
-        "price": 242144.87,
-        "profit": 1923.0,
-        "growth": 80.99,
-        "P/E": 81.55
+        "price": 240987.5
     },
     {
         "name": "Alphabet C (ex Google) ",
         "code": "GOOG",
-        "price": 131119.95,
-        "profit": 832.56,
-        "growth": 30.1,
-        "P/E": 27.53
+        "price": 129783.25
     },
     {
         "name": "Alphabet A (ex Google) ",
         "code": "GOOGL",
-        "price": 130723.61,
-        "profit": 834.18,
-        "growth": 29.69,
-        "P/E": 27.63
+        "price": 129349.23
     },
     {
         "name": "Chipotle Mexican Grill Inc. ",
         "code": "CMG",
-        "price": 106760.12,
-        "profit": 1009.27,
-        "growth": 68.33,
-        "P/E": 59.53
+        "price": 107114.26
     },
     {
         "name": "AutoZone Inc. ",
         "code": "AZO",
-        "price": 89872.72,
-        "profit": 574.23,
-        "growth": -2.56,
-        "P/E": 16.46
+        "price": 89516.32
     },
     {
         "name": "Mettler-Toledo International Inc. ",
         "code": "MTD",
-        "price": 85450.44,
-        "profit": 633.38,
-        "growth": 35.25,
-        "P/E": 34.74
+        "price": 85132.46
     },
     {
         "name": "Intuitive Surgical Inc ",
         "code": "ISRG",
-        "price": 59612.99,
-        "profit": 431.82,
-        "growth": 29.03,
-        "P/E": 46.87
+        "price": 60898.46
     },
     {
         "name": "Sherwin-Williams Co. ",
         "code": "SHW",
-        "price": 54896.1,
-        "profit": 432.57,
-        "growth": 15.53,
-        "P/E": 27.52
+        "price": 55231.4
     },
     {
         "name": "Equinix Inc ",
         "code": "EQIX",
-        "price": 53135.93,
-        "profit": 360.89,
-        "growth": 14.29,
-        "P/E": 98.01
+        "price": 53103.53
     },
     {
         "name": "BlackRock Inc. ",
         "code": "BLK",
-        "price": 52933.23,
-        "profit": 397.09,
-        "growth": 39.04,
-        "P/E": 17.85
+        "price": 52216.66
     }
 ]

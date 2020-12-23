@@ -164,7 +164,7 @@ class NewParsing:
                     "price": round(price * self.conversion_rate, 2),
                     "profit": round(profit, 2),
                     "growth": growth,
-                    "P/E": pe,
+                    "PE": pe,
                 }
             )
         return result_list
@@ -175,20 +175,38 @@ class NewParsing:
 
         """
         result = list(asyncio.run(self.get_companies_info()))
-        price = sorted(result, reverse=True, key=itemgetter("price"))[:10]
-        pe = sorted(result, key=itemgetter("P/E"))[:10]
-        growth = sorted(result, reverse=True, key=itemgetter("growth"))[:10]
-        profit = sorted(result, reverse=True, key=itemgetter("profit"))[:10]
+        price = [
+            item for item in sorted(result, reverse=True, key=itemgetter("price"))[:10]
+        ]
+        pe = [item for item in sorted(result, key=itemgetter("PE")) if item["PE"] >= 0][
+            :10
+        ]
+        growth = [
+            item for item in sorted(result, reverse=True, key=itemgetter("growth"))[:10]
+        ]
+        profit = [
+            item for item in sorted(result, reverse=True, key=itemgetter("profit"))[:10]
+        ]
         top_10 = [price, pe, growth, profit]
         names_for_files = [
             "top_10_price",
-            "top_10_pe",
+            "top_10_PE",
             "top_10_growth",
             "top_10_profit",
         ]
         for i in range(len(top_10)):
             with open(f"{names_for_files[i]}.json", "w") as ouf:
-                ouf.write(json.dumps(top_10[i], indent=4))
+                # takes string for key
+                value = names_for_files[i].removeprefix("top_10_")
+                result_dict = [
+                    {
+                        "name": item["name"],
+                        "code": item["code"],
+                        f"{value}": item[f"{value}"],
+                    }
+                    for item in top_10[i]
+                ]
+                ouf.write(json.dumps(result_dict, indent=4))
 
 
 if __name__ == "__main__":

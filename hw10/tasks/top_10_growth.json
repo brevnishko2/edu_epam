@@ -2,81 +2,51 @@
     {
         "name": "Tesla ",
         "code": "TSLA",
-        "price": 49180.81,
-        "profit": 624.9,
-        "growth": 721.62,
-        "P/E": 14392.16
+        "growth": 721.62
     },
     {
         "name": "NVIDIA Corp. ",
         "code": "NVDA",
-        "price": 40187.06,
-        "profit": 408.23,
-        "growth": 132.03,
-        "P/E": 41.38
+        "growth": 132.03
     },
     {
         "name": "AMD (Advanced Micro Devices)  Inc. ",
         "code": "AMD",
-        "price": 7048.97,
-        "profit": 61.23,
-        "growth": 126.44,
-        "P/E": 72.26
+        "growth": 126.44
     },
     {
         "name": "PayPal Inc ",
         "code": "PYPL",
-        "price": 18117.11,
-        "profit": 157.63,
-        "growth": 112.24,
-        "P/E": 35.29
+        "growth": 112.24
     },
     {
         "name": "Albemarle Corp. ",
         "code": "ALB",
-        "price": 10818.72,
-        "profit": 97.09,
-        "growth": 97.44,
-        "P/E": 11.92
+        "growth": 97.44
     },
     {
         "name": "L Brands Inc ",
         "code": "LB",
-        "price": 2912.27,
-        "profit": 34.17,
-        "growth": 93.54,
-        "P/E": 10.21
+        "growth": 93.54
     },
     {
         "name": "Align Technology Inc. ",
         "code": "ALGN",
-        "price": 40040.13,
-        "profit": 405.46,
-        "growth": 92.46,
-        "P/E": 47.15
+        "growth": 92.46
     },
     {
         "name": "Apple Inc. ",
         "code": "AAPL",
-        "price": 9928.84,
-        "profit": 84.82,
-        "growth": 82.32,
-        "P/E": 35.6
+        "growth": 82.32
     },
     {
         "name": "IDEXX Laboratories ",
         "code": "IDXX",
-        "price": 36806.12,
-        "profit": 321.69,
-        "growth": 81.82,
-        "P/E": 53.95
+        "growth": 81.82
     },
     {
         "name": "Cadence Design Systems Inc. ",
         "code": "CDNS",
-        "price": 9964.26,
-        "profit": 80.85,
-        "growth": 81.4,
-        "P/E": 31.9
+        "growth": 81.4
     }
 ]
