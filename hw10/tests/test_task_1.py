@@ -37,7 +37,7 @@ async def test_correct_info_collection():
         "price": 13209.57,
         "profit": 68.49,
         "growth": 45.32,
-        "P/E": 20.12,
+        "PE": 20.12,
     }
 
     assert task1[0] == ["/stocks/mmm-stock", "3.22"]
