@@ -1,6 +1,11 @@
 pre-commit
 pytest~=6.1.2
+bs4~=0.0.1
 black
 isort
+lxml~=4.6.2
 requests~=2.25.0
 mock~=4.0.2
+aiohttp
+pytest-asyncio
+asynctest
