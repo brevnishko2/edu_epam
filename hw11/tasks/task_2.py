@@ -1,22 +1,30 @@
+from __future__ import annotations
 from typing import Callable, Union
 
 
 class Order:
     """Class for calculation final price of item."""
 
-    def __init__(self, price: int, discount: Callable[[], Union[float, int]] = None):
+    def __init__(
+        self, price: int, strategy: Callable[[Order], Union[float, int]] = None
+    ):
         """
         Args:
             price: standard price of item
-            discount: function that return percentage of discount.
+            strategy: function that return percentage of strategy.
             Function's return must be int/float.
 
         """
         self.price = price
-        if discount:
-            self.discount = discount()
-        else:
-            self.discount = 0
+        self._strategy = strategy
+
+    @property
+    def strategy(self):
+        return self._strategy
+
+    @strategy.setter
+    def strategy(self, strategy):
+        self._strategy = strategy
 
     def final_price(self):
-        return self.price - self.price * self.discount
+        return self.strategy(self)

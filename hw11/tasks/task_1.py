@@ -5,7 +5,30 @@ class SimplifiedEnum(type):
     """
 
     def __new__(mcs, name, bases, args):
-        obj = super().__new__(mcs, name, bases, args)
-        for arg in args["_%s__keys" % name]:
-            exec('%s = "%s"\nobj.%s = %s' % (arg, arg, arg, arg))
-        return obj
+        new_dict = {f"{arg}": arg for arg in args[f"_{name}__keys"]}
+        mcs.obj = super().__new__(mcs, name, bases, new_dict)
+        mcs.obj.__iter__ = SimplifiedEnum.__iter__
+        mcs.obj.__next__ = SimplifiedEnum.__next__
+        mcs.obj.__len__ = SimplifiedEnum.__len__
+
+        return mcs.obj
+
+    def __iter__(self):
+        self.__iter_counter__ = 0
+        return self
+
+    def __next__(self):
+        self.__iteration_list__ = [
+            item
+            for item in self.__dir__()
+            if not (item.startswith("__") and item.endswith("__"))
+        ]
+        if self.__iter_counter__ < len(self.__iteration_list__):
+            result = self.__iteration_list__[self.__iter_counter__]
+            self.__iter_counter__ += 1
+            return result
+        else:
+            raise StopIteration
+
+    def __len__(self):
+        return len(self.__iteration_list__)
