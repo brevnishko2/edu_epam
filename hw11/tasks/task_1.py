@@ -13,11 +13,7 @@ class SimplifiedEnum(type):
         return obj
 
     def __iter__(cls):
-        cls._iteration_list__ = iter(cls._content_list__)
-        return cls
-
-    def __next__(cls):
-        return next(cls._iteration_list__)
+        return iter(cls._content_list__)
 
     def __len__(cls):
         return len(cls._content_list__)
