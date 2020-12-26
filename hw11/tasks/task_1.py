@@ -14,21 +14,20 @@ class SimplifiedEnum(type):
         return mcs.obj
 
     def __iter__(self):
-        self.__iter_counter__ = 0
+        self._iteration_list__ = [
+            item for item in self.__dir__() if not item.endswith("__")
+        ]
+        self._iter_counter__ = 0
         return self
 
     def __next__(self):
-        self.__iteration_list__ = [
-            item
-            for item in self.__dir__()
-            if not (item.startswith("__") and item.endswith("__"))
-        ]
-        if self.__iter_counter__ < len(self.__iteration_list__):
-            result = self.__iteration_list__[self.__iter_counter__]
-            self.__iter_counter__ += 1
+        if self._iter_counter__ < len(self._iteration_list__):
+            result = self._iteration_list__[self._iter_counter__]
+            self._iter_counter__ += 1
             return result
         else:
             raise StopIteration
 
     def __len__(self):
-        return len(self.__iteration_list__)
+        counter = [item for item in self]
+        return len(counter)
