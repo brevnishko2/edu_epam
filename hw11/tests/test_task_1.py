@@ -22,11 +22,11 @@ def test_sizes():
 def test_iteration():
 
     actual_result = []
-    for i in ColorsEnum():
+    for i in ColorsEnum:
         actual_result.append(i)
 
     assert actual_result == ["RED", "BLUE", "ORANGE", "BLACK"]
 
 
 def test_len():
-    assert len(ColorsEnum()) == 4
+    assert len(ColorsEnum) == 4

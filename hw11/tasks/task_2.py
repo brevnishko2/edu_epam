@@ -26,5 +26,5 @@ class Order:
     def strategy(self, strategy):
         self._strategy = strategy
 
-    def final_price(self):
+    def count_final_price(self):
         return self.strategy(self)
