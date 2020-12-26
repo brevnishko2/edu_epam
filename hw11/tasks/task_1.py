@@ -6,18 +6,18 @@ class SimplifiedEnum(type):
 
     def __new__(mcs, name, bases, args):
         obj = super().__new__(mcs, name, bases, args)
+        obj._content_list__ = args[f"_{name}__keys"]
         for item in args[f"_{name}__keys"]:
             setattr(obj, item, item)
-        obj._content_list__ = [item for item in args[f"_{name}__keys"]]
 
         return obj
 
-    def __iter__(self):
-        self._iteration_list__ = iter(self._content_list__)
-        return self
+    def __iter__(cls):
+        cls._iteration_list__ = iter(cls._content_list__)
+        return cls
 
-    def __next__(self):
-        return next(self._iteration_list__)
+    def __next__(cls):
+        return next(cls._iteration_list__)
 
-    def __len__(self):
-        return len(self._content_list__)
+    def __len__(cls):
+        return len(cls._content_list__)
